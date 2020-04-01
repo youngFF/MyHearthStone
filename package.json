@@ -1,0 +1,29 @@
+{
+  "name": "MyHearthStone",
+  "version": "1.0.0",
+  "description": "Welcome to **MyHearthStone**.The name of the book comes from a Game called **MyHearthStone**.That means lots of glorious cards in your pocket.",
+  "main": "index.js",
+  "dependencies": {
+    "gitbook-plugin-anchor-navigation-ex": "^1.0.14",
+    "gitbook-plugin-anchors": "^0.7.1",
+    "gitbook-plugin-favicon": "^0.0.2",
+    "gitbook-plugin-github": "^2.0.0",
+    "gitbook-plugin-expandable-chapters-small": "^0.1.7",
+    "gitbook-plugin-github-buttons": "^3.0.0",
+    "gitbook-plugin-search-pro": "^2.0.2",
+    "gitbook-plugin-sharing-plus": "^0.0.2",
+    "gitbook-plugin-splitter": "^0.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+
+            "build": "gitbook build .  ./docs"
+
+    }
+}

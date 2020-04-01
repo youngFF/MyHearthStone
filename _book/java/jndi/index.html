@@ -1,0 +1,942 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.7 Jndi · Blankj's Glory</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Blankj">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../spring framework/" />
+    
+    
+    <link rel="prev" href="../asmxjavassit/" />
+    
+
+    
+        <link rel="shortcut icon" href='../../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"youngFF","repo":"glory","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://blankj.com" target="_blank" class="custom-link">我的狗窝</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    1.Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../elementary/">
+            
+                <a href="../elementary/">
+            
+                    
+                    1.0 Java Elememtary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../jvm/">
+            
+                <a href="../jvm/">
+            
+                    
+                    1.1 Java virtual machine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../specification/">
+            
+                <a href="../specification/">
+            
+                    
+                    1.2 Java Specification
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../specification/JMS/">
+            
+                <a href="../specification/JMS/">
+            
+                    
+                    1.2.1 JMS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../design pattern/">
+            
+                <a href="../design pattern/">
+            
+                    
+                    1.3 Design Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../microservice/">
+            
+                <a href="../microservice/">
+            
+                    
+                    1.4 Java Microservice
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../microservice/mq/">
+            
+                <a href="../microservice/mq/">
+            
+                    
+                    1.4.1 mq
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../tomcatxjetty/">
+            
+                <a href="../tomcatxjetty/">
+            
+                    
+                    1.5 Tomcat & Jetty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../asmxjavassit/">
+            
+                <a href="../asmxjavassit/">
+            
+                    
+                    1.6 Asm & Javassist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.8" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1.7 Jndi
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../spring framework/">
+            
+                <a href="../../spring framework/">
+            
+                    
+                    2.Spring Framework
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../spring framework/spring-core/">
+            
+                <a href="../../spring framework/spring-core/">
+            
+                    
+                    2.1 Spring-Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../spring framework/spring-mvc/">
+            
+                <a href="../../spring framework/spring-mvc/">
+            
+                    
+                    2.2 Spring-Mvc
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../spring framework/spring-mvc/spring-mvc-request-annotation/">
+            
+                <a href="../../spring framework/spring-mvc/spring-mvc-request-annotation/">
+            
+                    
+                    2.2.1 SpringMVC注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../spring framework/spring-test/">
+            
+                <a href="../../spring framework/spring-test/">
+            
+                    
+                    2.3 Spring-Test
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../spring framework/spring-test/spring-web-mock-test/">
+            
+                <a href="../../spring framework/spring-test/spring-web-mock-test/">
+            
+                    
+                    2.3.1 Spring-mvc-mock
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../spring framework/spring-boot/">
+            
+                <a href="../../spring framework/spring-boot/">
+            
+                    
+                    2.4 Spring-Boot
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../spring framework/spring-boot/spring-boot项目配置/">
+            
+                <a href="../../spring framework/spring-boot/spring-boot项目配置/">
+            
+                    
+                    2.4.1 Spring-boot项目配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../spring framework/spring-data/">
+            
+                <a href="../../spring framework/spring-data/">
+            
+                    
+                    2.5 Spring-Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../spring framework/spring-cloud/">
+            
+                <a href="../../spring framework/spring-cloud/">
+            
+                    
+                    2.6 Spring-Cloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../spring framework/spring-rest/">
+            
+                <a href="../../spring framework/spring-rest/">
+            
+                    
+                    2.7 Spring-Rest
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../linux/">
+            
+                <a href="../../linux/">
+            
+                    
+                    3.Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../linux/shell/">
+            
+                <a href="../../linux/shell/">
+            
+                    
+                    3.1 Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../database/">
+            
+                <a href="../../database/">
+            
+                    
+                    4.DataBase
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../database/mysql/">
+            
+                <a href="../../database/mysql/">
+            
+                    
+                    4.1 MySQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../database/mysql/sql/">
+            
+                <a href="../../database/mysql/sql/">
+            
+                    
+                    4.1.1 SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../database/mysql/transaction/">
+            
+                <a href="../../database/mysql/transaction/">
+            
+                    
+                    4.1.2 Transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../database/redis/">
+            
+                <a href="../../database/redis/">
+            
+                    
+                    4.2 Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../database/mybatis/">
+            
+                <a href="../../database/mybatis/">
+            
+                    
+                    4.3 MyBatis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../../database/mybatis/mybatis参数绑定/">
+            
+                <a href="../../database/mybatis/mybatis参数绑定/">
+            
+                    
+                    4.3.1 MyBatis参数绑定方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../network/">
+            
+                <a href="../../network/">
+            
+                    
+                    5.Network
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../network/http/">
+            
+                <a href="../../network/http/">
+            
+                    
+                    5.1 Http
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../network/tcp/">
+            
+                <a href="../../network/tcp/">
+            
+                    
+                    5.2 TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../data structure/">
+            
+                <a href="../../data structure/">
+            
+                    
+                    6.Data Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../algorithm/">
+            
+                <a href="../../algorithm/">
+            
+                    
+                    7.Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../math/">
+            
+                <a href="../../math/">
+            
+                    
+                    8.Math
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../../programming language/">
+            
+                <a href="../../programming language/">
+            
+                    
+                    9.Programming Language
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >1.7 Jndi</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#jndi---java-naming-and-directory-interface"><b></b>JNDI - Java Naming and Directory Interface</a></li><ul><ul><li><span class="title-icon "></span><a href="#1&#x7B80;&#x4ECB;"><b></b>1.&#x7B80;&#x4ECB;</a></li><li><span class="title-icon "></span><a href="#2&#x5B9E;&#x4F8B;"><b></b>2.&#x5B9E;&#x4F8B;</a></li><li><span class="title-icon "></span><a href="#3&#x603B;&#x7ED3;"><b></b>3.&#x603B;&#x7ED3;</a></li><li><span class="title-icon "></span><a href="#4&#x53C2;&#x8003;"><b></b>4.&#x53C2;&#x8003;</a></li></ul></ul></ul></div><a href="#jndi---java-naming-and-directory-interface" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="jndi---java-naming-and-directory-interface"><a name="jndi---java-naming-and-directory-interface" class="anchor-navigation-ex-anchor" href="#jndi---java-naming-and-directory-interface"><i class="fa fa-link" aria-hidden="true"></i></a><a name="jndi---java-naming-and-directory-interface" class="plugin-anchor" href="#jndi---java-naming-and-directory-interface"><i class="fa fa-link" aria-hidden="true"></i></a>JNDI - Java Naming and Directory Interface</h1>
+<p>&#x76EE;&#x5F55;&#xFF1A;</p>
+<ol>
+<li><a href="#1&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</a></li>
+<li><a href="#2&#x5B9E;&#x4F8B;">&#x5B9E;&#x4F8B;</a></li>
+<li><a href="#3&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</a></li>
+<li><a href="#4&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li>
+</ol>
+<h3 id="1&#x7B80;&#x4ECB;"><a name="1&#x7B80;&#x4ECB;" class="anchor-navigation-ex-anchor" href="#1&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="1&#x7B80;&#x4ECB;" class="plugin-anchor" href="#1&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>1.&#x7B80;&#x4ECB;</h3>
+<p>JNDI(Java Naming and Directory Interface&#xFF0C;Java&#x547D;&#x540D;&#x548C;&#x76EE;&#x5F55;&#x63A5;&#x53E3;)&#x662F;&#x4E00;&#x7EC4;&#x5728;Java&#x5E94;&#x7528;&#x4E2D;&#x8BBF;&#x95EE;&#x547D;&#x540D;&#x548C;&#x76EE;&#x5F55;&#x670D;&#x52A1;&#x7684;API&#x3002;<strong>&#x547D;&#x540D;&#x670D;&#x52A1;&#x5C06;&#x540D;&#x79F0;&#x548C;&#x5BF9;&#x8C61;&#x8054;&#x7CFB;&#x8D77;&#x6765;&#xFF0C;&#x4F7F;&#x5F97;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x540D;&#x79F0;&#x8BBF;&#x95EE;&#x5BF9;&#x8C61;&#x3002;</strong></p>
+<p>  JNDI&#x7C7B;&#x4F3C;&#x4E8E;JDBC&#x4E00;&#x6837;,&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x7F16;&#x7A0B;&#x63A5;&#x53E3;,&#x7528;&#x6765;&#x89C4;&#x8303;&#x547D;&#x540D;&#x670D;&#x52A1;&#x4E2D;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x7BA1;&#x7406;,&#x901A;&#x8FC7;JNDI&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x4E0E;&#x6258;&#x7BA1;,&#x548C;&#x5BF9;&#x8C61;&#x7684;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;&#x5B8C;&#x5168;&#x89E3;&#x8026;.</p>
+<p>  &#x6BD4;&#x5982;:&#x5728;application&#x7684;&#x5E95;&#x5C42;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;,&#x5E76;&#x5C06;&#x5BF9;&#x8C61;bind&#x5230;&#x7279;&#x5B9A;&#x7684;context&#x4E2D;,&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#x6216;&#x8005;&quot;&#x67E5;&#x627E;&quot;&#x65B9;&#x5F0F;&#x53EA;&#x6709;&#x6B64;&#x5E95;&#x5C42;&#x6A21;&#x5757;&#x652F;&#x6301;,&#x5916;&#x90E8;&#x7A0B;&#x5E8F;&#x4E0D;&#x53EF;&#x89C1;.&#x5BF9;&#x4E8E;&#x5BF9;&#x8C61;&#x7684;&#x4F7F;&#x7528;&#x8005;(&#x8C03;&#x7528;&#x8005;)&#x53EA;&#x80FD;&#x901A;&#x8FC7;JNDI&#x7684;&#x65B9;&#x5F0F;&#x83B7;&#x53D6;&#x5BF9;&#x8C61;,&#x5BF9;&#x8C61;&#x4F7F;&#x7528;&#x8005;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7B49;.</p>
+<p>&#x200B;    &#x5728;JMS&#xFF0C;JMail,JDBC,EJB&#x7B49;&#x6280;&#x672F;&#x4E2D;&#xFF0C;&#x5C31;&#x5927;&#x91CF;&#x5E94;&#x7528;&#x7684;&#x8FD9;&#x79CD;&#x6280;&#x672F;&#x3002;JNDI&#x53EF;&#x8BBF;&#x95EE;&#x7684;&#x73B0;&#x6709;&#x7684;&#x76EE;&#x5F55;&#x53CA;&#x670D;&#x52A1;&#x6709;&#xFF1A;DNS&#x3001;XNam &#x3001;Novell&#x76EE;&#x5F55;&#x670D;&#x52A1;&#x3001;LDAP(Lightweight Directory Access Protocol &#x8F7B;&#x578B;&#x76EE;&#x5F55;&#x8BBF;&#x95EE;&#x534F;&#x8BAE;)&#x3001; CORBA&#x5BF9;&#x8C61;&#x670D;&#x52A1;&#x3001;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3001;Windows XP/2000/NT/Me/9x&#x7684;&#x6CE8;&#x518C;&#x8868;&#x3001;RMI&#x3001;DSML v1&amp;v2&#x3001;NIS&#x3002;</p>
+<p>&#x200B;    jndi&#x8BDE;&#x751F;&#x7684;&#x7406;&#x7531;&#x4F3C;&#x4E4E;&#x5F88;&#x7B80;&#x5355;&#x3002;&#x968F;&#x7740;&#x5206;&#x5E03;&#x5F0F;&#x5E94;&#x7528;&#x7684;&#x53D1;&#x5C55;&#xFF0C;&#x8FDC;&#x7A0B;&#x8BBF;&#x95EE;&#x5BF9;&#x8C61;&#x8BBF;&#x95EE;&#x6210;&#x4E3A;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x867D;&#x7136;&#x8BF4;&#x901A;&#x8FC7;Socket&#x7B49;&#x7F16;&#x7A0B;&#x624B;&#x6BB5;&#x4ECD;&#x7136;&#x53EF;&#x5B9E;&#x73B0;&#x8FDC;&#x7A0B;&#x901A;&#x4FE1;&#xFF0C;&#x4F46;&#x6309;&#x7167;&#x6A21;&#x5F0F;&#x7684;&#x7406;&#x8BBA;&#x6765;&#x8BF4;&#xFF0C;&#x4ECD;&#x662F;&#x6709;&#x5176;&#x5C40;&#x9650;&#x6027;&#x7684;&#x3002;RMI&#x6280;&#x672F;&#xFF0C;RMI-IIOP&#x6280;&#x672F;&#x7684;&#x4EA7;&#x751F;&#xFF0C;&#x4F7F;&#x8FDC;&#x7A0B;&#x5BF9;&#x8C61;&#x7684;&#x67E5;&#x627E;&#x6210;&#x4E3A;&#x4E86;&#x6280;&#x672F;&#x7126;&#x70B9;&#x3002;JNDI&#x6280;&#x672F;&#x5C31;&#x5E94;&#x8FD0;&#x800C;&#x751F;&#x3002;JNDI&#x6280;&#x672F;&#x4EA7;&#x751F;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x65B9;&#x4FBF;&#x7684;&#x67E5;&#x627E;&#x8FDC;&#x7A0B;&#x6216;&#x662F;&#x672C;&#x5730;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x200B;    &#x5C31;&#x662F;&#x4E0D;&#x8981;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x76F4;&#x63A5;<code>new</code>&#x8D44;&#x6E90;&#x3002;&#x800C;&#x662F;&#x628A;&#x8D44;&#x6E90;&#x7684;&#x914D;&#x7F6E;&#x653E;&#x5230;&#x7A0B;&#x5E8F;&#x4E4B;&#x5916;(&#x914D;&#x7F6E;&#x6587;&#x4EF6;)&#xFF0C;&#x901A;&#x8FC7;JNDI&#x6765;&#x7BA1;&#x7406;&#x8D44;&#x6E90;&#x5BF9;&#x8C61;&#x3002;</p>
+<p><img src="1.jpg" alt=""></p>
+<center>&#x56FE;1 JNDI&#x67B6;&#x6784;</center>
+
+<p>&#x200B;    &#x5982;&#x56FE;&#xFF0C;&#x4ECE;&#x4E0B;&#x5F80;&#x4E0A;&#x770B;&#x3002;JNDI SPI&#x5382;&#x5546;&#x90FD;&#x6709;&#x5BF9;&#x5E94;&#x7684;LDAP&#xFF0C;DNS&#xFF0C;NIS&#x7B49;&#x7684;&#x5B9E;&#x73B0;&#x3002;&#x8FD9;&#x4E9B;&#x6280;&#x672F;&#x51E0;&#x4E4E;&#x90FD;&#x6D89;&#x53CA;&#x5230;&#x8D44;&#x6E90;&#x7684;&#x4F7F;&#x7528;&#x3002;&#x8FD9;&#x4E9B;&#x8D44;&#x6E90;&#x5BF9;&#x8C61;&#x7EDF;&#x4E00;&#x7531;<strong>Naming Manager</strong>&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#x3002;&#x7A0B;&#x5E8F;&#x53EA;&#x9700;&#x8981;&#x4F7F;&#x7528;<strong>JNDI API</strong>&#x901A;&#x8FC7;&#x8D44;&#x6E90;&#x540D;&#x79F0;&#x83B7;&#x53D6;&#x76F8;&#x5E94;&#x7684;&#x8D44;&#x6E90;&#x5373;&#x53EF;&#x3002;</p>
+<h3 id="2&#x5B9E;&#x4F8B;"><a name="2&#x5B9E;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#2&#x5B9E;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="2&#x5B9E;&#x4F8B;" class="plugin-anchor" href="#2&#x5B9E;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>2.&#x5B9E;&#x4F8B;</h3>
+<p>&#x4F7F;&#x7528;JDBC&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#xFF1A;</p>
+<pre><code class="lang-java">
+Connection conn=<span class="hljs-keyword">null</span>; 
+<span class="hljs-keyword">try</span> { 
+    Class.forName(<span class="hljs-string">&quot;com.mysql.jdbc.Driver&quot;</span>, <span class="hljs-keyword">true</span>, Thread.currentThread().getContextClassLoader()); 
+    conn=DriverManager.getConnection(<span class="hljs-string">&quot;jdbc:mysql://MyDBServer?user=xxx&amp;password=xxx&quot;</span>); 
+    ...... 
+    conn.close(); 
+} <span class="hljs-keyword">catch</span>(Exception e) { 
+    e.printStackTrace(); 
+} <span class="hljs-keyword">finally</span> { 
+    <span class="hljs-keyword">if</span>(conn!=<span class="hljs-keyword">null</span>) { 
+        <span class="hljs-keyword">try</span> { 
+            conn.close(); 
+        } <span class="hljs-keyword">catch</span>(SQLException e) {} 
+    }
+</code></pre>
+<p>&#x4F7F;&#x7528;JNDI&#x505A;&#x6CD5;&#xFF1A;</p>
+<p>&#x914D;&#x7F6E;&#x6570;&#x636E;&#x6E90;:(&#x914D;&#x7F6E;&#x6570;&#x636E;&#x6E90;&#x7684;&#x4F4D;&#x7F6E;&#x6839;&#x636E;&#x5177;&#x4F53;&#x7684;web&#x670D;&#x52A1;&#x5668;&#x51B3;&#x5B9A;)</p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">datasources</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">local-tx-datasource</span>&gt;</span>
+  <span class="hljs-comment">&lt;!--JNDI &#x540D;&#x79F0;--&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">jndi-name</span>&gt;</span>MySqlDS<span class="hljs-tag">&lt;/<span class="hljs-name">jndi-name</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">connection-url</span>&gt;</span>jdbc:mysql://localhost:3306/lw<span class="hljs-tag">&lt;/<span class="hljs-name">connection-url</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">driver-class</span>&gt;</span>com.mysql.jdbc.Driver<span class="hljs-tag">&lt;/<span class="hljs-name">driver-class</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">user-name</span>&gt;</span>root<span class="hljs-tag">&lt;/<span class="hljs-name">user-name</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">password</span>&gt;</span>rootpassword<span class="hljs-tag">&lt;/<span class="hljs-name">password</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">exception-sorter-class-name</span>&gt;</span>org.jboss.resource.adapter.jdbc.vendor.MySQLExceptionSorter<span class="hljs-tag">&lt;/<span class="hljs-name">exception-sorter-class-name</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">metadata</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">type-mapping</span>&gt;</span>mySQL<span class="hljs-tag">&lt;/<span class="hljs-name">type-mapping</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">metadata</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">local-tx-datasource</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">datasources</span>&gt;</span>
+</code></pre>
+<p>&#x4F7F;&#x7528;JNDI&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#xFF1A;</p>
+<pre><code class="lang-java">
+Connection conn=<span class="hljs-keyword">null</span>; 
+<span class="hljs-keyword">try</span> { 
+    Context ctx = <span class="hljs-keyword">new</span> InitialContext(); 
+    Object datasourceRef = ctx.lookup(<span class="hljs-string">&quot;java:MySqlDS&quot;</span>); 
+    <span class="hljs-comment">//&#x5F15;&#x7528;&#x6570;&#x636E;&#x6E90; </span>
+    DataSource ds = (Datasource) datasourceRef; 
+    conn = ds.getConnection(); 
+    ...... 
+    c.close(); 
+} <span class="hljs-keyword">catch</span>(Exception e) { 
+    e.printStackTrace(); 
+} <span class="hljs-keyword">finally</span> { 
+    <span class="hljs-keyword">if</span>(conn!=<span class="hljs-keyword">null</span>) { 
+        <span class="hljs-keyword">try</span> { 
+            conn.close(); 
+        } <span class="hljs-keyword">catch</span>(SQLException e) {} 
+    }
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x7684;&#x597D;&#x5904;&#x5C31;&#x662F;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x7BA1;&#x7406;&#x8D44;&#x6E90;&#x7684;&#x914D;&#x7F6E;&#x7684;&#x5177;&#x4F53;&#x4FE1;&#x606F;&#x3002;&#x5982;&#x679C;&#x9047;&#x5230;&#x66F4;&#x6539;&#x8D44;&#x6E90;&#x914D;&#x7F6E;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x66F4;&#x6539;&#x914D;&#x7F6E;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x66F4;&#x6539;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x8FA8;&#x6790;&#xFF1A;context.lookup(&quot;java:comp/env/XXX&quot;)&#x548C;context.lookup(&quot;XXX&quot;)&#x7684;&#x533A;&#x522B;&#x3002;</p>
+<p>Answer&#xFF1A;context.loopup(&quot;java:comp/env/XXX&quot;)&#x53EA;&#x80FD;&#x7528;&#x5728;J2EE&#x73AF;&#x5883;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;Web&#x9879;&#x76EE;&#x3002;&#x800C;context.lookup(&quot;XXX&quot;)&#x53EF;&#x4EE5;&#x7528;&#x5728;&#x4EFB;&#x4F55;&#x73AF;&#x5883;&#xFF0C;&#x53EA;&#x9700;&#x8981;&quot;XXX&quot;&#x662F;&#x4E00;&#x4E2A;JNDI&#x8D44;&#x6E90;&#x540D;&#x5B57;&#x5373;&#x53EF;&#x3002;</p>
+<h3 id="3&#x603B;&#x7ED3;"><a name="3&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#3&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="3&#x603B;&#x7ED3;" class="plugin-anchor" href="#3&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>3.&#x603B;&#x7ED3;</h3>
+<p>1.&#x4E86;&#x89E3;JNDI</p>
+<p>2.&#x4E86;&#x89E3;JNDI&#x7684;&#x67B6;&#x6784;</p>
+<p>3.&#x4E86;&#x89E3;JNDI&#x601D;&#x60F3;&#xFF1A;<strong>&#x5C06;&#x7531;JNDI&#x7BA1;&#x7406;&#x7684;&#x8D44;&#x6E90;&#x4EE5;&#xFF1A;&#x540D;&#x5B57;-&#x8D44;&#x6E90;&#x5BF9;&#x8C61; &#x7684;&#x65B9;&#x5F0F;&#x7BA1;&#x7406;&#x8D77;&#x6765;&#xFF0C;&#x7A0B;&#x5E8F;&#x901A;&#x8FC7;&#x540D;&#x5B57;&#x6765;&#x68C0;&#x7D22;&#x5BF9;&#x8C61;&#x3002;</strong></p>
+<p>4.&#x4E86;&#x89E3;JNDI&#x4F8B;&#x5B50;</p>
+<h3 id="4&#x53C2;&#x8003;"><a name="4&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#4&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="4&#x53C2;&#x8003;" class="plugin-anchor" href="#4&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>4.&#x53C2;&#x8003;</h3>
+<ol>
+<li><a href="https://blog.csdn.net/wn084/article/details/80729230" target="_blank">https://blog.csdn.net/wn084/article/details/80729230</a></li>
+<li><a href="https://www.iteye.com/blog/shift-alt-ctrl-1971329" target="_blank">https://www.iteye.com/blog/shift-alt-ctrl-1971329</a></li>
+<li><a href="http://www.atguigu.com/jsfx/1399.html" target="_blank">http://www.atguigu.com/jsfx/1399.html</a></li>
+<li><a href="https://yq.aliyun.com/articles/533367?spm=a2c4e.11153940.0.0.278265e2Z66a2E" target="_blank">https://yq.aliyun.com/articles/533367?spm=a2c4e.11153940.0.0.278265e2Z66a2E</a></li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../asmxjavassit/" class="navigation navigation-prev " aria-label="Previous page: 1.6 Asm & Javassist">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../spring framework/" class="navigation navigation-next " aria-label="Next page: 2.Spring Framework">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.7 Jndi","level":"1.2.8","depth":2,"next":{"title":"2.Spring Framework","level":"1.3","depth":1,"path":"spring framework/README.md","ref":"spring framework/README.md","articles":[{"title":"2.1 Spring-Core","level":"1.3.1","depth":2,"path":"spring framework/spring-core/README.md","ref":"spring framework/spring-core/README.md","articles":[]},{"title":"2.2 Spring-Mvc","level":"1.3.2","depth":2,"path":"spring framework/spring-mvc/README.md","ref":"spring framework/spring-mvc/README.md","articles":[{"title":"2.2.1 SpringMVC注解","level":"1.3.2.1","depth":3,"path":"spring framework/spring-mvc/spring-mvc-request-annotation/README.md","ref":"spring framework/spring-mvc/spring-mvc-request-annotation/README.md","articles":[]}]},{"title":"2.3 Spring-Test","level":"1.3.3","depth":2,"path":"spring framework/spring-test/README.md","ref":"spring framework/spring-test/README.md","articles":[{"title":"2.3.1 Spring-mvc-mock","level":"1.3.3.1","depth":3,"path":"spring framework/spring-test/spring-web-mock-test/README.md","ref":"spring framework/spring-test/spring-web-mock-test/README.md","articles":[]}]},{"title":"2.4 Spring-Boot","level":"1.3.4","depth":2,"path":"spring framework/spring-boot/README.md","ref":"spring framework/spring-boot/README.md","articles":[{"title":"2.4.1 Spring-boot项目配置","level":"1.3.4.1","depth":3,"path":"spring framework/spring-boot/spring-boot项目配置/README.md","ref":"spring framework/spring-boot/spring-boot项目配置/README.md","articles":[]}]},{"title":"2.5 Spring-Data","level":"1.3.5","depth":2,"path":"spring framework/spring-data/README.md","ref":"spring framework/spring-data/README.md","articles":[]},{"title":"2.6 Spring-Cloud","level":"1.3.6","depth":2,"path":"spring framework/spring-cloud/README.md","ref":"spring framework/spring-cloud/README.md","articles":[]},{"title":"2.7 Spring-Rest","level":"1.3.7","depth":2,"path":"spring framework/spring-rest/README.md","ref":"spring framework/spring-rest/README.md","articles":[]}]},"previous":{"title":"1.6 Asm & Javassist","level":"1.2.7","depth":2,"path":"java/asmxjavassit/README.md","ref":"java/asmxjavassit/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","-lunr","-search","search-pro","github","github-buttons","-donate","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/youngFF"},"livereload":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"./source/images/donate.png","title":"","button":"赞赏","alipayText":" "},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"youngFF","repo":"glory","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Blankj","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Blankj's Glory","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://blankj.com"}},"gitbook":"3.2.3","description":"select * from learn"},"file":{"path":"java/jndi/README.md","mtime":"2020-03-18T06:57:39.647Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-01T14:41:53.790Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
