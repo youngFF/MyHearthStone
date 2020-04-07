@@ -201,12 +201,17 @@ serializable(可串行化)
 
 ### 5.参考资料
 
-[1]: https://www.cnblogs.com/xrq730/p/5087378.html
-[2]: https://www.cnblogs.com/devilwind/p/8058268.html
-[3]: https://www.cnblogs.com/snsdzjlz320/p/5761387.html
-[4]: https://www.cnblogs.com/zl0372/articles/mysql_16.html
-[5]: https://www.cnblogs.com/yxh168/p/9174932.html
-[6]: https://blog.csdn.net/weixin_43639512/article/details/84304672
+1. https://www.cnblogs.com/xrq730/p/5087378.html
+
+2. https://www.cnblogs.com/devilwind/p/8058268.html
+
+3. https://www.cnblogs.com/snsdzjlz320/p/5761387.html
+
+4. https://www.cnblogs.com/zl0372/articles/mysql_16.html
+
+5. https://www.cnblogs.com/yxh168/p/9174932.html
+
+6. https://blog.csdn.net/weixin_43639512/article/details/84304672
 
 
 
@@ -216,3 +221,7 @@ serializable(可串行化)
 
 [1]: #1简介
 [2]: #2事务特性
+[3]: #3事务隔离级别
+[4]: #4事务提交
+[5]: #5参考资料
+
