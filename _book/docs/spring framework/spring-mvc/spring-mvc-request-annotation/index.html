@@ -1,0 +1,973 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.2.1 SpringMVC注解 · Blankj's Glory</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Blankj">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../spring-test/" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    
+        <link rel="shortcut icon" href='../../../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"youngFF","repo":"glory","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.baidu.com" target="_blank" class="custom-link">百度一下</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../java/">
+            
+                <a href="../../../java/">
+            
+                    
+                    1.Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../../java/elementary/">
+            
+                <a href="../../../java/elementary/">
+            
+                    
+                    1.0 Java Elememtary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../../java/jvm/">
+            
+                <a href="../../../java/jvm/">
+            
+                    
+                    1.1 Java virtual machine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../../java/specification/">
+            
+                <a href="../../../java/specification/">
+            
+                    
+                    1.2 Java Specification
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../../java/specification/JMS/">
+            
+                <a href="../../../java/specification/JMS/">
+            
+                    
+                    1.2.1 JMS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../../java/design pattern/">
+            
+                <a href="../../../java/design pattern/">
+            
+                    
+                    1.3 Design Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../../java/microservice/">
+            
+                <a href="../../../java/microservice/">
+            
+                    
+                    1.4 Java Microservice
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../../../java/microservice/mq/">
+            
+                <a href="../../../java/microservice/mq/">
+            
+                    
+                    1.4.1 mq
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../../java/tomcatxjetty/">
+            
+                <a href="../../../java/tomcatxjetty/">
+            
+                    
+                    1.5 Tomcat & Jetty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../../java/asmxjavassit/">
+            
+                <a href="../../../java/asmxjavassit/">
+            
+                    
+                    1.6 Asm & Javassist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../../java/jndi/">
+            
+                <a href="../../../java/jndi/">
+            
+                    
+                    1.7 Jndi
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    2.Spring Framework
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../spring-core/">
+            
+                <a href="../../spring-core/">
+            
+                    
+                    2.1 Spring-Core
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    2.2 Spring-Mvc
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    2.2.1 SpringMVC注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../spring-test/">
+            
+                <a href="../../spring-test/">
+            
+                    
+                    2.3 Spring-Test
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../spring-test/spring-web-mock-test/">
+            
+                <a href="../../spring-test/spring-web-mock-test/">
+            
+                    
+                    2.3.1 Spring-mvc-mock
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../spring-boot/">
+            
+                <a href="../../spring-boot/">
+            
+                    
+                    2.4 Spring-Boot
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../spring-boot/spring-boot项目配置/">
+            
+                <a href="../../spring-boot/spring-boot项目配置/">
+            
+                    
+                    2.4.1 Spring-boot项目配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../spring-data/">
+            
+                <a href="../../spring-data/">
+            
+                    
+                    2.5 Spring-Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../spring-cloud/">
+            
+                <a href="../../spring-cloud/">
+            
+                    
+                    2.6 Spring-Cloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../spring-rest/">
+            
+                <a href="../../spring-rest/">
+            
+                    
+                    2.7 Spring-Rest
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../linux/">
+            
+                <a href="../../../linux/">
+            
+                    
+                    3.Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../linux/shell/">
+            
+                <a href="../../../linux/shell/">
+            
+                    
+                    3.1 Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../database/">
+            
+                <a href="../../../database/">
+            
+                    
+                    4.DataBase
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../database/mysql/">
+            
+                <a href="../../../database/mysql/">
+            
+                    
+                    4.1 MySQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../../database/mysql/sql/">
+            
+                <a href="../../../database/mysql/sql/">
+            
+                    
+                    4.1.1 SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../../database/mysql/transaction/">
+            
+                <a href="../../../database/mysql/transaction/">
+            
+                    
+                    4.1.2 Transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../database/redis/">
+            
+                <a href="../../../database/redis/">
+            
+                    
+                    4.2 Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../database/mybatis/">
+            
+                <a href="../../../database/mybatis/">
+            
+                    
+                    4.3 MyBatis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../../../database/mybatis/mybatis参数绑定/">
+            
+                <a href="../../../database/mybatis/mybatis参数绑定/">
+            
+                    
+                    4.3.1 MyBatis参数绑定方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../network/">
+            
+                <a href="../../../network/">
+            
+                    
+                    5.Network
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../network/http/">
+            
+                <a href="../../../network/http/">
+            
+                    
+                    5.1 Http
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../../network/tcp/">
+            
+                <a href="../../../network/tcp/">
+            
+                    
+                    5.2 TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../../data structure/">
+            
+                <a href="../../../data structure/">
+            
+                    
+                    6.Data Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../../algorithm/">
+            
+                <a href="../../../algorithm/">
+            
+                    
+                    7.Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../../math/">
+            
+                <a href="../../../math/">
+            
+                    
+                    8.Math
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../../../programming language/">
+            
+                <a href="../../../programming language/">
+            
+                    
+                    9.Programming Language
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >2.2.1 SpringMVC注解</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><ul><li><span class="title-icon "></span><a href="#springmvc&#x6CE8;&#x89E3;-annotated-controllers"><b></b>SpringMVC&#x6CE8;&#x89E3;-Annotated Controllers</a></li><li><span class="title-icon "></span><a href="#1&#x7B80;&#x4ECB;"><b></b>1.&#x7B80;&#x4ECB;</a></li><li><span class="title-icon "></span><a href="#2springmvc&#x5E38;&#x7528;&#x6CE8;&#x89E3;"><b></b>2.springmvc&#x5E38;&#x7528;&#x6CE8;&#x89E3;</a></li><li><span class="title-icon "></span><a href="#3handler-method-arguments"><b></b>3.handler method arguments</a></li><li><span class="title-icon "></span><a href="#4&#x603B;&#x7ED3;"><b></b>4.&#x603B;&#x7ED3;</a></li><li><span class="title-icon "></span><a href="#5&#x53C2;&#x8003;&#x8D44;&#x6599;"><b></b>5.&#x53C2;&#x8003;&#x8D44;&#x6599;</a></li></ul></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h3 id="springmvc&#x6CE8;&#x89E3;-annotated-controllers"><a name="springmvc&#x6CE8;&#x89E3;-annotated-controllers" class="anchor-navigation-ex-anchor" href="#springmvc&#x6CE8;&#x89E3;-annotated-controllers"><i class="fa fa-link" aria-hidden="true"></i></a><a name="springmvc&#x6CE8;&#x89E3;-annotated-controllers" class="plugin-anchor" href="#springmvc&#x6CE8;&#x89E3;-annotated-controllers"><i class="fa fa-link" aria-hidden="true"></i></a>SpringMVC&#x6CE8;&#x89E3;-Annotated Controllers</h3>
+<p>&#x76EE;&#x5F55;&#xFF1A;</p>
+<ol>
+<li><a href="#1&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</a></li>
+<li><a href="#2springmvc&#x5E38;&#x7528;&#x6CE8;&#x89E3;">SpringMVC&#x5E38;&#x7528;&#x6CE8;&#x89E3;</a></li>
+<li><a href="#3handler-method-arguments">handler method arguments</a></li>
+<li><a href="#4&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</a></li>
+<li><a href="#5&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</a></li>
+</ol>
+<h3 id="1&#x7B80;&#x4ECB;"><a name="1&#x7B80;&#x4ECB;" class="anchor-navigation-ex-anchor" href="#1&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="1&#x7B80;&#x4ECB;" class="plugin-anchor" href="#1&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>1.&#x7B80;&#x4ECB;</h3>
+<p>SpringMVC provides an annotation-based programming model where @Component and @RestContrller components use annotations to express request mappings, request input, exception handling,and more.Annotated controllers have flexible method signatures and do not have to extend</p>
+<h3 id="2springmvc&#x5E38;&#x7528;&#x6CE8;&#x89E3;"><a name="2springmvc&#x5E38;&#x7528;&#x6CE8;&#x89E3;" class="anchor-navigation-ex-anchor" href="#2springmvc&#x5E38;&#x7528;&#x6CE8;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="2springmvc&#x5E38;&#x7528;&#x6CE8;&#x89E3;" class="plugin-anchor" href="#2springmvc&#x5E38;&#x7528;&#x6CE8;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>2.springmvc&#x5E38;&#x7528;&#x6CE8;&#x89E3;</h3>
+<p>@RequestParam</p>
+<p>@RequestParam annotations to bind servlet request parameters (<strong>query paramters , form data</strong>) to a method argument in a controller.&#xFF08;key-value. form data(&#x8868;&#x5355;&#x6570;&#x636E;)&#x4E5F;&#x662F;&#x4EE5;key-value&#x4F20;&#x8F93;&#x7684;&#xFF09;</p>
+<p>type conversion is automatically applied if the target method parameter type is not <code>String</code>.</p>
+<p>when an @RequestParam annotation declared as a <code>Map&lt;String,String&gt; or MultiValueMap&lt;String,String&gt;</code> argument, the map is populated with all request parameters.</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;@RequestParam&#x9002;&#x7528;&#x4E8E;&#xFF0C;&#x8BF7;&#x6C42;Content-type:text/plan; &#x6216;&#x8005;application/x-www.form-urlencoded&#x3002;&#x5BF9;&#x4E8E;form&#x8868;&#x5355;&#x6765;&#x8BF4;&#xFF0C;post&#x63D0;&#x4EA4;&#x4F1A;&#x5C06;key-value&#x653E;&#x5728;body&#x4F53;&#x4E2D;&#x3002;&#x800C;get&#x63D0;&#x4EA4;&#x4F1A;&#x5C06;key-value&#x653E;&#x5728;url&#x540E;&#x9762;</strong></p>
+<p>@RequestParam&#x6CE8;&#x89E3;&#x7528;&#x6765;&#x5904;&#x7406;Content-Type: &#x4E3A;  application/x-www-form-urlencoded&#x7F16;&#x7801;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x63D0;&#x4EA4;&#x65B9;&#x5F0F;&#x4E3A;get&#x6216;post&#x3002;&#xFF08;Http&#x534F;&#x8BAE;&#x4E2D;&#xFF0C;form&#x7684;enctype&#x5C5E;&#x6027;&#x4E3A;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#xFF0C;&#x5E38;&#x7528;&#x6709;&#x4E24;&#x79CD;&#xFF1A;application/x-www-form-urlencoded&#x548C;multipart/form-data&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;application/x-www-form-urlencoded&#xFF09;&#xFF1B;</p>
+<p>@RequestParam&#x6CE8;&#x89E3;&#x5B9E;&#x8D28;&#x662F;&#x5C06;Request.getParameter() &#x4E2D;&#x7684;Key-Value&#x53C2;&#x6570;Map&#x5229;&#x7528;Spring&#x7684;&#x8F6C;&#x5316;&#x673A;&#x5236;ConversionService&#x914D;&#x7F6E;&#xFF0C;&#x8F6C;&#x5316;&#x6210;&#x53C2;&#x6570;&#x63A5;&#x6536;&#x5BF9;&#x8C61;&#x6216;&#x5B57;&#x6BB5;&#xFF0C;
+get&#x65B9;&#x5F0F;&#x4E2D;queryString&#x7684;&#x503C;&#xFF0C;&#x548C;post&#x65B9;&#x5F0F;&#x4E2D;body data&#x7684;&#x503C;&#x90FD;&#x4F1A;&#x88AB;Servlet&#x63A5;&#x53D7;&#x5230;&#x5E76;&#x8F6C;&#x5316;&#x5230;Request.getParameter()&#x53C2;&#x6570;&#x96C6;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;@RequestParam&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x7684;&#x5230;&#xFF1B;</p>
+<p>&#x8BE5;&#x6CE8;&#x89E3;&#x6709;&#x4E09;&#x4E2A;&#x5C5E;&#x6027;&#xFF1A; value&#x3001;required&#x3001;defaultValue&#xFF1B; value&#x7528;&#x6765;&#x6307;&#x5B9A;&#x8981;&#x4F20;&#x5165;&#x503C;&#x7684;id&#x540D;&#x79F0;&#xFF0C;required&#x7528;&#x6765;&#x6307;&#x793A;&#x53C2;&#x6570;&#x662F;&#x5426;&#x5FC5;&#x5F55;&#xFF0C;defaultValue&#x8868;&#x793A;&#x53C2;&#x6570;&#x4E0D;&#x4F20;&#x65F6;&#x5019;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Controller</span>
+<span class="hljs-meta">@RequestMapping</span>(value=<span class="hljs-string">&quot;/user&quot;</span>,method={HttpRequestMethod.POST,HttpRequestMethod.GET})
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserController</span></span>{
+
+ <span class="hljs-comment">/**
+  * &#x83B7;&#x53D6;&#x5355;&#x4E2A;&#x8BF7;&#x6C42;&#x53C2;&#x6570;
+  */</span>
+  <span class="hljs-meta">@RequsetMapping</span>(value=<span class="hljs-string">&quot;/getInfo&quot;</span>)
+  <span class="hljs-meta">@ResponseBody</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> User <span class="hljs-title">getUser</span><span class="hljs-params">(@RequestParam(<span class="hljs-string">&quot;name&quot;</span>)</span>String name)</span>{
+    <span class="hljs-comment">// service </span>
+    <span class="hljs-keyword">return</span> user;
+  }
+}
+
+
+<span class="hljs-meta">@Controller</span>
+<span class="hljs-meta">@RequestMapping</span>(value=<span class="hljs-string">&quot;/user&quot;</span>,method={HttpRequestMethod.POST,HttpRequestMethod.GET})
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserController</span></span>{
+
+ <span class="hljs-comment">/**
+  * &#x83B7;&#x53D6;&#x5168;&#x90E8;&#x8BF7;&#x6C42;&#x53C2;&#x6570;
+  */</span>
+  <span class="hljs-meta">@RequsetMapping</span>(value=<span class="hljs-string">&quot;/getInfo&quot;</span>)
+  <span class="hljs-meta">@ResponseBody</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> User <span class="hljs-title">getUser</span><span class="hljs-params">(@RequestParam Map&lt;String,String&gt; params)</span></span>{
+    <span class="hljs-comment">// service </span>
+    <span class="hljs-keyword">return</span> user;
+  }
+}
+</code></pre>
+<p>@RequestBody</p>
+<p>you can use the @RequestBody annotation to <strong>have the request body read and deserialized info an Object</strong> through <code>HttpMessageConverter</code>.</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Controller</span>
+<span class="hljs-meta">@RequestMapping</span>(value=<span class="hljs-string">&quot;/user&quot;</span>,method={HttpRequestMethod.POST,HttpRequestMethod.GET})
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserController</span></span>{
+
+ <span class="hljs-comment">/**
+  * &#x83B7;&#x53D6;&#x5355;&#x4E2A;&#x8BF7;&#x6C42;&#x53C2;&#x6570;
+  */</span>
+  <span class="hljs-meta">@RequsetMapping</span>(value=<span class="hljs-string">&quot;/add&quot;</span>)
+  <span class="hljs-meta">@ResponseBody</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> HttpEntity&lt;Boolean&gt; <span class="hljs-title">addUser</span><span class="hljs-params">(@RequestBody User user)</span></span>{
+
+    <span class="hljs-keyword">return</span> HttpEntity.success();
+  }
+}
+</code></pre>
+<p>@RequestBody&#x5E38;&#x7528;&#x6765;&#x5904;&#x7406;Content-type:application/json&#x683C;&#x5F0F;&#x7684;&#x8BF7;&#x6C42;&#x3002;</p>
+<p>&#x9700;&#x8981;&#x5728;pom.xml&#x548C;springmvc-servlet.xml&#x4E2D;&#x914D;&#x7F6E;</p>
+<p>pom.xml</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>jackson-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>${jackson.version}<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>jackson-databind<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>${jackson.version}<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</code></pre>
+<p>springmvc-servlet.xml</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">mvc:annotation-driven</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- @ResponseBody  &#x6570;&#x636E;&#x96C6;&#x5408;&#x7684;&#x8F6C;&#x6362;--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mvc:message-converters</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.springframework.http.converter.StringHttpMessageConverter&quot;</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.springframework.http.converter.json.MappingJackson2HttpMessageConverter&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">mvc:message-converters</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mvc:annotation-driven</span>&gt;</span>
+</code></pre>
+<p>@RequestHeader</p>
+<p>&#x83B7;&#x53D6;Http&#x8BF7;&#x6C42;&#x5934;&#x90E8;&#x4FE1;&#x606F;</p>
+<p>if the target method parameter is not <code>String</code> , type conversion is automatically applied.</p>
+<pre><code class="lang-java"><span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">&quot;/demo&quot;</span>)
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handle</span><span class="hljs-params">(@RequestHeader(<span class="hljs-string">&quot;Accept-Encoding&quot;</span>)</span>String encoding,
+                  @<span class="hljs-title">RequestHeader</span><span class="hljs-params">(<span class="hljs-string">&quot;keep-Alive&quot;</span>)</span>Long keepAlive)</span>{
+  <span class="hljs-comment">//...</span>
+}
+</code></pre>
+<p>when an @RequestHeader annotation is used on a Map<string,string> , MultiValueMap<string,string>,or <code>HttpHeaders</code>,the map is populated with all header values.</string,string></string,string></p>
+<p>Built-in support is avaliable for converting a comma-sperated string into an array or collection of strings or other types known to the type conversion system.For example, a method parameter annotated with @RequestHeader(&quot;Accept&quot;) can be of type <code>String</code> but also <code>String[]</code> or <code>List&lt;String&gt;</code></p>
+<pre><code class="lang-java"><span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">&quot;/demo&quot;</span>)
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handle</span><span class="hljs-params">(@RequestHeader(<span class="hljs-string">&quot;Accept&quot;</span>)</span>String[] accpet)</span>{
+  <span class="hljs-comment">//...</span>
+}
+</code></pre>
+<p>@CookieValue</p>
+<p>&#x83B7;&#x53D6;cookie&#x503C;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">&quot;/demo&quot;</span>)
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handle</span><span class="hljs-params">(@CookieValue(<span class="hljs-string">&quot;JSESSIONID&quot;</span>)</span>String cookie)</span>{
+  <span class="hljs-comment">//...</span>
+}
+</code></pre>
+<h3 id="3handler-method-arguments"><a name="3handler-method-arguments" class="anchor-navigation-ex-anchor" href="#3handler-method-arguments"><i class="fa fa-link" aria-hidden="true"></i></a><a name="3handler-method-arguments" class="plugin-anchor" href="#3handler-method-arguments"><i class="fa fa-link" aria-hidden="true"></i></a>3.handler method arguments</h3>
+<h3 id="4&#x603B;&#x7ED3;"><a name="4&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#4&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="4&#x603B;&#x7ED3;" class="plugin-anchor" href="#4&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>4.&#x603B;&#x7ED3;</h3>
+<h3 id="5&#x53C2;&#x8003;&#x8D44;&#x6599;"><a name="5&#x53C2;&#x8003;&#x8D44;&#x6599;" class="anchor-navigation-ex-anchor" href="#5&#x53C2;&#x8003;&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="5&#x53C2;&#x8003;&#x8D44;&#x6599;" class="plugin-anchor" href="#5&#x53C2;&#x8003;&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a>5.&#x53C2;&#x8003;&#x8D44;&#x6599;</h3>
+<ol>
+<li><a href="https://www.cnblogs.com/haha12/p/10336363.html" target="_blank">https://www.cnblogs.com/haha12/p/10336363.html</a></li>
+<li><a href="https://blog.csdn.net/summerSunStart/article/details/78676781" target="_blank">https://blog.csdn.net/summerSunStart/article/details/78676781</a></li>
+<li><a href="https://blog.csdn.net/outsanding/article/details/80871769" target="_blank">https://blog.csdn.net/outsanding/article/details/80871769</a></li>
+<li><a href="https://blog.csdn.net/lch_2016/article/details/81022646" target="_blank">https://blog.csdn.net/lch_2016/article/details/81022646</a></li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 2.2 Spring-Mvc">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../spring-test/" class="navigation navigation-next " aria-label="Next page: 2.3 Spring-Test">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.2.1 SpringMVC注解","level":"1.3.2.1","depth":3,"next":{"title":"2.3 Spring-Test","level":"1.3.3","depth":2,"path":"spring framework/spring-test/README.md","ref":"spring framework/spring-test/README.md","articles":[{"title":"2.3.1 Spring-mvc-mock","level":"1.3.3.1","depth":3,"path":"spring framework/spring-test/spring-web-mock-test/README.md","ref":"spring framework/spring-test/spring-web-mock-test/README.md","articles":[]}]},"previous":{"title":"2.2 Spring-Mvc","level":"1.3.2","depth":2,"path":"spring framework/spring-mvc/README.md","ref":"spring framework/spring-mvc/README.md","articles":[{"title":"2.2.1 SpringMVC注解","level":"1.3.2.1","depth":3,"path":"spring framework/spring-mvc/spring-mvc-request-annotation/README.md","ref":"spring framework/spring-mvc/spring-mvc-request-annotation/README.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","-lunr","-search","search-pro","github","github-buttons","-donate","sharing-plus","anchor-navigation-ex","favicon"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/youngFF"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"./source/images/donate.png","title":"","button":"赞赏","alipayText":" "},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"youngFF","repo":"glory","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Blankj","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Blankj's Glory","language":"zh-hans","links":{"sidebar":{"百度一下":"https://www.baidu.com"}},"gitbook":"3.2.3","description":"select * from learn"},"file":{"path":"spring framework/spring-mvc/spring-mvc-request-annotation/README.md","mtime":"2020-04-05T15:21:27.996Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-07T07:33:26.885Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

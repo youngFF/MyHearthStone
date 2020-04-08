@@ -73,6 +73,24 @@ public class UserController{
   }
 }
 
+@Controller
+@RequestMapping(value="/user",method={HttpRequestMethod.POST,HttpRequestMethod.GET})
+public class UserController{
+  
+ /**
+  * POST
+  * content-type:application/x-www-urlencoded
+  * form表单单数与User字段属性对应
+  */
+  @RequsetMapping(value="/addUser",method={RequestMethod.POST})
+  @ResponseBody
+  public User addUser(User user){
+    // service 
+    return user;
+  }
+}
+
+
 ```
 
 
