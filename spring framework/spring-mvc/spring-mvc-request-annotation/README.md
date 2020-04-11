@@ -105,7 +105,7 @@ you can use the @RequestBody annotation to **have the request body read and dese
 public class UserController{
   
  /**
-  * 获取单个请求参数
+  * 请求参数转为对象
   */
   @RequsetMapping(value="/add")
   @ResponseBody
@@ -113,7 +113,21 @@ public class UserController{
     
     return HttpEntity.success();
   }
+  
+   /**
+  * 前端请求参数为单个: 名称id
+  */
+  @RequsetMapping(value="/add")
+  @ResponseBody
+  public HttpEntity<Boolean> addUser(@RequestBody Map<String,String> param){
+    String id = param.get("id");
+    
+    return HttpEntity.success();
+  }
+  
 }
+
+
 ```
 
 @RequestBody常用来处理Content-type:application/json格式的请求。
