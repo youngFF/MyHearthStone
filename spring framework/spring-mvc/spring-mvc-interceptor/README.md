@@ -423,9 +423,9 @@ Spring拦截器注册方式
 
 
 [1]: #1简介
-[2]: #2handlerinterceptor和3.拦截器处理逻辑webrequestInteceptor接口
+[2]: #2handlerinterceptor和webrequestinteceptor接口
 [3]: #3拦截器处理逻辑
 [4]: #4多个拦截器处理流程
-[5]: #5spring和springBoot配置拦截器方式
+[5]: #5spring和springboot配置拦截器方式
 [6]: #6参考资料
 
