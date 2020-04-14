@@ -17,6 +17,7 @@
 	* [2.2 Spring-Mvc](spring framework/spring-mvc/README.md)
 	  * [2.2.1 SpringMVC注解](spring framework/spring-mvc/spring-mvc-request-annotation/README.md)
 	  * [2.2.2 SpringMVC拦截器](spring framework/spring-mvc/spring-mvc-interceptor/README.md)
+	  * [2.2.3 Spring全局统一异常处理](spring framework/spring-mvc/spring-global-exception/README.md)
 	* [2.3 Spring-Test](spring framework/spring-test/README.md)
 		* [2.3.1 Spring-mvc-mock](spring framework/spring-test/spring-web-mock-test/README.md)
 	* [2.4 Spring-Boot](spring framework/spring-boot/README.md)
