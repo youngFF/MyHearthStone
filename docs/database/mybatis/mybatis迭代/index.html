@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>4.3.1 MyBatis参数绑定方式 · Blankj's Glory</title>
+        <title>4.3.2 MyBatis迭代器几种写法 · Blankj's Glory</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../mybatis迭代/" />
+    <link rel="next" href="../../../network/" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="../mybatis参数绑定/" />
     
 
     
@@ -619,9 +619,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.5.3.1" data-path="./">
+        <li class="chapter " data-level="1.5.3.1" data-path="../mybatis参数绑定/">
             
-                <a href="./">
+                <a href="../mybatis参数绑定/">
             
                     
                     4.3.1 MyBatis参数绑定方式
@@ -632,9 +632,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3.2" data-path="../mybatis迭代/">
+        <li class="chapter active" data-level="1.5.3.2" data-path="./">
             
-                <a href="../mybatis迭代/">
+                <a href="./">
             
                     
                     4.3.2 MyBatis迭代器几种写法
@@ -782,7 +782,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >4.3.1 MyBatis参数绑定方式</a>
+        <a href="../../.." >4.3.2 MyBatis迭代器几种写法</a>
     </h1>
 </div>
 
@@ -797,128 +797,89 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#mybatis&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;"><b></b>MyBatis&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;</a></li><ul><ul><li><span class="title-icon "></span><a href="#1&#x7B80;&#x4ECB;"><b></b>1.&#x7B80;&#x4ECB;</a></li><li><span class="title-icon "></span><a href="#2xml&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;"><b></b>2.XML&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#3&#x6CE8;&#x89E3;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;"><b></b>3.&#x6CE8;&#x89E3;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#4&#x603B;&#x7ED3;"><b></b>4.&#x603B;&#x7ED3;</a></li><li><span class="title-icon "></span><a href="#5&#x53C2;&#x8003;"><b></b>5.&#x53C2;&#x8003;</a></li></ul></ul></ul></div><a href="#mybatis&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="mybatis&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;"><a name="mybatis&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#mybatis&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="mybatis&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#mybatis&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>MyBatis&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#mybatis&#x8FED;&#x4EE3;&#x5668;"><b></b>MyBatis&#x8FED;&#x4EE3;&#x5668;</a></li><ul><ul><li><span class="title-icon "></span><a href="#1&#x7B80;&#x4ECB;"><b></b>1.&#x7B80;&#x4ECB;</a></li><li><span class="title-icon "></span><a href="#2mybatis&#x8FED;&#x4EE3;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;"><b></b>2.MyBatis&#x8FED;&#x4EE3;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#3&#x603B;&#x7ED3;"><b></b>3.&#x603B;&#x7ED3;</a></li><li><span class="title-icon "></span><a href="#3&#x53C2;&#x8003;&#x8D44;&#x6599;"><b></b>3.&#x53C2;&#x8003;&#x8D44;&#x6599;</a></li></ul></ul></ul></div><a href="#mybatis&#x8FED;&#x4EE3;&#x5668;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="mybatis&#x8FED;&#x4EE3;&#x5668;"><a name="mybatis&#x8FED;&#x4EE3;&#x5668;" class="anchor-navigation-ex-anchor" href="#mybatis&#x8FED;&#x4EE3;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="mybatis&#x8FED;&#x4EE3;&#x5668;" class="plugin-anchor" href="#mybatis&#x8FED;&#x4EE3;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>MyBatis&#x8FED;&#x4EE3;&#x5668;</h1>
 <p>&#x76EE;&#x5F55;&#xFF1A;</p>
 <ol>
-<li><a href="#1&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</a></li>
-<li><a href="#2xml&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;">XML&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;</a></li>
-<li><a href="3&#x6CE8;&#x89E3;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;">&#x6CE8;&#x89E3;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;</a></li>
-<li><a href="#4&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</a></li>
-<li><a href="#5&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li>
+<li>[&#x7B80;&#x4ECB;][1]</li>
+<li>[MyBatis&#x8FED;&#x4EE3;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;][2]</li>
+<li>[&#x603B;&#x7ED3;][3]</li>
+<li>[&#x53C2;&#x8003;&#x8D44;&#x6599;][4]</li>
 </ol>
 <h3 id="1&#x7B80;&#x4ECB;"><a name="1&#x7B80;&#x4ECB;" class="anchor-navigation-ex-anchor" href="#1&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="1&#x7B80;&#x4ECB;" class="plugin-anchor" href="#1&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>1.&#x7B80;&#x4ECB;</h3>
-<p>&#x672C;&#x6587;&#x4E3B;&#x8981;&#x8BB0;&#x5F55;MyBatis&#x4F7F;&#x7528;XML&#x6587;&#x4EF6;&#x548C;&#x6CE8;&#x89E3;&#x8FDB;&#x884C;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x4EE5;&#x53CA;&#x5728;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x9047;&#x5230;&#x7684;&#x4E00;&#x4E9B;MyBatis&#x8BED;&#x6CD5;&#x4E0A;&#x9762;&#x9047;&#x89C1;&#x7684;&#x95EE;&#x9898;</p>
-<h3 id="2xml&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;"><a name="2xml&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#2xml&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="2xml&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#2xml&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>2.XML&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;</h3>
-<p>XML&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">UserMapperDAO</span></span>{
-    <span class="hljs-comment">//&#x5355;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;</span>
-  <span class="hljs-function">User <span class="hljs-title">selectOne</span><span class="hljs-params">(@Param(<span class="hljs-string">&quot;id&quot;</span>)</span>Long id)</span>;
-  <span class="hljs-comment">//&#x591A;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;</span>
-  <span class="hljs-function">User <span class="hljs-title">selectTne</span><span class="hljs-params">(@Parm(<span class="hljs-string">&quot;id&quot;</span>)</span>Long id,@<span class="hljs-title">Param</span><span class="hljs-params">(<span class="hljs-string">&quot;name&quot;</span>)</span>String name)</span>;
-  <span class="hljs-comment">//&#x4F20;&#x5165;&#x5BF9;&#x8C61;</span>
-  <span class="hljs-function">User <span class="hljs-title">selectThree</span><span class="hljs-params">(@Param(<span class="hljs-string">&quot;vo&quot;</span>)</span>UserQueryVo vo)
-
-}
-</span></code></pre>
-<p>&#x53C2;&#x6570;&#x540D;&#x79F0;&#x4F20;&#x9012;</p>
-<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapper</span> <span class="hljs-attr">namespace</span>=<span class="hljs-string">&quot;....UserMapperDAO&quot;</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- &#x6570;&#x636E;&#x5E93;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x548C;&#x5B9E;&#x4F53;&#x7C7B;&#x5B57;&#x6BB5;&#x6620;&#x5C04;&#x5173;&#x7CFB; --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">resultMap</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;resultMap&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;...UserVO&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">jdbcType</span>=<span class="hljs-string">&quot;BIGINT&quot;</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;pk&quot;</span>/&gt;</span>
-    ....
-  <span class="hljs-tag">&lt;/<span class="hljs-name">resultMap</span>&gt;</span>
-
-  <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectOne&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;...User&quot;</span>&gt;</span>
-      select * from User where auto_pk = #{id}
-  <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
-
-  <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectTwo&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;...User&quot;</span>&gt;</span>
-      select * from User where auto_pk = #{id} and name=#{name}
-  <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
-
-  <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectThree&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;...User&quot;</span>&gt;</span>
-      select * from User where auto_pk = #{vo.id} and name= #{vo.name}
-  <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
-
-<span class="hljs-tag">&lt;/<span class="hljs-name">mapper</span>&gt;</span>
+<p>MyBatis&#x8FED;&#x4EE3;&#x5668;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;<code>SQL</code>&#x4E2D;in&#x7684;&#x6761;&#x4EF6;&#x3002;&#x5373;: <code>select * from User where pk in (...)</code>&#x4E2D;in&#x7684;&#x6761;&#x4EF6;&#x3002;MyBatis&#x4E2D;&#x7684;&#x8FED;&#x4EE3;&#x5668;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">foreach</span>  <span class="hljs-attr">item</span>=<span class="hljs-string">&quot;item&quot;</span> <span class="hljs-attr">collection</span>=<span class="hljs-string">&quot;&lt;collectionName&gt;&quot;</span> <span class="hljs-attr">index</span>=<span class="hljs-string">&quot;index&quot;</span>  <span class="hljs-attr">open</span>=<span class="hljs-string">&quot;(&quot;</span> <span class="hljs-attr">separator</span>=<span class="hljs-string">&quot;,&quot;</span> <span class="hljs-attr">close</span>=<span class="hljs-string">&quot;)&quot;</span>&gt;</span>
+#{item}
+<span class="hljs-tag">&lt;/<span class="hljs-name">foreach</span>&gt;</span>
 </code></pre>
-<p>&#x7D22;&#x5F15;&#x503C;&#x4F20;&#x9012;</p>
-<p>Mapper&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x53C2;&#x6570;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x4ECE;0&#x5F00;&#x59CB;</p>
-<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapper</span> <span class="hljs-attr">namespace</span>=<span class="hljs-string">&quot;....UserMapperDAO&quot;</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- &#x6570;&#x636E;&#x5E93;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x548C;&#x5B9E;&#x4F53;&#x7C7B;&#x5B57;&#x6BB5;&#x6620;&#x5C04;&#x5173;&#x7CFB; --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">resultMap</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;resultMap&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;...UserVO&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">jdbcType</span>=<span class="hljs-string">&quot;BIGINT&quot;</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;pk&quot;</span>/&gt;</span>
-    ....
-  <span class="hljs-tag">&lt;/<span class="hljs-name">resultMap</span>&gt;</span>
+<p>collection : &#x7528;&#x4E8E;&#x8FED;&#x4EE3;&#x7684;&#x96C6;&#x5408;&#x540D;&#x5B57;</p>
+<p>index&#xFF1A;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x5143;&#x7D20;</p>
+<p>index&#xFF1A;&#x8FED;&#x4EE3;&#x65F6;&#x7684;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x4F4D;&#x7F6E;</p>
+<p>open&#xFF1A;&#x5F00;&#x59CB;&#x7B26;&#x53F7;</p>
+<p>separator : &#x5206;&#x9694;&#x7B26;</p>
+<p>close : &#x7ED3;&#x675F;&#x7B26;&#x53F7;</p>
+<h3 id="2mybatis&#x8FED;&#x4EE3;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;"><a name="2mybatis&#x8FED;&#x4EE3;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#2mybatis&#x8FED;&#x4EE3;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="2mybatis&#x8FED;&#x4EE3;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#2mybatis&#x8FED;&#x4EE3;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>2.MyBatis&#x8FED;&#x4EE3;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;</h3>
+<p>&#x53C2;&#x6570;&#xFF1A;<code>java.util.Collection</code>   <strong>&#x96C6;&#x5408;&#x7C7B;&#x578B;</strong></p>
+<pre><code class="lang-java">public List&lt;User&gt; getUserByIds(List&lt;String&gt; id);
 
-  <span class="hljs-comment">&lt;!--&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;resultMap&#x5C06;&#x7ED3;&#x679C;&#x96C6;&#x6620;&#x5C04;&#x4E3A;&#x522B;&#x7684;&#x5B9E;&#x4F53;&#x3002;&#x5355;&#x53C2;&#x6570;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;parameterType==java.lang.Long
-    &#x591A;&#x53C2;&#x6570;&#x65F6;&#x53EF;&#x4EE5;&#x7701;&#x7565;--&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectOne&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;...User&quot;</span>&gt;</span>
-      select * from User where auto_pk = #{0}
-  <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
-
-  <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectTwo&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;...User&quot;</span>&gt;</span>
-      select * from User where auto_pk = #{0} and name=#{1}
-  <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
-
-  <span class="hljs-comment">&lt;!--&#x5F53;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x662F;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x6700;&#x597D;&#x4E0D;&#x8981;&#x7528;&#x7D22;&#x5F15;&#x503C;&#x4F20;&#x9012;&#x7684;&#x65B9;&#x5F0F;--&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectThree&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;...User&quot;</span>&gt;</span>
-      select * from User where auto_pk = #{vo.id} and name= #{vo.name}
-  <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
-
-<span class="hljs-tag">&lt;/<span class="hljs-name">mapper</span>&gt;</span>
+&lt;select id=&quot;getUserByIds&quot; resultType=&quot;...User&quot;&gt;
+  select * from User where pk in 
+  &lt;foreach  item=&quot;item&quot; collection=&quot;list&quot; index=&quot;index&quot;  open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;
+#{item}
+&lt;/foreach&gt;
+&lt;/select&gt;
 </code></pre>
-<h3 id="3&#x6CE8;&#x89E3;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;"><a name="3&#x6CE8;&#x89E3;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#3&#x6CE8;&#x89E3;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="3&#x6CE8;&#x89E3;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#3&#x6CE8;&#x89E3;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>3.&#x6CE8;&#x89E3;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x65B9;&#x5F0F;</h3>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">UserMapperDAO</span></span>{
-    <span class="hljs-comment">//&#x5355;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;</span>
-  <span class="hljs-meta">@Select</span>(<span class="hljs-string">&quot;select * from User where id=#{id}&quot;</span>)
-  <span class="hljs-function">User <span class="hljs-title">selectOne</span><span class="hljs-params">(@Param(<span class="hljs-string">&quot;id&quot;</span>)</span>Long id)</span>;
-  <span class="hljs-comment">//&#x591A;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;</span>
-  <span class="hljs-meta">@Select</span>(<span class="hljs-string">&quot;select * from User where id=#{id} and name=#{name}&quot;</span>)
-  <span class="hljs-function">User <span class="hljs-title">selectTne</span><span class="hljs-params">(@Parm(<span class="hljs-string">&quot;id&quot;</span>)</span>Long id,@<span class="hljs-title">Param</span><span class="hljs-params">(<span class="hljs-string">&quot;name&quot;</span>)</span>String name)</span>;
-  <span class="hljs-comment">//&#x4F20;&#x5165;&#x5BF9;&#x8C61;</span>
-  <span class="hljs-meta">@Select</span>(<span class="hljs-string">&quot;select * from User where id=#{vo.id} and name=#{vo.name}&quot;</span>)
-  <span class="hljs-comment">//&#x6216;&#x8005; @SelectProvider(type=UserMapperDAOProvider.calss , method=&quot;selectThree&quot;)</span>
-  <span class="hljs-function">User <span class="hljs-title">selectThree</span><span class="hljs-params">(@Param(<span class="hljs-string">&quot;vo&quot;</span>)</span>UserQueryVo vo)
+<p>&#x53C2;&#x6570;&#xFF1A;    <strong>&#x6570;&#x7EC4;&#x7C7B;&#x578B;</strong></p>
+<pre><code class="lang-java">public List&lt;User&gt; getUserByIds(String[] id);
 
+&lt;select id=&quot;getUserByIds&quot; resultType=&quot;...User&quot;&gt;
+  select * from User where pk in 
+  &lt;foreach  item=&quot;item&quot; collection=&quot;array&quot; index=&quot;index&quot;  open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;
+#{item}
+&lt;/foreach&gt;
+&lt;/select&gt;
+</code></pre>
+<p>&#x53C2;&#x6570;&#xFF1A;<strong>&#x591A;&#x4E2A;</strong></p>
+<p>&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x4F7F;&#x7528;<code>Map</code>,&#x5C06;&#x96C6;&#x5408;&#x4EE5;key-value&#x7684;&#x683C;&#x5F0F;&#x653E;&#x5230;Map&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x5728;xml&#x4E2D;&#x83B7;&#x53D6;&#x540D;&#x5B57;&#x5373;&#x53EF;&#x3002;&#x5B9E;&#x9645;&#x4E0A;MyBatis&#x5C31;&#x662F;&#x5C06;&#x63A5;&#x53E3;&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x4EE5;&#x540D;&#x5B57;(@Param(&quot;&quot;))&#x548C;&#x5176;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x653E;&#x5230;Map&#x4E2D;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x5728;xml/SelectProvider&#x4ECE;Map&#x4E2D;&#x83B7;&#x53D6;&#x53C2;&#x6570;&#x503C;&#x4ECE;&#x800C;&#x8FBE;&#x5230;&#x52A8;&#x6001;SQL&#x3002; </p>
+<pre><code class="lang-java">Map&lt;String,Object&gt; map = Maps.newHashMap(&quot;ids&quot;,Lists.newArrayList());
 
+public void addUser(Map&lt;String,Object) map);
 
-    <span class="hljs-comment">// &#x8981;&#x7EE7;&#x627F;SqlBuilder</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> UserMapperDAOProvider extends SqlBuilder</span>{
+&lt;select id=&quot;getUserByIds&quot; resultType=&quot;...User&quot;&gt;
+  select * from User where pk in 
+  &lt;foreach  item=&quot;item&quot; collection=&quot;ids&quot; index=&quot;index&quot;  open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;
+#{item}
+&lt;/foreach&gt;
+&lt;/select&gt;
+</code></pre>
+<h3 id="3&#x603B;&#x7ED3;"><a name="3&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#3&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="3&#x603B;&#x7ED3;" class="plugin-anchor" href="#3&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>3.&#x603B;&#x7ED3;</h3>
+<p><strong>MyBatis&#x5BF9;&#x53C2;&#x6570;&#x7684;&#x5305;&#x88C5;&#x4F7F;&#x7528;Map<string,object> &#xFF0C;&#x5176;&#x4E2D;key&#x4E3A;Mybatis&#x7684;&#x53C2;&#x6570;&#x540D;&#x79F0;&#xFF0C;value&#x4E3A;&#x53C2;&#x6570;&#x5177;&#x4F53;&#x503C;&#x3002;</string,object></strong></p>
+<p><strong>&#x8FD9;&#x4E2A;&#x601D;&#x60F3;&#x5F88;&#x91CD;&#x8981;&#x3002;</strong></p>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@SelectProvider</span>(type=MyProvider.class,method=<span class="hljs-string">&quot;insertUser&quot;</span>)
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addUser</span><span class="hljs-params">(@Param(<span class="hljs-string">&quot;ids&quot;</span>)</span> List&lt;String&gt; ids, @<span class="hljs-title">Param</span><span class="hljs-params">(<span class="hljs-string">&quot;name&quot;</span>)</span>String name, @<span class="hljs-title">Param</span><span class="hljs-params">(<span class="hljs-string">&quot;age&quot;</span>)</span> <span class="hljs-keyword">int</span> age)</span>;
+</code></pre>
+<p>&#x5176;&#x4E2D;<code>addUser</code>&#x7684;&#x65B9;&#x6CD5;&#x53C2;&#x6570;&#x4F1A;&#x88AB;&#x5305;&#x88C5;&#x4E3A;Map&#xFF1A;{&quot;ids&quot;:[] , &quot;name&#x7684;&#x503C;&quot;: &quot;&quot; , &quot;age&quot;: &quot;age&#x7684;&#x503C;&quot;}&#x3002;</p>
+<p>&#x5728;SelectProvider&#x4E2D;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x53C2;&#x6570;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyProvider</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">SQLBuilder</span></span>{
 
-        <span class="hljs-comment">/**
-        * &#x8FD4;&#x56DE;&#x503C;&#xFF1A;string &#x5373;&#x751F;&#x6210;&#x7684;sql&#x8BED;&#x53E5;
-        *    &#x53C2;&#x6570;&#xFF1A;mybatis&#x4F1A;&#x628A;&#x63A5;&#x53E3;&#x4E2D;&#x7684;&#x6CE8;&#x89E3;-&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x53D8;&#x6210;map&#x7684;&#x5F62;&#x5F0F;
-        */</span>
-        <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">selectThree</span><span class="hljs-params">(Map&lt;String,Object&gt; params)</span></span>{
-        UserQueryVo vo = (UserQueryVo) params.get(<span class="hljs-string">&quot;vo&quot;</span>);
-        BEGIN();
-        SELECT(<span class="hljs-string">&quot;*&quot;</span>);
-        FROM(<span class="hljs-string">&quot;User&quot;</span>);
-        <span class="hljs-comment">//&#x6CE8;&#x610F;&#xFF1A;&#x4F7F;&#x7528;vo&#x5BF9;&#x8C61;&#x91CC;&#x9762;&#x7684;&#x5C5E;&#x6027;&#x65F6;&#x5FC5;&#x987B;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x5F0F;</span>
-        WHERE(<span class="hljs-string">&quot;id=#{vo.id}&quot;</span>);
-        <span class="hljs-comment">//WHERE(&quot;id=&quot; + vo.getId()) &#x274C;&#x9519;&#x8BEF;&#x5199;&#x6CD5;&#xFF0C;&#x5B9E;&#x9645;&#x5DE5;&#x7A0B;&#x5B9E;&#x9A8C;&#x4E2D;&#x4F1A;&#x51FA;&#x9519;</span>
-        <span class="hljs-keyword">return</span> SQL();
-      }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">insertUser</span><span class="hljs-params">(Map&lt;String,Object&gt; params)</span></span>{
+    BEGIN();
+    String name =(String) params.get(<span class="hljs-string">&quot;name&quot;</span>);
+    <span class="hljs-keyword">int</span> age = (<span class="hljs-keyword">int</span>)params.get(<span class="hljs-string">&quot;age&quot;</span>);
+
+    <span class="hljs-comment">// &#x6839;&#x636E;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x62FC;&#x88C5;SQL</span>
+
+    <span class="hljs-keyword">return</span> SQL();
   }
 }
 </code></pre>
-<h3 id="4&#x603B;&#x7ED3;"><a name="4&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#4&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="4&#x603B;&#x7ED3;" class="plugin-anchor" href="#4&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>4.&#x603B;&#x7ED3;</h3>
+<h3 id="3&#x53C2;&#x8003;&#x8D44;&#x6599;"><a name="3&#x53C2;&#x8003;&#x8D44;&#x6599;" class="anchor-navigation-ex-anchor" href="#3&#x53C2;&#x8003;&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="3&#x53C2;&#x8003;&#x8D44;&#x6599;" class="plugin-anchor" href="#3&#x53C2;&#x8003;&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a>3.&#x53C2;&#x8003;&#x8D44;&#x6599;</h3>
 <ol>
-<li><p>&#x4E86;&#x89E3;MyBatis&#x914D;&#x7F6E;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;XML&#xFF0C;&#x6CE8;&#x89E3;</p>
+<li><p><a href="https://blog.csdn.net/zuihongyan518/article/details/86478222" target="_blank">https://blog.csdn.net/zuihongyan518/article/details/86478222</a></p>
 </li>
-<li><p>&#x4E86;&#x89E3;MyBatis&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;&#x7D22;&#x5F15;&#x503C;&#xFF0C;&#x5BF9;&#x8C61;&#xFF0C;&#x6CE8;&#x89E3;</p>
+<li><p><a href="https://www.cnblogs.com/yy3b2007com/p/10417242.html#autoid-0-0-0" target="_blank">https://www.cnblogs.com/yy3b2007com/p/10417242.html#autoid-0-0-0</a></p>
 </li>
-<li><p>&#x5728;Provider&#x4E2D;&#x7684;&#x52A8;&#x6001;sql&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x7684;&#x503C;&#xFF0C;&#x4E0D;&#x8981;&#x4F7F;&#x7528;WHERE(&quot;id=&quot; + vo.getId())&#xFF0C;&#x800C;&#x662F;&#x4F7F;&#x7528;WHERE(&quot;id=#{vo.id}&quot;)&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x800C;&#x4F7F;&#x7528;vo.getId()&#x662F;&#x7528;&#x6765;&#x8FDB;&#x884C;java&#x903B;&#x8F91;&#x7684;&#x5224;&#x65AD;&#x3002;</p>
-</li>
-<li><p><strong>MyBatis&#x52A8;&#x6001;sql&#x7684;string&#x7C7B;&#x578B;&#x5224;&#x7A7A;:  &lt;  if test=&quot;x !=null and x !=&apos;&apos; &quot;&gt;</strong></p>
-</li>
-</ol>
-<h3 id="5&#x53C2;&#x8003;"><a name="5&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#5&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="5&#x53C2;&#x8003;" class="plugin-anchor" href="#5&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>5.&#x53C2;&#x8003;</h3>
-<ol>
-<li><a href="https://www.cnblogs.com/suhaha/p/11794450.html" target="_blank">https://www.cnblogs.com/suhaha/p/11794450.html</a></li>
-<li><a href="https://blog.csdn.net/u010159380/article/details/82255461" target="_blank">https://blog.csdn.net/u010159380/article/details/82255461</a></li>
-<li><a href="https://blog.csdn.net/qq_21046965/article/details/84993996" target="_blank">https://blog.csdn.net/qq_21046965/article/details/84993996</a></li>
+<li><a href="https://www.bbsmax.com/A/QV5ZGEa7dy/" target="_blank">https://www.bbsmax.com/A/QV5ZGEa7dy/</a></li>
 </ol>
 
                                 
@@ -947,12 +908,12 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 4.3 MyBatis">
+                <a href="../mybatis参数绑定/" class="navigation navigation-prev " aria-label="Previous page: 4.3.1 MyBatis参数绑定方式">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../mybatis迭代/" class="navigation navigation-next " aria-label="Next page: 4.3.2 MyBatis迭代器几种写法">
+                <a href="../../../network/" class="navigation navigation-next " aria-label="Next page: 5.Network">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -963,7 +924,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.3.1 MyBatis参数绑定方式","level":"1.5.3.1","depth":3,"next":{"title":"4.3.2 MyBatis迭代器几种写法","level":"1.5.3.2","depth":3,"path":"database/mybatis/mybatis迭代/README.md","ref":"database/mybatis/mybatis迭代/README.md","articles":[]},"previous":{"title":"4.3 MyBatis","level":"1.5.3","depth":2,"path":"database/mybatis/README.md","ref":"database/mybatis/README.md","articles":[{"title":"4.3.1 MyBatis参数绑定方式","level":"1.5.3.1","depth":3,"path":"database/mybatis/mybatis参数绑定/README.md","ref":"database/mybatis/mybatis参数绑定/README.md","articles":[]},{"title":"4.3.2 MyBatis迭代器几种写法","level":"1.5.3.2","depth":3,"path":"database/mybatis/mybatis迭代/README.md","ref":"database/mybatis/mybatis迭代/README.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","-lunr","-search","search-pro","github","github-buttons","-donate","sharing-plus","anchor-navigation-ex","favicon"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/youngFF"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"./source/images/donate.png","title":"","button":"赞赏","alipayText":" "},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"youngFF","repo":"glory","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Blankj","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Blankj's Glory","language":"zh-hans","links":{"sidebar":{"百度一下":"https://www.baidu.com"}},"gitbook":"3.2.3","description":"select * from learn"},"file":{"path":"database/mybatis/mybatis参数绑定/README.md","mtime":"2020-03-23T02:12:21.509Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-16T13:04:40.455Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.3.2 MyBatis迭代器几种写法","level":"1.5.3.2","depth":3,"next":{"title":"5.Network","level":"1.6","depth":1,"path":"network/README.md","ref":"network/README.md","articles":[{"title":"5.1 Http","level":"1.6.1","depth":2,"path":"network/http/README.md","ref":"network/http/README.md","articles":[]},{"title":"5.2 TCP","level":"1.6.2","depth":2,"path":"network/tcp/README.md","ref":"network/tcp/README.md","articles":[]}]},"previous":{"title":"4.3.1 MyBatis参数绑定方式","level":"1.5.3.1","depth":3,"path":"database/mybatis/mybatis参数绑定/README.md","ref":"database/mybatis/mybatis参数绑定/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","-lunr","-search","search-pro","github","github-buttons","-donate","sharing-plus","anchor-navigation-ex","favicon"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/youngFF"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"./source/images/donate.png","title":"","button":"赞赏","alipayText":" "},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"youngFF","repo":"glory","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Blankj","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Blankj's Glory","language":"zh-hans","links":{"sidebar":{"百度一下":"https://www.baidu.com"}},"gitbook":"3.2.3","description":"select * from learn"},"file":{"path":"database/mybatis/mybatis迭代/README.md","mtime":"2020-04-16T13:04:16.278Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-16T13:04:40.455Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

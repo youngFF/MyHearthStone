@@ -34,6 +34,7 @@
 	* [4.2 Redis](database/redis/README.md)
 	* [4.3 MyBatis](database/mybatis/README.md)
 	  * [4.3.1 MyBatis参数绑定方式](database/mybatis/mybatis参数绑定/README.md)
+	  * [4.3.2 MyBatis迭代器几种写法](database/mybatis/mybatis迭代/README.md)
 * [5.Network](network/README.md)
 	* [5.1 Http](network/http/README.md)
 	* [5.2 TCP](network/tcp/README.md)
