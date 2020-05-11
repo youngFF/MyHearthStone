@@ -22,15 +22,16 @@ Spring中的事件通知机制是观察者模式的一种实现。观察者是Ap
 
 如图所示，是事件发布的一个大体流程。首先容器（Spring容器，Servlet容器/即tomcat服务器）注册监听器用来监听特定的事件；然后容器发布特定类型的事件，然后进行事件通知/事件广播通知已经注册的监听器用来处理
 
-```sequence
+```mermaid
+sequenceDiagram
 participant 客户端
 participant Spring容器/Servlet容器
 participant 容器中其他模块
 
-客户端->Spring容器/Servlet容器:1.注册监听特定事件的监听器
-Spring容器/Servlet容器->Spring容器/Servlet容器:2.发布特定类型的事件
-Spring容器/Servlet容器->容器中其他模块:3.广播事件
-容器中其他模块->容器中其他模块:4.对特定的广播事件进行相应
+客户端->>Spring容器/Servlet容器:1.注册监听特定事件的监听器
+Spring容器/Servlet容器->>Spring容器/Servlet容器:2.发布特定类型的事件
+Spring容器/Servlet容器->>容器中其他模块:3.广播事件
+容器中其他模块->>容器中其他模块:4.对特定的广播事件进行相应
 ```
 
 <center>图2 事件发布和通知时序图</center>
@@ -39,11 +40,13 @@ Spring容器/Servlet容器->容器中其他模块:3.广播事件
 
 ### 2.源码分析
 
-```sequence
-AbstractApplicationContext->AbstractApplicationContext:publishEvent(Object event) 发布事件
-AbstractApplicationContext->ApplicationEventMulticaster:multicastEvent(ApplicationEvent) 广播事件
-ApplicationEventMulticaster->ApplicationEventMulticaster:getApplicationListeners(ApplicationEvent,ResolvableType) 获取相应事件的监听器
-ApplicationEventMulticaster->ApplicationEventMulticaster:invokeListener(ApplicationListener<?> listener , ApplicationEvent event) 触发事件
+```mermaid
+sequenceDiagram
+
+AbstractApplicationContext->>AbstractApplicationContext:publishEvent(Object event) 发布事件
+AbstractApplicationContext->>ApplicationEventMulticaster:multicastEvent(ApplicationEvent) 广播事件
+ApplicationEventMulticaster->>ApplicationEventMulticaster:getApplicationListeners(ApplicationEvent,ResolvableType) 获取相应事件的监听器
+ApplicationEventMulticaster->>ApplicationEventMulticaster:invokeListener(ApplicationListener listener , ApplicationEvent event) 触发事件
 ```
 
 <center>图3 Spring事件发布代码时序图</center>

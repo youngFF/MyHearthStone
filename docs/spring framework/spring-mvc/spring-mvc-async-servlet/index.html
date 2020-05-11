@@ -12,6 +12,7 @@
         
         
     
+    
     <link rel="stylesheet" href="../../../gitbook/style.css">
 
     
@@ -37,6 +38,14 @@
                 
             
                 
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-js-sequence-diagram/styles.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -50,6 +59,9 @@
 
     
         
+    
+
+
     
 
         
@@ -864,38 +876,40 @@
                                 <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#spring&#x5F02;&#x6B65;&#x5904;&#x7406;servlet"><b></b>Spring&#x5F02;&#x6B65;&#x5904;&#x7406;Servlet</a></li><ul><ul><li><span class="title-icon "></span><a href="#1&#x7B80;&#x4ECB;"><b></b>1.&#x7B80;&#x4ECB;</a></li><li><span class="title-icon "></span><a href="#2&#x539F;&#x7406;"><b></b>2.&#x539F;&#x7406;</a></li><li><span class="title-icon "></span><a href="#3&#x4F8B;&#x5B50;"><b></b>3.&#x4F8B;&#x5B50;</a></li><li><span class="title-icon "></span><a href="#4&#x53C2;&#x8003;&#x8D44;&#x6599;"><b></b>4.&#x53C2;&#x8003;&#x8D44;&#x6599;</a></li></ul></ul></ul></div><a href="#spring&#x5F02;&#x6B65;&#x5904;&#x7406;servlet" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="spring&#x5F02;&#x6B65;&#x5904;&#x7406;servlet"><a name="spring&#x5F02;&#x6B65;&#x5904;&#x7406;servlet" class="anchor-navigation-ex-anchor" href="#spring&#x5F02;&#x6B65;&#x5904;&#x7406;servlet"><i class="fa fa-link" aria-hidden="true"></i></a><a name="spring&#x5F02;&#x6B65;&#x5904;&#x7406;servlet" class="plugin-anchor" href="#spring&#x5F02;&#x6B65;&#x5904;&#x7406;servlet"><i class="fa fa-link" aria-hidden="true"></i></a>Spring&#x5F02;&#x6B65;&#x5904;&#x7406;Servlet</h1>
 <p>&#x76EE;&#x5F55;:</p>
 <ol>
-<li><p><a href="#1&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</a></p>
-</li>
-<li><p><a href="#2&#x539F;&#x7406;">&#x539F;&#x7406;</a></p>
-<p>2.1 [spring&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x914D;&#x7F6E;][2.1]</p>
-</li>
-<li><p><a href="#3&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</a></p>
-</li>
-<li><p>[&#x53C2;&#x8003;&#x8D44;&#x6599;][&#x53C2;&#x8003;&#x8D44;&#x6599;]</p>
-</li>
+<li><a href="#1&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</a></li>
+<li><a href="#2&#x539F;&#x7406;">&#x539F;&#x7406;</a></li>
+<li><a href="#3&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</a></li>
+<li><a href="#4&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</a></li>
 </ol>
 <h3 id="1&#x7B80;&#x4ECB;"><a name="1&#x7B80;&#x4ECB;" class="anchor-navigation-ex-anchor" href="#1&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="1&#x7B80;&#x4ECB;" class="plugin-anchor" href="#1&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>1.&#x7B80;&#x4ECB;</h3>
 <p>&#x901A;&#x5E38;<code>Servlet</code>&#x7684;&#x4E3B;&#x8981;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;&#x4E3A;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#xFF0C;<code>Servlet</code>&#x63A5;&#x6536;&#x5230;&#x8BF7;&#x6C42;&#x540E;&#x8FDB;&#x884C;&#x4E1A;&#x52A1;&#x5904;&#x7406;&#xFF0C;&#x6700;&#x540E;&#x5C06;&#x5904;&#x7406;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x3002;</p>
-<pre><code class="lang-sequence">&#x5BA2;&#x6237;&#x7AEF;-&gt;&#x670D;&#x52A1;&#x5668;:&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x53D1;&#x9001;&#x8BF7;&#x6C42;
-&#x670D;&#x52A1;&#x5668;-&gt;&#x4E1A;&#x52A1;&#x5C42;:&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x5904;&#x7406;&#x4E1A;&#x52A1;&#x903B;&#x8F91;
-&#x670D;&#x52A1;&#x5668;-&gt;&#x5BA2;&#x6237;&#x7AEF;:&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;
-</code></pre>
+<div class="mermaid">
+sequenceDiagram
+&#x5BA2;&#x6237;&#x7AEF;-&gt;&gt;&#x670D;&#x52A1;&#x5668;:&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x53D1;&#x9001;&#x8BF7;&#x6C42;
+&#x670D;&#x52A1;&#x5668;-&gt;&gt;&#x4E1A;&#x52A1;&#x5C42;:&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x5904;&#x7406;&#x4E1A;&#x52A1;&#x903B;&#x8F91;
+&#x670D;&#x52A1;&#x5668;-&gt;&gt;&#x5BA2;&#x6237;&#x7AEF;:&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;
+</div>
+
 <center>&#x56FE;1 &#x5178;&#x578B;Servlet&#x8BF7;&#x6C42; </center>
 
 <p>&#x5176;&#x4E2D;&#xFF0C;&#x7B2C;&#x4E8C;&#x6B65;&#x5904;&#x7406;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x901A;&#x5E38;&#x662F;&#x6700;&#x8017;&#x65F6;&#x7684;&#xFF0C;&#x4E3B;&#x8981;&#x4F53;&#x73B0;&#x5728;<strong>&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;</strong>&#xFF0C;<strong>&#x8DE8;&#x7F51;&#x7EDC;&#x8C03;&#x7528;</strong>&#x7B49;&#x3002;<font color="brown">&#x5728;&#x6B64;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;Servlet&#x7EBF;&#x7A0B;&#x4E00;&#x76F4;&#x5904;&#x4E8E;&#x963B;&#x585E;&#x72B6;&#x6001;&#xFF0C;&#x76F4;&#x5230;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x5B8C;&#x6BD5;</font>&#x3002;&#x5728;&#x4E1A;&#x52A1;&#x5904;&#x7406;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7684;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x6570;&#x662F;&#x6709;&#x9650;&#x7684;&#xFF0C;Servlet&#x8D44;&#x6E90;(Servlet&#x7EBF;&#x7A0B;)&#x4E00;&#x76F4;&#x88AB;&#x5360;&#x7528;&#x5F97;&#x4E0D;&#x5230;&#x91CA;&#x653E;&#xFF0C;&#x5BF9;&#x4E8E;&#x5E76;&#x53D1;&#x8BF7;&#x6C42;&#x6BD4;&#x8F83;&#x5927;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x8BF7;&#x6C42;&#x7531;&#x4E8E;&#x83B7;&#x53D6;&#x4E0D;&#x5230;&#x8FDE;&#x63A5;&#x800C;&#x5904;&#x4E8E;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x5F71;&#x54CD;&#x4E86;&#x670D;&#x52A1;&#x5668;&#x7684;&#x541E;&#x5410;&#x80FD;&#x529B;&#x3002;</p>
 <h3 id="2&#x539F;&#x7406;"><a name="2&#x539F;&#x7406;" class="anchor-navigation-ex-anchor" href="#2&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="2&#x539F;&#x7406;" class="plugin-anchor" href="#2&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>2.&#x539F;&#x7406;</h3>
 <p>&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x7684;&#x8BF7;&#x6C42;&#x7C7B;&#x578B;keep-alive&#xFF0C;&#x8FD9;&#x6837;&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;&#x540E;&#x4E0D;&#x5173;&#x95ED;&#x8FDE;&#x63A5;&#xFF0C;&#x8FD9;&#x6837;&#x670D;&#x52A1;&#x5668;&#x5C31;&#x53EF;&#x4EE5;&#x628A;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x63A8;&#x9001;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x3002;&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x7684;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#xFF0C;<code>Servlet</code>&#x7EBF;&#x7A0B;&#x5C06;&#x8BF7;&#x6C42;&#x8F6C;&#x4EA4;&#x7ED9;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x7EBF;&#x7A0B;&#x6765;&#x6267;&#x884C;&#x4E1A;&#x52A1;&#x5904;&#x7406;&#xFF0C;&#x7EBF;&#x7A0B;&#x672C;&#x8EAB;&#x8FD4;&#x56DE;&#x5230;&#x5BB9;&#x5668;(&#x8FD9;&#x6837;&#x8FD9;&#x4E2A;&#x7EBF;&#x7A0B;&#x5C31;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x5904;&#x7406;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x8BF7;&#x6C42;)&#xFF0C;&#xFF0C;&#x5F02;&#x6B65;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x5B8C;&#x4E1A;&#x52A1;&#x4EE5;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x751F;&#x6210;&#x54CD;&#x5E94;&#x6570;&#x636E;&#xFF08;&#x5F02;&#x6B65;&#x7EBF;&#x7A0B;&#x62E5;&#x6709; ServletRequest &#x548C; ServletResponse &#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#xFF09;&#xFF0C;&#x6216;&#x8005;&#x5C06;&#x8BF7;&#x6C42;&#x7EE7;&#x7EED;&#x8F6C;&#x53D1;&#x7ED9;&#x5176;&#x5B83; Servlet&#x3002;&#x5982;&#x6B64;&#x4E00;&#x6765;&#xFF0C; Servlet &#x7EBF;&#x7A0B;&#x4E0D;&#x518D;&#x662F;&#x4E00;&#x76F4;&#x5904;&#x4E8E;&#x963B;&#x585E;&#x72B6;&#x6001;&#x4EE5;&#x7B49;&#x5F85;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x800C;&#x662F;&#x542F;&#x52A8;&#x5F02;&#x6B65;&#x7EBF;&#x7A0B;&#x4E4B;&#x540E;&#x53EF;&#x4EE5;&#x7ACB;&#x5373;&#x8FD4;&#x56DE;&#xFF0C; Servlet request&#x8BF7;&#x6C42;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x88AB;&#x5FEB;&#x901F;&#x91CA;&#x653E;&#x56DE;Web&#x5BB9;&#x5668;&#xFF0C;&#x4ECE;&#x800C;&#x63D0;&#x9AD8;&#x5E76;&#x53D1;&#x6027;&#x3002;</p>
-<pre><code class="lang-sequence">participant &#x5BA2;&#x6237;&#x7AEF;
+<div class="mermaid">
+sequenceDiagram
+participant &#x5BA2;&#x6237;&#x7AEF;
 participant &#x670D;&#x52A1;&#x5668;&#x7EBF;&#x7A0B;
 participant &#x670D;&#x52A1;&#x5668;&#x56DE;&#x8C03;&#x5904;&#x7406;&#x7EBF;&#x7A0B;
 participant &#x540E;&#x7AEF;&#x5904;&#x7406;&#x670D;&#x52A1;
 
-&#x5BA2;&#x6237;&#x7AEF;-&gt;&#x670D;&#x52A1;&#x5668;&#x7EBF;&#x7A0B;:&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x53D1;&#x9001;&#x8BF7;&#x6C42;
-&#x670D;&#x52A1;&#x5668;&#x7EBF;&#x7A0B;-&gt;&#x540E;&#x7AEF;&#x5904;&#x7406;&#x670D;&#x52A1;:&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x5C06;&#x8BF7;&#x6C42;&#x59D4;&#x6258;&#x7ED9;&#x540E;&#x7AEF;&#x5904;&#x7406;&#x7EBF;&#x7A0B;
-&#x670D;&#x52A1;&#x5668;&#x7EBF;&#x7A0B;-&gt;&#x670D;&#x52A1;&#x5668;&#x7EBF;&#x7A0B;:&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x7EBF;&#x7A0B;&#x8FD4;&#x56DE;&#x5230;&#x7EBF;&#x7A0B;&#x6C60;
-&#x540E;&#x7AEF;&#x5904;&#x7406;&#x670D;&#x52A1;-&gt;&#x670D;&#x52A1;&#x5668;&#x56DE;&#x8C03;&#x5904;&#x7406;&#x7EBF;&#x7A0B;:&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;
-&#x670D;&#x52A1;&#x5668;&#x56DE;&#x8C03;&#x5904;&#x7406;&#x7EBF;&#x7A0B;-&gt;&#x5BA2;&#x6237;&#x7AEF;:&#x7B2C;&#x4E94;&#x6B65;&#xFF1A;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x5230;&#x5BA2;&#x6237;&#x7AEF;
-</code></pre>
+&#x5BA2;&#x6237;&#x7AEF;-&gt;&gt;&#x670D;&#x52A1;&#x5668;&#x7EBF;&#x7A0B;:&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x53D1;&#x9001;&#x8BF7;&#x6C42;
+&#x670D;&#x52A1;&#x5668;&#x7EBF;&#x7A0B;-&gt;&gt;&#x540E;&#x7AEF;&#x5904;&#x7406;&#x670D;&#x52A1;:&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x5C06;&#x8BF7;&#x6C42;&#x59D4;&#x6258;&#x7ED9;&#x540E;&#x7AEF;&#x5904;&#x7406;&#x7EBF;&#x7A0B;
+&#x670D;&#x52A1;&#x5668;&#x7EBF;&#x7A0B;-&gt;&gt;&#x670D;&#x52A1;&#x5668;&#x7EBF;&#x7A0B;:&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x7EBF;&#x7A0B;&#x8FD4;&#x56DE;&#x5230;&#x7EBF;&#x7A0B;&#x6C60;
+&#x540E;&#x7AEF;&#x5904;&#x7406;&#x670D;&#x52A1;-&gt;&gt;&#x670D;&#x52A1;&#x5668;&#x56DE;&#x8C03;&#x5904;&#x7406;&#x7EBF;&#x7A0B;:&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;
+&#x670D;&#x52A1;&#x5668;&#x56DE;&#x8C03;&#x5904;&#x7406;&#x7EBF;&#x7A0B;-&gt;&gt;&#x5BA2;&#x6237;&#x7AEF;:&#x7B2C;&#x4E94;&#x6B65;&#xFF1A;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x5230;&#x5BA2;&#x6237;&#x7AEF;
+
+</div>
+
 <center>&#x56FE;2 Servelt&#x5F02;&#x6B65;&#x8BF7;&#x6C42;</center>
 
 <h4 id="21-spring&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x914D;&#x7F6E;"><a name="21-spring&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#21-spring&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="21-spring&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x914D;&#x7F6E;" class="plugin-anchor" href="#21-spring&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 Spring&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x914D;&#x7F6E;</h4>
@@ -998,12 +1012,13 @@ participant &#x540E;&#x7AEF;&#x5904;&#x7406;&#x670D;&#x52A1;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.2.4 Spring异步处理Servlet","level":"1.3.2.4","depth":3,"next":{"title":"2.3 Spring-Test","level":"1.3.3","depth":2,"path":"spring framework/spring-test/README.md","ref":"spring framework/spring-test/README.md","articles":[{"title":"2.3.1 Spring-mvc-mock","level":"1.3.3.1","depth":3,"path":"spring framework/spring-test/spring-web-mock-test/README.md","ref":"spring framework/spring-test/spring-web-mock-test/README.md","articles":[]}]},"previous":{"title":"2.2.3 Spring全局统一异常处理","level":"1.3.2.3","depth":3,"path":"spring framework/spring-mvc/spring-global-exception/README.md","ref":"spring framework/spring-mvc/spring-global-exception/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","-lunr","-search","search-pro","github","github-buttons","-donate","sharing-plus","anchor-navigation-ex","favicon"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/youngFF"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"./source/images/donate.png","title":"","button":"赞赏","alipayText":" "},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"youngFF","repo":"glory","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"hyena","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"think study repeat","language":"zh-hans","links":{"sidebar":{"百度一下":"https://www.baidu.com"}},"gitbook":"3.2.3","description":"my hearthStone book"},"file":{"path":"spring framework/spring-mvc/spring-mvc-async-servlet/README.md","mtime":"2020-05-11T07:52:02.157Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-11T11:12:04.177Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.2.4 Spring异步处理Servlet","level":"1.3.2.4","depth":3,"next":{"title":"2.3 Spring-Test","level":"1.3.3","depth":2,"path":"spring framework/spring-test/README.md","ref":"spring framework/spring-test/README.md","articles":[{"title":"2.3.1 Spring-mvc-mock","level":"1.3.3.1","depth":3,"path":"spring framework/spring-test/spring-web-mock-test/README.md","ref":"spring framework/spring-test/spring-web-mock-test/README.md","articles":[]}]},"previous":{"title":"2.2.3 Spring全局统一异常处理","level":"1.3.2.3","depth":3,"path":"spring framework/spring-mvc/spring-global-exception/README.md","ref":"spring framework/spring-mvc/spring-global-exception/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","-lunr","-search","search-pro","github","github-buttons","-donate","sharing-plus","anchor-navigation-ex","favicon","js-sequence-diagram","mermaid-gb3"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/youngFF"},"splitter":{},"search-pro":{},"js-sequence-diagram":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"./source/images/donate.png","title":"","button":"赞赏","alipayText":" "},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"youngFF","repo":"glory","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"hyena","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"think study repeat","language":"zh-hans","links":{"sidebar":{"百度一下":"https://www.baidu.com"}},"gitbook":"3.2.3","description":"my hearthStone book"},"file":{"path":"spring framework/spring-mvc/spring-mvc-async-servlet/README.md","mtime":"2020-05-11T12:50:10.550Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-11T13:17:28.682Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    
     <script src="../../../gitbook/gitbook.js"></script>
     <script src="../../../gitbook/theme.js"></script>
     
@@ -1036,9 +1051,31 @@ participant &#x540E;&#x7AEF;&#x5904;&#x7406;&#x670D;&#x52A1;
         
     
         
+        <script src="../../../gitbook/gitbook-plugin-js-sequence-diagram/jquery-2.1.1.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-js-sequence-diagram/underscore-min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-js-sequence-diagram/sequence-diagram-min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-js-sequence-diagram/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
         <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
+
+    <script src="../../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
 
     </body>
 </html>
