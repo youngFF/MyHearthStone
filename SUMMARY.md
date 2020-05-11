@@ -14,6 +14,7 @@
 	* [1.7 Jndi](java/jndi/README.md)
 * [2.Spring Framework](spring framework/README.md)
 	* [2.1 Spring-Core](spring framework/spring-core/README.md)
+	  * [2.1.1 Spring事件发布](spring framework/spring-core/spring-event/README.md)
 	* [2.2 Spring-Mvc](spring framework/spring-mvc/README.md)
 	  * [2.2.1 SpringMVC注解](spring framework/spring-mvc/spring-mvc-request-annotation/README.md)
 	  * [2.2.2 SpringMVC拦截器](spring framework/spring-mvc/spring-mvc-interceptor/README.md)
