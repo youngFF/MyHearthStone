@@ -24,9 +24,6 @@ Spring中的事件通知机制是观察者模式的一种实现。观察者是Ap
 
 ```mermaid
 sequenceDiagram
-participant 客户端
-participant Spring容器/Servlet容器
-participant 容器中其他模块
 
 客户端->>Spring容器/Servlet容器:1.注册监听特定事件的监听器
 Spring容器/Servlet容器->>Spring容器/Servlet容器:2.发布特定类型的事件
