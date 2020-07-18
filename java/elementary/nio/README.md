@@ -2,11 +2,11 @@
 
 目录：
 
-1. [简介][]
-2. [NIO原理][]
-3. [NIO操作系统层面原理][]
-4. [流程][]
-5. [参考资料][]
+1. [简介][1]
+2. [NIO原理][2]
+3. [NIO操作系统层面原理][3]
+4. [流程][4]
+5. [参考资料][5]
 
 
 
@@ -44,7 +44,7 @@ IO的各种流是阻塞的。这意味着，当一个线程调用read() 或  wri
 
 
 
-### 3. Java NIO操作系统层面的原理
+### 3. NIO操作系统层面的原理
 
 ##### 3.1 网卡接收数据
 
@@ -146,9 +146,22 @@ ps：操作系统添加等待队列只是添加了对这个“等待中”进程
 
 
 
+
+
+
+
+
+
 ### 5.参考资料
 
-[1]: https://blog.csdn.net/songchuwang1868/article/details/89877739 强烈推荐
+1. https://blog.csdn.net/songchuwang1868/article/details/89877739 强烈推荐
+2. https://blog.csdn.net/forezp/article/details/88414741
 
-[2]: https://blog.csdn.net/forezp/article/details/88414741
+
+
+[1]: #1简介
+[2]: #2nio原理
+[3]: 	#3nio操作系统层面的原理
+[4]: #4流程
+[5]: #5参考资料
 
