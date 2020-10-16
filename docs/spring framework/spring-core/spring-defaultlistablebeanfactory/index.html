@@ -1,0 +1,1382 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.1.4 Spring DefaultListableBeanFactory · think study repeat</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="hyena">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-js-sequence-diagram/styles.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../spring-mvc/" />
+    
+    
+    <link rel="prev" href="../spring-cycle-depend/" />
+    
+
+    
+        <link rel="shortcut icon" href='../../../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"youngFF","repo":"glory","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.baidu.com" target="_blank" class="custom-link">百度一下</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../java/">
+            
+                <a href="../../../java/">
+            
+                    
+                    1.Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../../java/elementary/">
+            
+                <a href="../../../java/elementary/">
+            
+                    
+                    1.0 Java Elememtary
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../../java/elementary/atomic_unsafe/">
+            
+                <a href="../../../java/elementary/atomic_unsafe/">
+            
+                    
+                    1.0.1 AotimicInteger&Unsafe类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../../../java/elementary/executors/">
+            
+                <a href="../../../java/elementary/executors/">
+            
+                    
+                    1.0.2 ThreadPoolExecutor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../../../java/elementary/nio/">
+            
+                <a href="../../../java/elementary/nio/">
+            
+                    
+                    1.0.3 NIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../../../java/elementary/thread/">
+            
+                <a href="../../../java/elementary/thread/">
+            
+                    
+                    1.0.4 java线程概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../../java/jvm/">
+            
+                <a href="../../../java/jvm/">
+            
+                    
+                    1.1 Java virtual machine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../../java/specification/">
+            
+                <a href="../../../java/specification/">
+            
+                    
+                    1.2 Java Specification
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../../java/specification/JMS/">
+            
+                <a href="../../../java/specification/JMS/">
+            
+                    
+                    1.2.1 JMS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../../java/specification/JMX/">
+            
+                <a href="../../../java/specification/JMX/">
+            
+                    
+                    1.2.2 JMX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../../../java/specification/JDBC/">
+            
+                <a href="../../../java/specification/JDBC/">
+            
+                    
+                    1.2.1 JDBC
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../../java/design pattern/">
+            
+                <a href="../../../java/design pattern/">
+            
+                    
+                    1.3 Design Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../../java/microservice/">
+            
+                <a href="../../../java/microservice/">
+            
+                    
+                    1.4 Java Microservice
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../../../java/microservice/mq/">
+            
+                <a href="../../../java/microservice/mq/">
+            
+                    
+                    1.4.1 mq
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../../../java/microservice/rpc/">
+            
+                <a href="../../../java/microservice/rpc/">
+            
+                    
+                    1.4.2 RPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../../../java/tomcatxjetty/">
+            
+                <a href="../../../java/tomcatxjetty/">
+            
+                    
+                    1.5 Tomcat & Jetty
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.3.1" data-path="../../../java/tomcatxjetty/tomcat/framework/">
+            
+                <a href="../../../java/tomcatxjetty/tomcat/framework/">
+            
+                    
+                    1.5.1 tomcat架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.2" data-path="../../../java/tomcatxjetty/tomcat/connector/README.md">
+            
+                <span>
+            
+                    
+                    1.5.2 tomcat连接器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../../java/asmxjavassit/">
+            
+                <a href="../../../java/asmxjavassit/">
+            
+                    
+                    1.6 Asm & Javassist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../../java/jndi/">
+            
+                <a href="../../../java/jndi/">
+            
+                    
+                    1.7 Jndi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../../java/maven/">
+            
+                <a href="../../../java/maven/">
+            
+                    
+                    1.8 maven
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.8.1" data-path="../../../java/maven/reactor/">
+            
+                <a href="../../../java/maven/reactor/">
+            
+                    
+                    1.8.1 maven反应堆
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    2.Spring Framework
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    2.1 Spring-Core
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../spring-event/">
+            
+                <a href="../spring-event/">
+            
+                    
+                    2.1.1 Spring事件发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../spring-beanfactoryt/README.md">
+            
+                <span>
+            
+                    
+                    2.1.2 Spring容器继承关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../spring-cycle-depend/">
+            
+                <a href="../spring-cycle-depend/">
+            
+                    
+                    2.1.3 Spring循环依赖问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    2.1.4 Spring DefaultListableBeanFactory
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../spring-mvc/">
+            
+                <a href="../../spring-mvc/">
+            
+                    
+                    2.2 Spring-Mvc
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../spring-mvc/spring-mvc-request-annotation/">
+            
+                <a href="../../spring-mvc/spring-mvc-request-annotation/">
+            
+                    
+                    2.2.1 SpringMVC注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../spring-mvc/spring-mvc-interceptor/">
+            
+                <a href="../../spring-mvc/spring-mvc-interceptor/">
+            
+                    
+                    2.2.2 SpringMVC拦截器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../spring-mvc/spring-global-exception/">
+            
+                <a href="../../spring-mvc/spring-global-exception/">
+            
+                    
+                    2.2.3 Spring全局统一异常处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../../spring-mvc/spring-mvc-async-servlet/">
+            
+                <a href="../../spring-mvc/spring-mvc-async-servlet/">
+            
+                    
+                    2.2.4 Spring异步处理Servlet
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../spring-test/">
+            
+                <a href="../../spring-test/">
+            
+                    
+                    2.3 Spring-Test
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../spring-test/spring-web-mock-test/">
+            
+                <a href="../../spring-test/spring-web-mock-test/">
+            
+                    
+                    2.3.1 Spring-mvc-mock
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../spring-boot/">
+            
+                <a href="../../spring-boot/">
+            
+                    
+                    2.4 Spring-Boot
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../spring-boot/spring-boot项目配置/">
+            
+                <a href="../../spring-boot/spring-boot项目配置/">
+            
+                    
+                    2.4.1 Spring-boot项目配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../spring-data/">
+            
+                <a href="../../spring-data/">
+            
+                    
+                    2.5 Spring-Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../spring-cloud/">
+            
+                <a href="../../spring-cloud/">
+            
+                    
+                    2.6 Spring-Cloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../spring-rest/">
+            
+                <a href="../../spring-rest/">
+            
+                    
+                    2.7 Spring-Rest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../../spring-util/">
+            
+                <a href="../../spring-util/">
+            
+                    
+                    2.8 Spring-Util
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.8.1" data-path="../../spring-util/spring-cron/">
+            
+                <a href="../../spring-util/spring-cron/">
+            
+                    
+                    2.8.1 Spring定时任务和Cron表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../linux/">
+            
+                <a href="../../../linux/">
+            
+                    
+                    3.Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../linux/shell/">
+            
+                <a href="../../../linux/shell/">
+            
+                    
+                    3.1 Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../database/">
+            
+                <a href="../../../database/">
+            
+                    
+                    4.DataBase
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../database/mysql/">
+            
+                <a href="../../../database/mysql/">
+            
+                    
+                    4.1 MySQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../../database/mysql/sql/">
+            
+                <a href="../../../database/mysql/sql/">
+            
+                    
+                    4.1.1 SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../../database/mysql/transaction/">
+            
+                <a href="../../../database/mysql/transaction/">
+            
+                    
+                    4.1.2 Transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../database/redis/">
+            
+                <a href="../../../database/redis/">
+            
+                    
+                    4.2 Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../database/mybatis/">
+            
+                <a href="../../../database/mybatis/">
+            
+                    
+                    4.3 MyBatis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../../../database/mybatis/mybatis参数绑定/">
+            
+                <a href="../../../database/mybatis/mybatis参数绑定/">
+            
+                    
+                    4.3.1 MyBatis参数绑定方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="../../../database/mybatis/mybatis迭代/">
+            
+                <a href="../../../database/mybatis/mybatis迭代/">
+            
+                    
+                    4.3.2 MyBatis迭代器几种写法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../network/">
+            
+                <a href="../../../network/">
+            
+                    
+                    5.Network
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../network/http/">
+            
+                <a href="../../../network/http/">
+            
+                    
+                    5.1 Http
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../../network/tcp/">
+            
+                <a href="../../../network/tcp/">
+            
+                    
+                    5.2 TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../../operation_system/">
+            
+                <a href="../../../operation_system/">
+            
+                    
+                    6.Operation System
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../../opeartion_system/file_sequence_random_io/README.md">
+            
+                <span>
+            
+                    
+                    6.1 文件顺序/随机IO
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../../data structure/">
+            
+                <a href="../../../data structure/">
+            
+                    
+                    7.Data Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../../algorithm/">
+            
+                <a href="../../../algorithm/">
+            
+                    
+                    8.Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../../../math/">
+            
+                <a href="../../../math/">
+            
+                    
+                    9.Math
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../../../programming language/">
+            
+                <a href="../../../programming language/">
+            
+                    
+                    10.Programming Language
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../../../armory/">
+            
+                <a href="../../../armory/">
+            
+                    
+                    11. weapons 武器库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../../../tech_framework/">
+            
+                <a href="../../../tech_framework/">
+            
+                    
+                    12.工程架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../../../tech_experience/">
+            
+                <a href="../../../tech_experience/">
+            
+                    
+                    13.工程经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >2.1.4 Spring DefaultListableBeanFactory</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#spring-defaultlistablebeanfactory"><b></b>Spring DefaultListableBeanFactory</a></li><ul><ul><li><span class="title-icon "></span><a href="#1&#x7B80;&#x4ECB;"><b></b>1.&#x7B80;&#x4ECB;</a></li><li><span class="title-icon "></span><a href="#2&#x901A;&#x8FC7;defaultlistablebeanfactory&#x5411;&#x5BB9;&#x5668;&#x4E2D;&#x6CE8;&#x518C;bean"><b></b>2.&#x901A;&#x8FC7;DefaultListableBeanfactory&#x5411;&#x5BB9;&#x5668;&#x4E2D;&#x6CE8;&#x518C;Bean</a></li><li><span class="title-icon "></span><a href="#3spring&#x542F;&#x52A8;&#x8FC7;&#x7A0B;"><b></b>3.Spring&#x542F;&#x52A8;&#x8FC7;&#x7A0B;</a></li><li><span class="title-icon "></span><a href="#4&#x53C2;&#x8003;&#x8D44;&#x6599;"><b></b>4.&#x53C2;&#x8003;&#x8D44;&#x6599;</a></li></ul></ul></ul></div><a href="#spring-defaultlistablebeanfactory" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="spring-defaultlistablebeanfactory"><a name="spring-defaultlistablebeanfactory" class="anchor-navigation-ex-anchor" href="#spring-defaultlistablebeanfactory"><i class="fa fa-link" aria-hidden="true"></i></a><a name="spring-defaultlistablebeanfactory" class="plugin-anchor" href="#spring-defaultlistablebeanfactory"><i class="fa fa-link" aria-hidden="true"></i></a>Spring DefaultListableBeanFactory</h1>
+<p>&#x76EE;&#x5F55;:</p>
+<ol>
+<li><a href="#1&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</a></li>
+<li><a href="#2&#x901A;&#x8FC7;defaultlistablebeanfactory&#x5411;&#x5BB9;&#x5668;&#x4E2D;&#x6CE8;&#x518C;bean">&#x901A;&#x8FC7;DefaultListableBeanFactory&#x5411;&#x5BB9;&#x5668;&#x4E2D;&#x6CE8;&#x518C;Bean</a></li>
+<li><a href="#3&#x4E86;&#x89E3;spring&#x542F;&#x52A8;&#x8FC7;&#x7A0B;">&#x4E86;&#x89E3;Spring&#x542F;&#x52A8;&#x8FC7;&#x7A0B;</a> </li>
+<li><a href="#4&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</a></li>
+</ol>
+<h3 id="1&#x7B80;&#x4ECB;"><a name="1&#x7B80;&#x4ECB;" class="anchor-navigation-ex-anchor" href="#1&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="1&#x7B80;&#x4ECB;" class="plugin-anchor" href="#1&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>1.&#x7B80;&#x4ECB;</h3>
+<p>Spring&apos;s default implementation of the ConfigurableListableBeanFactory and BeanDefinitionRegistry interfaces: a full-fledged bean factory based on bean definition metadata, extensible through post-processors.
+Typical usage is registering all bean definitions first (possibly read from a bean definition file), before accessing beans. Bean lookup by name is therefore an inexpensive operation in a local bean definition table, operating on pre-resolved bean definition metadata objects.</p>
+<p>Spring&#x5BF9;<code>ConfigurableListableBeanFactory</code>&#x548C;<code>BeanDefinitionRegistry</code>&#x63A5;&#x53E3;&#x7684;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#x3002;</p>
+<h3 id="2&#x901A;&#x8FC7;defaultlistablebeanfactory&#x5411;&#x5BB9;&#x5668;&#x4E2D;&#x6CE8;&#x518C;bean"><a name="2&#x901A;&#x8FC7;defaultlistablebeanfactory&#x5411;&#x5BB9;&#x5668;&#x4E2D;&#x6CE8;&#x518C;bean" class="anchor-navigation-ex-anchor" href="#2&#x901A;&#x8FC7;defaultlistablebeanfactory&#x5411;&#x5BB9;&#x5668;&#x4E2D;&#x6CE8;&#x518C;bean"><i class="fa fa-link" aria-hidden="true"></i></a><a name="2&#x901A;&#x8FC7;defaultlistablebeanfactory&#x5411;&#x5BB9;&#x5668;&#x4E2D;&#x6CE8;&#x518C;bean" class="plugin-anchor" href="#2&#x901A;&#x8FC7;defaultlistablebeanfactory&#x5411;&#x5BB9;&#x5668;&#x4E2D;&#x6CE8;&#x518C;bean"><i class="fa fa-link" aria-hidden="true"></i></a>2.&#x901A;&#x8FC7;DefaultListableBeanfactory&#x5411;&#x5BB9;&#x5668;&#x4E2D;&#x6CE8;&#x518C;Bean</h3>
+<p>&#x5728;&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x4E2D;,&#x901A;&#x5E38;&#x8981;&#x8C03;&#x7528;Spring&#x5BB9;&#x5668;&#x7684;&#x63A5;&#x53E3;&#x5411;&#x5BB9;&#x5668;&#x4E2D;&#x6CE8;&#x518C;&#x5176;&#x5B83;&#x7EC4;&#x4EF6;(Component/Bean).&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5C55;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x901A;&#x8FC7;<code>DefaulltListableBeanFactory</code>&#x63A5;&#x53E3;&#x5411;Spring&#x5BB9;&#x5668;&#x4E2D;&#x6CE8;&#x518C;Bean.</p>
+<pre><code class="lang-java">    <span class="hljs-comment">// acquire ApplicationContext reference</span>
+    ConfigurableApplicationContext context = (ConfigurableApplicationContext) applicationContext;
+    DefaultListableBeanFactory beanFactory = (DefaultListableBeanFactory)context.getBeanFactory();
+
+    <span class="hljs-comment">// registry signleton bean</span>
+    beanFactory.registerBeanDefinition(beanName,beanDefinition);
+</code></pre>
+<h3 id="3spring&#x542F;&#x52A8;&#x8FC7;&#x7A0B;"><a name="3spring&#x542F;&#x52A8;&#x8FC7;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#3spring&#x542F;&#x52A8;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="3spring&#x542F;&#x52A8;&#x8FC7;&#x7A0B;" class="plugin-anchor" href="#3spring&#x542F;&#x52A8;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>3.Spring&#x542F;&#x52A8;&#x8FC7;&#x7A0B;</h3>
+<h4 id="&#x5BB9;&#x5668;&#x6574;&#x4F53;&#x6982;&#x89C8;"><a name="&#x5BB9;&#x5668;&#x6574;&#x4F53;&#x6982;&#x89C8;" class="anchor-navigation-ex-anchor" href="#&#x5BB9;&#x5668;&#x6574;&#x4F53;&#x6982;&#x89C8;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5BB9;&#x5668;&#x6574;&#x4F53;&#x6982;&#x89C8;" class="plugin-anchor" href="#&#x5BB9;&#x5668;&#x6574;&#x4F53;&#x6982;&#x89C8;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BB9;&#x5668;&#x6574;&#x4F53;&#x6982;&#x89C8;</h4>
+<p>Spring&#x542F;&#x52A8;&#x65F6;&#x8BFB;&#x53D6;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x63D0;&#x4F9B;&#x7684;Bean&#x914D;&#x7F6E;&#x4FE1;&#x606F;(XML&#x6587;&#x4EF6;,JAVA&#x914D;&#x7F6E;,Bean&#x9690;&#x5F0F;&#x53D1;&#x73B0;&#x548C;&#x81EA;&#x52A8;&#x88C5;&#x914D;),&#x5E76;&#x5728;Spring&#x5BB9;&#x5668;&#x4E2D;&#x751F;&#x6210;&#x4E00;&#x4EFD;&#x76F8;&#x5E94;&#x7684;Bean&#x914D;&#x7F6E;&#x6CE8;&#x518C;&#x8868;,&#x7136;&#x540E;&#x6839;&#x636E;&#x6CE8;&#x518C;&#x8868;&#x5B9E;&#x4F8B;&#x5316;Bean,
+&#x88C5;&#x914D;Bean&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;.&#x7136;&#x540E;&#x4E3A;&#x4E0A;&#x5C42;&#x5E94;&#x7528;&#x63D0;&#x4F9B;&#x51C6;&#x5907;&#x5C31;&#x7EEA;&#x7684;&#x8FD0;&#x884C;&#x73AF;&#x5883;.
+<img src="1.png" alt=""></p>
+<center>&#x56FE;1 Spring&#x88C5;&#x914D;Bean</center>
+
+
+<h4 id="&#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x673A;&#x5236;"><a name="&#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x673A;&#x5236;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x673A;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x673A;&#x5236;" class="plugin-anchor" href="#&#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x673A;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x673A;&#x5236;</h4>
+<p><img src="2.png" alt=""></p>
+<center>&#x56FE;2 Spring&#x5BB9;&#x5668;&#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x673A;&#x5236;</center>
+
+<p>&#xFF11;&#x3001;ResourceLoader&#x4ECE;&#x5B58;&#x50A8;&#x4ECB;&#x8D28;&#x4E2D;&#x52A0;&#x8F7D;Spring&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;Resource&#x8868;&#x793A;&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x8D44;&#x6E90;&#xFF1B;</p>
+<p>&#xFF12;&#x3001;BeanDefinitionReader&#x8BFB;&#x53D6;Resource&#x6240;&#x6307;&#x5411;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8D44;&#x6E90;&#xFF0C;&#x7136;&#x540E;&#x89E3;&#x6790;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x89E3;&#x6790;&#x6210;&#x4E00;&#x4E2A;BeanDefinition&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x4FDD;&#x5B58;&#x5230;BeanDefinitionRegistry&#x4E2D;&#xFF1B;</p>
+<p>&#xFF13;&#x3001;&#x5BB9;&#x5668;&#x626B;&#x63CF;BeanDefinitionRegistry&#x4E2D;&#x7684;BeanDefinition&#xFF0C;&#x4F7F;&#x7528;Java&#x7684;&#x53CD;&#x5C04;&#x673A;&#x5236;&#x81EA;&#x52A8;&#x8BC6;&#x522B;&#x51FA;Bean&#x5DE5;&#x5382;&#x540E;&#x5904;&#x7406;&#x540E;&#x5668;&#xFF08;&#x5B9E;&#x73B0;BeanFactoryPostProcessor&#x63A5;&#x53E3;&#xFF09;&#x7684;Bean&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;&#x8FD9;&#x4E9B;Bean&#x5DE5;&#x5382;&#x540E;&#x5904;&#x7406;&#x5668;&#x5BF9;BeanDefinitionRegistry&#x4E2D;&#x7684;BeanDefinition&#x8FDB;&#x884C;&#x52A0;&#x5DE5;&#x5904;&#x7406;&#x3002;&#x4E3B;&#x8981;&#x5B8C;&#x6210;&#x4EE5;&#x4E0B;&#x4E24;&#x9879;&#x5DE5;&#x4F5C;&#xFF1A;</p>
+<p>1&#xFF09;&#x5BF9;&#x4F7F;&#x7528;&#x5230;&#x5360;&#x4F4D;&#x7B26;&#x7684;&#x5143;&#x7D20;&#x6807;&#x7B7E;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#xFF0C;&#x5F97;&#x5230;&#x6700;&#x7EC8;&#x7684;&#x914D;&#x7F6E;&#x503C;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x5BF9;&#x4E00;&#x4E9B;&#x534A;&#x6210;&#x54C1;&#x5F0F;&#x7684;BeanDefinition&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x52A0;&#x5DE5;&#x5904;&#x7406;&#x5E76;&#x5F97;&#x5230;&#x6210;&#x54C1;&#x7684;BeanDefinition&#x5BF9;&#x8C61;&#xFF1B;</p>
+<p>2&#xFF09;&#x5BF9;BeanDefinitionRegistry&#x4E2D;&#x7684;BeanDefinition&#x8FDB;&#x884C;&#x626B;&#x63CF;&#xFF0C;&#x901A;&#x8FC7;Java&#x53CD;&#x5C04;&#x673A;&#x5236;&#x627E;&#x51FA;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#x7684;Bean&#xFF08;&#x5B9E;&#x73B0;java.beans.PropertyEditor&#x63A5;&#x53E3;&#x7684;Bean&#xFF09;&#xFF0C;&#x5E76;&#x81EA;&#x52A8;&#x5C06;&#x5B83;&#x4EEC;&#x6CE8;&#x518C;&#x5230;Spring&#x5BB9;&#x5668;&#x7684;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#x6CE8;&#x518C;&#x8868;&#x4E2D;&#xFF08;PropertyEditorRegistry&#xFF09;&#xFF1B;</p>
+<p>4&#xFF0E;Spring&#x5BB9;&#x5668;&#x4ECE;BeanDefinitionRegistry&#x4E2D;&#x53D6;&#x51FA;&#x52A0;&#x5DE5;&#x540E;&#x7684;BeanDefinition&#xFF0C;&#x5E76;&#x8C03;&#x7528;InstantiationStrategy&#x7740;&#x624B;&#x8FDB;&#x884C;Bean&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x5DE5;&#x4F5C;&#xFF1B;</p>
+<p>5&#xFF0E;&#x5728;&#x5B9E;&#x4F8B;&#x5316;Bean&#x65F6;&#xFF0C;Spring&#x5BB9;&#x5668;&#x4F7F;&#x7528;BeanWrapper&#x5BF9;Bean&#x8FDB;&#x884C;&#x5C01;&#x88C5;&#xFF0C;BeanWrapper&#x63D0;&#x4F9B;&#x4E86;&#x5F88;&#x591A;&#x4EE5;Java&#x53CD;&#x5C04;&#x673A;&#x5236;&#x64CD;&#x4F5C;Bean&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x5C06;&#x7ED3;&#x5408;&#x8BE5;Bean&#x7684;BeanDefinition&#x4EE5;&#x53CA;&#x5BB9;&#x5668;&#x4E2D;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x5B8C;&#x6210;Bean&#x5C5E;&#x6027;&#x7684;&#x8BBE;&#x7F6E;&#x5DE5;&#x4F5C;&#xFF1B;</p>
+<p>6&#xFF0E;&#x5229;&#x7528;&#x5BB9;&#x5668;&#x4E2D;&#x6CE8;&#x518C;&#x7684;Bean&#x540E;&#x5904;&#x7406;&#x5668;&#xFF08;&#x5B9E;&#x73B0;BeanPostProcessor&#x63A5;&#x53E3;&#x7684;Bean&#xFF09;&#x5BF9;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x5DE5;&#x4F5C;&#x7684;Bean&#x8FDB;&#x884C;&#x540E;&#x7EED;&#x52A0;&#x5DE5;&#xFF0C;&#x76F4;&#x63A5;&#x88C5;&#x914D;&#x51FA;&#x4E00;&#x4E2A;&#x51C6;&#x5907;&#x5C31;&#x7EEA;&#x7684;Bean&#x3002;</p>
+<p>Spring&#x5BB9;&#x5668;&#x786E;&#x5B9E;&#x582A;&#x79F0;&#x4E00;&#x90E8;&#x8BBE;&#x8BA1;&#x7CBE;&#x5BC6;&#x7684;&#x673A;&#x5668;&#xFF0C;&#x5176;&#x5185;&#x90E8;&#x62E5;&#x6709;&#x4F17;&#x591A;&#x7684;&#x7EC4;&#x4EF6;&#x548C;&#x88C5;&#x7F6E;&#x3002;Spring&#x7684;&#x9AD8;&#x660E;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#xFF0C;&#x5B83;&#x4F7F;&#x7528;&#x4F17;&#x591A;&#x63A5;&#x53E3;&#x63CF;&#x7ED8;&#x51FA;&#x4E86;&#x6240;&#x6709;&#x88C5;&#x7F6E;&#x7684;&#x84DD;&#x56FE;&#xFF0C;&#x6784;&#x5EFA;&#x597D;Spring&#x7684;&#x9AA8;&#x67B6;&#xFF0C;&#x7EE7;&#x800C;&#x901A;&#x8FC7;&#x7EE7;&#x627F;&#x4F53;&#x7CFB;&#x5C42;&#x5C42;&#x63A8;&#x6F14;&#xFF0C;&#x4E0D;&#x65AD;&#x4E30;&#x5BCC;&#xFF0C;&#x6700;&#x7EC8;&#x8BA9;Spring&#x6210;&#x4E3A;&#x6709;&#x8840;&#x6709;&#x8089;&#x7684;&#x5B8C;&#x6574;&#x7684;&#x6846;&#x67B6;&#x3002;&#x6240;&#x4EE5;&#x67E5;&#x770B;Spring&#x6846;&#x67B6;&#x7684;&#x6E90;&#x7801;&#x65F6;&#xFF0C;&#x6709;&#x4E24;&#x6761;&#x6E05;&#x6670;&#x53EF;&#x89C1;&#x7684;&#x8109;&#x7EDC;&#xFF1A;</p>
+<p>1&#xFF09;&#x63A5;&#x53E3;&#x5C42;&#x63CF;&#x8FF0;&#x4E86;&#x5BB9;&#x5668;&#x7684;&#x91CD;&#x8981;&#x7EC4;&#x4EF6;&#x53CA;&#x7EC4;&#x4EF6;&#x95F4;&#x7684;&#x534F;&#x4F5C;&#x5173;&#x7CFB;&#xFF1B;</p>
+<p>2&#xFF09;&#x7EE7;&#x627F;&#x4F53;&#x7CFB;&#x9010;&#x6B65;&#x5B9E;&#x73B0;&#x7EC4;&#x4EF6;&#x7684;&#x5404;&#x9879;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x63A5;&#x53E3;&#x5C42;&#x6E05;&#x6670;&#x5730;&#x52FE;&#x52D2;&#x51FA;Spring&#x6846;&#x67B6;&#x7684;&#x9AD8;&#x5C42;&#x529F;&#x80FD;&#xFF0C;&#x6846;&#x67B6;&#x8109;&#x7EDC;&#x547C;&#x4E4B;&#x6B32;&#x51FA;&#x3002;&#x6709;&#x4E86;&#x63A5;&#x53E3;&#x5C42;&#x62BD;&#x8C61;&#x7684;&#x63CF;&#x8FF0;&#x540E;&#xFF0C;&#x4E0D;&#x4F46;Spring&#x81EA;&#x5DF1;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x4EFB;&#x4F55;&#x7B2C;&#x4E09;&#x65B9;&#x7EC4;&#x7EC7;&#x4E5F;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x4E0D;&#x540C;&#x5B9E;&#x73B0;&#xFF0C; &#x53EF;&#x4EE5;&#x8BF4;Spring&#x5B8C;&#x5584;&#x7684;&#x63A5;&#x53E3;&#x5C42;&#x4F7F;&#x6846;&#x67B6;&#x7684;&#x6269;&#x5C55;&#x6027;&#x5F97;&#x5230;&#x4E86;&#x5F88;&#x597D;&#x7684;&#x4FDD;&#x8BC1;&#x3002;&#x7EB5;&#x5411;&#x7EE7;&#x627F;&#x4F53;&#x7CFB;&#x7684;&#x9010;&#x6B65;&#x6269;&#x5C55;&#xFF0C;&#x5206;&#x6B65;&#x9AA4;&#x5730;&#x5B9E;&#x73B0;&#x6846;&#x67B6;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8FD9;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x6848;&#x4FDD;&#x8BC1;&#x4E86;&#x6846;&#x67B6;&#x529F;&#x80FD;&#x4E0D;&#x4F1A;&#x5806;&#x79EF;&#x5728;&#x67D0;&#x4E9B;&#x7C7B;&#x7684;&#x8EAB;&#x4E0A;&#xFF0C;&#x9020;&#x6210;&#x8FC7;&#x91CD;&#x7684;&#x4EE3;&#x7801;&#x903B;&#x8F91;&#x8D1F;&#x8F7D;&#xFF0C;&#x6846;&#x67B6;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x88AB;&#x5B8C;&#x7F8E;&#x5730;&#x5206;&#x89E3;&#x5F00;&#x4E86;&#x3002;</p>
+<p>Spring&#x7EC4;&#x4EF6;&#x6309;&#x5176;&#x6240;&#x627F;&#x62C5;&#x7684;&#x89D2;&#x8272;&#x53EF;&#x4EE5;&#x5212;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF1A;</p>
+<p>1&#xFF09;&#x7269;&#x6599;&#x7EC4;&#x4EF6;&#xFF1A;Resource&#x3001;BeanDefinition&#x3001;PropertyEditor&#x4EE5;&#x53CA;&#x6700;&#x7EC8;&#x7684;Bean&#x7B49;&#xFF0C;&#x5B83;&#x4EEC;&#x662F;&#x52A0;&#x5DE5;&#x6D41;&#x7A0B;&#x4E2D;&#x88AB;&#x52A0;&#x5DE5;&#x3001;&#x88AB;&#x6D88;&#x8D39;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5C31;&#x50CF;&#x6D41;&#x6C34;&#x7EBF;&#x4E0A;&#x88AB;&#x52A0;&#x5DE5;&#x7684;&#x7269;&#x6599;&#xFF1B;</p>
+<p>2&#xFF09;&#x52A0;&#x5DE5;&#x8BBE;&#x5907;&#x7EC4;&#x4EF6;&#xFF1A;ResourceLoader&#x3001;BeanDefinitionReader&#x3001;BeanFactoryPostProcessor&#x3001;InstantiationStrategy&#x4EE5;&#x53CA;BeanWrapper&#x7B49;&#x7EC4;&#x4EF6;&#x50CF;&#x662F;&#x6D41;&#x6C34;&#x7EBF;&#x4E0A;&#x4E0D;&#x540C;&#x73AF;&#x8282;&#x7684;&#x52A0;&#x5DE5;&#x8BBE;&#x5907;&#xFF0C;&#x5BF9;&#x7269;&#x6599;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x52A0;&#x5DE5;&#x5904;&#x7406;&#x3002;
+Spring&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x5B9E;&#x4F8B;&#x5316;bean&#xFF0C;&#x9996;&#x5148;&#x8981;&#x5206;2&#x79CD;&#x60C5;&#x51B5;</p>
+<p>&#x7B2C;&#x4E00;&#xFF1A;&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;BeanFactory&#x4F5C;&#x4E3A;Spring Bean&#x7684;&#x5DE5;&#x5382;&#x7C7B;&#xFF0C;&#x5219;&#x6240;&#x6709;&#x7684;bean&#x90FD;&#x662F;&#x5728;&#x7B2C;&#x4E00;&#x6B21;&#x4F7F;&#x7528;&#x8BE5;Bean&#x7684;&#x65F6;&#x5019;&#x5B9E;&#x4F8B;&#x5316;
+&#x7B2C;&#x4E8C;&#xFF1A;&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;ApplicationContext&#x4F5C;&#x4E3A;Spring Bean&#x7684;&#x5DE5;&#x5382;&#x7C7B;&#xFF0C;&#x5219;&#x53C8;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;
+&#xFF08;1&#xFF09;&#xFF1A;&#x5982;&#x679C;bean&#x7684;scope&#x662F;singleton&#x7684;&#xFF0C;&#x5E76;&#x4E14;lazy-init&#x4E3A;false&#xFF08;&#x9ED8;&#x8BA4;&#x662F;false&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x8BBE;&#x7F6E;&#xFF09;&#xFF0C;&#x5219;ApplicationContext&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x5B9E;&#x4F8B;&#x5316;&#x8BE5;Bean&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x5B9E;&#x4F8B;&#x5316;&#x7684;Bean&#x653E;&#x5728;&#x4E00;&#x4E2A;map&#x7ED3;&#x6784;&#x7684;&#x7F13;&#x5B58;&#x4E2D;&#xFF0C;&#x4E0B;&#x6B21;&#x518D;&#x4F7F;&#x7528;&#x8BE5;Bean&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x76F4;&#x63A5;&#x4ECE;&#x8FD9;&#x4E2A;&#x7F13;&#x5B58;&#x4E2D;&#x53D6;
+&#xFF08;2&#xFF09;&#xFF1A;&#x5982;&#x679C;bean&#x7684;scope&#x662F;singleton&#x7684;&#xFF0C;&#x5E76;&#x4E14;lazy-init&#x4E3A;true&#xFF0C;&#x5219;&#x8BE5;Bean&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x662F;&#x5728;&#x7B2C;&#x4E00;&#x6B21;&#x4F7F;&#x7528;&#x8BE5;Bean&#x7684;&#x65F6;&#x5019;&#x8FDB;&#x884C;&#x5B9E;&#x4F8B;&#x5316;
+&#xFF08;3&#xFF09;&#xFF1A;&#x5982;&#x679C;bean&#x7684;scope&#x662F;prototype&#x7684;&#xFF0C;&#x5219;&#x8BE5;Bean&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x662F;&#x5728;&#x7B2C;&#x4E00;&#x6B21;&#x4F7F;&#x7528;&#x8BE5;Bean&#x7684;&#x65F6;&#x5019;&#x8FDB;&#x884C;&#x5B9E;&#x4F8B;&#x5316;</p>
+<h4 id="spring&#x5BB9;&#x5668;&#x521D;&#x59CB;&#x5316;&#x8FC7;&#x7A0B;"><a name="spring&#x5BB9;&#x5668;&#x521D;&#x59CB;&#x5316;&#x8FC7;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#spring&#x5BB9;&#x5668;&#x521D;&#x59CB;&#x5316;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="spring&#x5BB9;&#x5668;&#x521D;&#x59CB;&#x5316;&#x8FC7;&#x7A0B;" class="plugin-anchor" href="#spring&#x5BB9;&#x5668;&#x521D;&#x59CB;&#x5316;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>Spring&#x5BB9;&#x5668;&#x521D;&#x59CB;&#x5316;&#x8FC7;&#x7A0B;</h4>
+<p><img src="3.png" alt=""></p>
+<center>&#x56FE;3 Spring&#x5BB9;&#x5668;&#x521D;&#x59CB;&#x5316;&#x8FC7;&#x7A0B;</center>
+
+<h4 id="propertyeditor"><a name="propertyeditor" class="anchor-navigation-ex-anchor" href="#propertyeditor"><i class="fa fa-link" aria-hidden="true"></i></a><a name="propertyeditor" class="plugin-anchor" href="#propertyeditor"><i class="fa fa-link" aria-hidden="true"></i></a>PropertyEditor</h4>
+<p>&#x5728;Spring&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x5F80;&#x5F80;&#x901A;&#x8FC7;&#x5B57;&#x9762;&#x503C;&#x4E3A;Bean&#x5404;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027;&#x63D0;&#x4F9B;&#x8BBE;&#x7F6E;&#x503C;&#xFF1A;&#x4E0D;&#x7BA1;&#x662F;double&#x7C7B;&#x578B;&#x8FD8;&#x662F;int&#x7C7B;&#x578B;&#xFF0C;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x90FD;&#x5BF9;&#x5E94;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x7684;&#x5B57;&#x9762;&#x503C;&#x3002;BeanWrapper&#x586B;&#x5145;Bean&#x5C5E;&#x6027;&#x65F6;&#x5982;&#x4F55;&#x5C06;&#x8FD9;&#x4E2A;&#x5B57;&#x9762;&#x503C;&#x8F6C;&#x6362;&#x4E3A;&#x5BF9;&#x5E94;&#x7684;double&#x6216;int&#x7B49;&#x5185;&#x90E8;&#x7C7B;&#x578B;&#x5462;&#xFF1F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x9690;&#x7EA6;&#x5730;&#x611F;&#x89C9;&#x5230;&#x4E00;&#x5B9A;&#x6709;&#x4E00;&#x4E2A;&#x8F6C;&#x6362;&#x5668;&#x5728;&#x5176;&#x4E2D;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;&#x8FD9;&#x4E2A;&#x8F6C;&#x6362;&#x5668;&#x5C31;&#x662F;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#x3002;</p>
+<p>PropertyEditor
+&#x3000;&#x3000;PropertyEditor&#x662F;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#x7684;&#x63A5;&#x53E3;&#xFF0C;<strong>&#x5B83;&#x89C4;&#x5B9A;&#x4E86;&#x5C06;&#x5916;&#x90E8;&#x8BBE;&#x7F6E;&#x503C;&#x8F6C;&#x6362;&#x4E3A;&#x5185;&#x90E8;JavaBean&#x5C5E;&#x6027;&#x503C;&#x7684;&#x8F6C;&#x6362;&#x63A5;&#x53E3;&#x65B9;&#x6CD5;</strong>&#x3002;PropertyEditor&#x4E3B;&#x8981;&#x7684;&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x8BF4;&#x660E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java">    <span class="hljs-function">Object <span class="hljs-title">getValue</span><span class="hljs-params">()</span>&#xFF1A;&#x8FD4;&#x56DE;&#x5C5E;&#x6027;&#x7684;&#x5F53;&#x524D;&#x503C;&#x3002;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x88AB;&#x5C01;&#x88C5;&#x6210;&#x5BF9;&#x5E94;&#x7684;&#x5305;&#x88C5;&#x7C7B;&#x5B9E;&#x4F8B;&#xFF1B;
+    <span class="hljs-keyword">void</span> <span class="hljs-title">setValue</span><span class="hljs-params">(Object newValue)</span>&#xFF1A;&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;&#x7684;&#x503C;&#xFF0C;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x4EE5;&#x5305;&#x88C5;&#x7C7B;&#x4F20;&#x5165;&#xFF08;&#x81EA;&#x52A8;&#x88C5;&#x7BB1;&#xFF09;&#xFF1B;
+    String <span class="hljs-title">getAsText</span><span class="hljs-params">()</span>&#xFF1A;&#x5C06;&#x5C5E;&#x6027;&#x5BF9;&#x8C61;&#x7528;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x793A;&#xFF0C;&#x4EE5;&#x4FBF;&#x5916;&#x90E8;&#x7684;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#x80FD;&#x4EE5;&#x53EF;&#x89C6;&#x5316;&#x7684;&#x65B9;&#x5F0F;&#x663E;&#x793A;&#x3002;&#x7F3A;&#x7701;&#x8FD4;&#x56DE;<span class="hljs-keyword">null</span>&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x5C5E;&#x6027;&#x4E0D;&#x80FD;&#x4EE5;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x793A;&#xFF1B;
+    <span class="hljs-keyword">void</span> <span class="hljs-title">setAsText</span><span class="hljs-params">(String text)</span>&#xFF1A;&#x7528;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x53BB;&#x66F4;&#x65B0;&#x5C5E;&#x6027;&#x7684;&#x5185;&#x90E8;&#x503C;&#xFF0C;&#x8FD9;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x4E00;&#x822C;&#x4ECE;&#x5916;&#x90E8;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#x4F20;&#x5165;&#xFF1B;
+    String[] <span class="hljs-title">getTags</span><span class="hljs-params">()</span>&#xFF1A;&#x8FD4;&#x56DE;&#x8868;&#x793A;&#x6709;&#x6548;&#x5C5E;&#x6027;&#x503C;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#xFF08;&#x5982;<span class="hljs-keyword">boolean</span>&#x5C5E;&#x6027;&#x5BF9;&#x5E94;&#x7684;&#x6709;&#x6548;Tag&#x4E3A;<span class="hljs-keyword">true</span>&#x548C;<span class="hljs-keyword">false</span>&#xFF09;&#xFF0C;&#x4EE5;&#x4FBF;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#x80FD;&#x4EE5;&#x4E0B;&#x62C9;&#x6846;&#x7684;&#x65B9;&#x5F0F;&#x663E;&#x793A;&#x51FA;&#x6765;&#x3002;&#x7F3A;&#x7701;&#x8FD4;&#x56DE;<span class="hljs-keyword">null</span>&#xFF0C;&#x8868;&#x793A;&#x5C5E;&#x6027;&#x6CA1;&#x6709;&#x5339;&#x914D;&#x7684;&#x5B57;&#x7B26;&#x503C;&#x6709;&#x9650;&#x96C6;&#x5408;&#xFF1B;
+    String <span class="hljs-title">getJavaInitializationString</span><span class="hljs-params">()</span>&#xFF1A;&#x4E3A;&#x5C5E;&#x6027;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x521D;&#x59CB;&#x503C;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#x4EE5;&#x6B64;&#x503C;&#x4F5C;&#x4E3A;&#x5C5E;&#x6027;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002;
+</span></code></pre>
+<p>Spring&#x4F7F;&#x7528;PropertyEditor&#x4F8B;&#x5B50;&#xFF1A;</p>
+<p>CustomEditorConfigurer&#x5B9E;&#x73B0;BeanFactoryPostProcessor&#x63A5;&#x53E3;&#xFF0C;&#x56E0;&#x6B64;&#x662F;&#x4E00;&#x4E2A;Bean&#x5DE5;&#x5382;&#x540E;&#x5904;&#x7406;&#x5668;&#x3002;&#x6211;&#x4EEC;&#x77E5;&#x9053;Bean&#x5DE5;&#x5382;&#x540E;&#x5904;&#x7406;&#x5668;&#x5728;Spring&#x5BB9;&#x5668;&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5E76;&#x751F;&#x6210;BeanDefinition&#x534A;&#x6210;&#x54C1;&#x540E;&#x5C31;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x3002;&#x56E0;&#x6B64;CustomEditorConfigurer&#x6709;&#x5BB9;&#x5668;&#x542F;&#x52A8;&#x65F6;&#x6709;&#x673A;&#x4F1A;&#x6CE8;&#x5165;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;</p>
+<pre><code class="lang-xml">    <span class="hljs-comment">&lt;!--&#x2460;&#x914D;&#x7F6E;&#x81EA;&#x52A8;&#x6CE8;&#x518C;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#x7684;CustomEditorConfigurer --&gt;</span>    
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.springframework.beans.factory.config.CustomEditorConfigurer&quot;</span>&gt;</span>    
+            <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;customEditors&quot;</span>&gt;</span>    
+                <span class="hljs-tag">&lt;<span class="hljs-name">map</span>&gt;</span>    
+                       <span class="hljs-comment">&lt;!--&#x2461;-1&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#x5BF9;&#x5E94;&#x7684;&#x5C5E;&#x6027;&#x7C7B;&#x578B;--&gt;</span>    
+                       <span class="hljs-tag">&lt;<span class="hljs-name">entry</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;com.baobaotao.editor.Car&quot;</span>&gt;</span>     
+
+                             <span class="hljs-comment">&lt;!--&#x2461;-2&#x5BF9;&#x5E94;&#x7684;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;Bean --&gt;</span>    
+                        <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.baobaotao.editor.CustomCarEditor&quot;</span> /&gt;</span>    
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">entry</span>&gt;</span>    
+                <span class="hljs-tag">&lt;/<span class="hljs-name">map</span>&gt;</span>    
+            <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    
+        <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>    
+     <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;boss&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.baobaotao.editor.Boss&quot;</span>&gt;</span>    
+           <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;John&quot;</span>/&gt;</span>     
+           <span class="hljs-comment">&lt;!--&#x2462;&#x8BE5;&#x5C5E;&#x6027;&#x5C06;&#x4F7F;&#x7528;&#x2461;&#x5904;&#x7684;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#x5B8C;&#x6210;&#x5C5E;&#x6027;&#x586B;&#x5145;&#x64CD;&#x4F5C;--&gt;</span>    
+           <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;car&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&#x7EA2;&#x65D7;CA72,200,20000.00&quot;</span>/&gt;</span>     
+    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+</code></pre>
+<p>&#x4E0A;&#x8FF0;XML&#x7247;&#x6BB5;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#xFF0C;&#x901A;&#x8FC7;&#x5B57;&#x9762;&#x503C;&quot;&#x7EA2;&#x65D7;CA72,200,20000.00&quot;,&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Car&#x5BF9;&#x8C61;,&#x901A;&#x8FC7;
+CustomCarEditor&#x6765;&#x5B8C;&#x6210;&#x8F6C;&#x6362;.</p>
+<p>&#x3000;&#x5728;&#x2460;&#x5904;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x7528;&#x4E8E;&#x6CE8;&#x518C;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#x7684;CustomEditorConfigurer&#xFF0C;Spring&#x5BB9;&#x5668;&#x5C06;&#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x673A;&#x5236;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;Bean&#x3002;CustomEditorConfigurer&#x901A;&#x8FC7;&#x4E00;&#x4E2A;Map&#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#x9700;&#x8981;&#x81EA;&#x52A8;&#x6CE8;&#x518C;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#x3002;&#x5728;&#x2461;&#x5904;&#xFF0C;&#x6211;&#x4EEC;&#x4E3A;Car&#x7C7B;&#x578B;&#x6307;&#x5B9A;&#x4E86;&#x5BF9;&#x5E94;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;CustomCarEditor&#xFF0C;&#x6CE8;&#x610F;&#x952E;&#x662F;&#x5C5E;&#x6027;&#x7C7B;&#x578B;&#xFF0C;&#x800C;&#x503C;&#x662F;&#x5BF9;&#x5E94;&#x7684;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;Bean&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#x7684;&#x7C7B;&#x540D;&#x3002;
+&#x3000;&#x3000;&#x6700;&#x7CBE;&#x5F69;&#x7684;&#x90E8;&#x5206;&#x5F53;&#x7136;&#x662F;&#x2462;&#x5904;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x6211;&#x4EEC;&#x539F;&#x6765;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;<bean>&#x5143;&#x7D20;&#x6807;&#x7B7E;&#x914D;&#x7F6E;&#x597D;car Bean&#xFF0C;&#x7136;&#x540E;&#x5728;boss&#x7684;<bean>&#x4E2D;&#x901A;&#x8FC7;ref&#x5F15;&#x7528;car Bean&#xFF0C;&#x4F46;&#x662F;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x901A;&#x8FC7;value&#x4E3A;car&#x5C5E;&#x6027;&#x63D0;&#x4F9B;&#x914D;&#x7F6E;&#x3002;BeanWrapper&#x5728;&#x8BBE;&#x7F6E;boss&#x7684;car&#x5C5E;&#x6027;&#x65F6;&#xFF0C;&#x5B83;&#x5C06;&#x68C0;&#x7D22;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;&#x7684;&#x6CE8;&#x518C;&#x8868;&#xFF0C;&#x5F53;&#x53D1;&#x73B0;Car&#x5C5E;&#x6027;&#x7C7B;&#x578B;&#x62E5;&#x6709;&#x5BF9;&#x5E94;&#x7684;&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;CustomCarEditor&#x65F6;&#xFF0C;&#x5B83;&#x5C31;&#x4F1A;&#x5229;&#x7528;CustomCarEditor&#x5C06;&#x201C;&#x7EA2;&#x65D7;CA72,200,20000.00&#x201D;&#x8F6C;&#x6362;&#x4E3A;Car&#x5BF9;&#x8C61; -- <sup><a href="#fn_&#x5F15;&#x7528;&#x81EA;&#x6B64;&#x7BC7;&#x6587;&#x7AE0;" id="reffn_&#x5F15;&#x7528;&#x81EA;&#x6B64;&#x7BC7;&#x6587;&#x7AE0;">&#x5F15;&#x7528;&#x81EA;&#x6B64;&#x7BC7;&#x6587;&#x7AE0;</a></sup></bean></bean></p>
+<pre><code class="lang-java">
+    <span class="hljs-keyword">package</span> com.baobaotao.editor;    
+    <span class="hljs-keyword">import</span> java.beans.PropertyEditorSupport;    
+
+    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CustomCarEditor</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">PropertyEditorSupport</span> </span>{    
+
+        <span class="hljs-comment">//1. &#x5C06;&#x5B57;&#x9762;&#x503C;&#x8F6C;&#x6362;&#x4E3A;&#x5C5E;&#x6027;&#x7C7B;&#x578B;&#x5BF9;&#x8C61;    </span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setAsText</span><span class="hljs-params">(String text)</span></span>{     
+            <span class="hljs-keyword">if</span>(text == <span class="hljs-keyword">null</span> || text.indexOf(<span class="hljs-string">&quot;,&quot;</span>) == -<span class="hljs-number">1</span>){    
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;&#x8BBE;&#x7F6E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x683C;&#x5F0F;&#x4E0D;&#x6B63;&#x786E;&quot;</span>);    
+            }    
+            String[] infos = text.split(<span class="hljs-string">&quot;,&quot;</span>);    
+            Car car = <span class="hljs-keyword">new</span> Car();    
+            car.setBrand(infos[<span class="hljs-number">0</span>]);    
+            car.setMaxSpeed(Integer.parseInt(infos[<span class="hljs-number">1</span>]));    
+            car.setPrice(Double.parseDouble(infos[<span class="hljs-number">2</span>]));    
+
+             <span class="hljs-comment">//2. &#x8C03;&#x7528;&#x7236;&#x7C7B;&#x7684;setValue()&#x65B9;&#x6CD5;&#x8BBE;&#x7F6E;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x5C5E;&#x6027;&#x5BF9;&#x8C61;    </span>
+            setValue(car);     
+        }    
+    }
+</code></pre>
+<p>&#x8FD9;&#x662F;CustomCarEditor&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;.</p>
+<h3 id="4&#x53C2;&#x8003;&#x8D44;&#x6599;"><a name="4&#x53C2;&#x8003;&#x8D44;&#x6599;" class="anchor-navigation-ex-anchor" href="#4&#x53C2;&#x8003;&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="4&#x53C2;&#x8003;&#x8D44;&#x6599;" class="plugin-anchor" href="#4&#x53C2;&#x8003;&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a>4.&#x53C2;&#x8003;&#x8D44;&#x6599;</h3>
+<ol>
+<li><a href="https://blog.csdn.net/qq_39632561/article/details/83070140(&#x63A8;&#x8350;" target="_blank">https://blog.csdn.net/qq_39632561/article/details/83070140(&#x63A8;&#x8350;</a>)</li>
+<li><a href="https://blog.csdn.net/shenchaohao12321/article/details/80295371" target="_blank">https://blog.csdn.net/shenchaohao12321/article/details/80295371</a></li>
+</ol>
+<blockquote id="fn_&#x5F15;&#x7528;&#x81EA;&#x6B64;&#x7BC7;&#x6587;&#x7AE0;">
+<sup>&#x5F15;&#x7528;&#x81EA;&#x6B64;&#x7BC7;&#x6587;&#x7AE0;</sup>. <a href="https://blog.csdn.net/shenchaohao12321/article/details/80295371" target="_blank">https://blog.csdn.net/shenchaohao12321/article/details/80295371</a><a href="#reffn_&#x5F15;&#x7528;&#x81EA;&#x6B64;&#x7BC7;&#x6587;&#x7AE0;" title="Jump back to footnote [&#x5F15;&#x7528;&#x81EA;&#x6B64;&#x7BC7;&#x6587;&#x7AE0;] in the text."> &#x21A9;</a>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../spring-cycle-depend/" class="navigation navigation-prev " aria-label="Previous page: 2.1.3 Spring循环依赖问题">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../spring-mvc/" class="navigation navigation-next " aria-label="Next page: 2.2 Spring-Mvc">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.1.4 Spring DefaultListableBeanFactory","level":"1.3.1.4","depth":3,"next":{"title":"2.2 Spring-Mvc","level":"1.3.2","depth":2,"path":"spring framework/spring-mvc/README.md","ref":"spring framework/spring-mvc/README.md","articles":[{"title":"2.2.1 SpringMVC注解","level":"1.3.2.1","depth":3,"path":"spring framework/spring-mvc/spring-mvc-request-annotation/README.md","ref":"spring framework/spring-mvc/spring-mvc-request-annotation/README.md","articles":[]},{"title":"2.2.2 SpringMVC拦截器","level":"1.3.2.2","depth":3,"path":"spring framework/spring-mvc/spring-mvc-interceptor/README.md","ref":"spring framework/spring-mvc/spring-mvc-interceptor/README.md","articles":[]},{"title":"2.2.3 Spring全局统一异常处理","level":"1.3.2.3","depth":3,"path":"spring framework/spring-mvc/spring-global-exception/README.md","ref":"spring framework/spring-mvc/spring-global-exception/README.md","articles":[]},{"title":"2.2.4 Spring异步处理Servlet","level":"1.3.2.4","depth":3,"path":"spring framework/spring-mvc/spring-mvc-async-servlet/README.md","ref":"spring framework/spring-mvc/spring-mvc-async-servlet/README.md","articles":[]}]},"previous":{"title":"2.1.3 Spring循环依赖问题","level":"1.3.1.3","depth":3,"path":"spring framework/spring-core/spring-cycle-depend/README.md","ref":"spring framework/spring-core/spring-cycle-depend/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","-lunr","-search","search-pro","github","github-buttons","-donate","sharing-plus","anchor-navigation-ex","favicon","js-sequence-diagram","mermaid-gb3"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/youngFF"},"splitter":{},"search-pro":{},"js-sequence-diagram":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"./source/images/donate.png","title":"","button":"赞赏","alipayText":" "},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"youngFF","repo":"glory","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"hyena","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"think study repeat","language":"zh-hans","links":{"sidebar":{"百度一下":"https://www.baidu.com"}},"gitbook":"3.2.3","description":"my hearthStone book"},"file":{"path":"spring framework/spring-core/spring-defaultlistablebeanfactory/README.md","mtime":"2020-10-16T08:38:00.135Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-16T08:39:47.484Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-js-sequence-diagram/jquery-2.1.1.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-js-sequence-diagram/underscore-min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-js-sequence-diagram/sequence-diagram-min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-js-sequence-diagram/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
