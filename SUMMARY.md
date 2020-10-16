@@ -26,7 +26,7 @@
 * [2.Spring Framework](spring framework/README.md)
 	* [2.1 Spring-Core](spring framework/spring-core/README.md)
 	  * [2.1.1 Spring事件发布](spring framework/spring-core/spring-event/README.md)
-	  * [2.1.2 Spring容器继承关系](spring framework/spring-core/spring-beanfactoryt/README.md)
+	  * [2.1.2 Spring容器继承关系](spring framework/spring-core/spring-beanfactory/README.md)
 	  * [2.1.3 Spring循环依赖问题](spring framework/spring-core/spring-cycle-depend/README.md)
 	  * [2.1.4 Spring DefaultListableBeanFactory](spring framework/spring-core/spring-defaultlistablebeanfactory/README.md)
 	* [2.2 Spring-Mvc](spring framework/spring-mvc/README.md)
