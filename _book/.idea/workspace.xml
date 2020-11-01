@@ -47,101 +47,8 @@
     <option name="TOOL_WINDOW_SELECTED_CONTENT_INDEX" value="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d7582e0-d3eb-479e-af38-4efc4dc1deef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/SUMMARY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/algorithm/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/algorithm/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/data structure/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/data structure/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/database/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/database/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/database/mybatis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/database/mybatis/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/database/mybatis/mybatis参数绑定/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/database/mybatis/mybatis参数绑定/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/database/mybatis/mybatis迭代/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/database/mybatis/mybatis迭代/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/database/mysql/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/database/mysql/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/database/mysql/sql/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/database/mysql/sql/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/database/mysql/transaction/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/database/mysql/transaction/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/database/redis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/database/redis/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/algorithm/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/algorithm/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/data structure/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/data structure/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/database/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/database/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/database/mybatis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/database/mybatis/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/database/mybatis/mybatis参数绑定/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/database/mybatis/mybatis参数绑定/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/database/mybatis/mybatis迭代/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/database/mybatis/mybatis迭代/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/database/mysql/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/database/mysql/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/database/mysql/sql/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/database/mysql/sql/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/database/mysql/transaction/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/database/mysql/transaction/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/database/redis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/database/redis/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/java/asmxjavassit/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/java/asmxjavassit/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/java/design pattern/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/java/design pattern/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/java/elementary/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/java/elementary/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/java/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/java/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/java/jndi/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/java/jndi/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/java/jvm/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/java/jvm/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/java/microservice/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/java/microservice/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/java/microservice/mq/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/java/microservice/mq/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/java/specification/JMS/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/java/specification/JMS/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/java/specification/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/java/specification/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/java/tomcatxjetty/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/java/tomcatxjetty/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/linux/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/linux/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/linux/shell/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/linux/shell/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/math/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/math/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/network/http/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/network/http/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/network/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/network/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/network/tcp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/network/tcp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/programming language/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/programming language/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/search_plus_index.json" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/search_plus_index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/spring framework/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/spring framework/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/spring framework/spring-boot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/spring framework/spring-boot/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/spring framework/spring-boot/spring-boot项目配置/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/spring framework/spring-boot/spring-boot项目配置/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/spring framework/spring-cloud/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/spring framework/spring-cloud/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/spring framework/spring-core/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/spring framework/spring-core/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/spring framework/spring-core/spring-event/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/spring framework/spring-core/spring-event/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/spring framework/spring-data/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/spring framework/spring-data/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/spring framework/spring-mvc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/spring framework/spring-mvc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/spring framework/spring-mvc/spring-global-exception/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/spring framework/spring-mvc/spring-global-exception/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/spring framework/spring-mvc/spring-mvc-async-servlet/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/spring framework/spring-mvc/spring-mvc-async-servlet/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/spring framework/spring-mvc/spring-mvc-interceptor/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/spring framework/spring-mvc/spring-mvc-interceptor/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/spring framework/spring-mvc/spring-mvc-request-annotation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/spring framework/spring-mvc/spring-mvc-request-annotation/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/spring framework/spring-rest/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/spring framework/spring-rest/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/spring framework/spring-test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/spring framework/spring-test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/spring framework/spring-test/spring-web-mock-test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/spring framework/spring-test/spring-web-mock-test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/spring framework/spring-util/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/spring framework/spring-util/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/docs/spring framework/spring-util/spring-cron/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/docs/spring framework/spring-util/spring-cron/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/java/asmxjavassit/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/java/asmxjavassit/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/java/design pattern/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/java/design pattern/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/java/elementary/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/java/elementary/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/java/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/java/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/java/jndi/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/java/jndi/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/java/jvm/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/java/jvm/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/java/microservice/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/java/microservice/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/java/microservice/mq/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/java/microservice/mq/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/java/specification/JMS/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/java/specification/JMS/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/java/specification/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/java/specification/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/java/tomcatxjetty/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/java/tomcatxjetty/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/linux/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/linux/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/linux/shell/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/linux/shell/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/math/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/math/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/network/http/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/network/http/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/network/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/network/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/network/tcp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/network/tcp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/programming language/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/programming language/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/spring framework/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/spring framework/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/spring framework/spring-boot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/spring framework/spring-boot/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/spring framework/spring-boot/spring-boot项目配置/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/spring framework/spring-boot/spring-boot项目配置/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/spring framework/spring-cloud/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/spring framework/spring-cloud/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/spring framework/spring-core/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/spring framework/spring-core/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/spring framework/spring-core/spring-event/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/spring framework/spring-core/spring-event/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/spring framework/spring-data/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/spring framework/spring-data/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/spring framework/spring-mvc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/spring framework/spring-mvc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/spring framework/spring-mvc/spring-global-exception/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/spring framework/spring-mvc/spring-global-exception/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/spring framework/spring-mvc/spring-mvc-async-servlet/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/spring framework/spring-mvc/spring-mvc-async-servlet/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/spring framework/spring-mvc/spring-mvc-interceptor/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/spring framework/spring-mvc/spring-mvc-interceptor/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/spring framework/spring-mvc/spring-mvc-request-annotation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/spring framework/spring-mvc/spring-mvc-request-annotation/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/spring framework/spring-rest/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/spring framework/spring-rest/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/spring framework/spring-test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/spring framework/spring-test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/spring framework/spring-test/spring-web-mock-test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/spring framework/spring-test/spring-web-mock-test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/spring framework/spring-util/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/spring framework/spring-util/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_book/spring framework/spring-util/spring-cron/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_book/spring framework/spring-util/spring-cron/index.html" afterDir="false" />
+    <list default="true" id="9d7582e0-d3eb-479e-af38-4efc4dc1deef" name="Default Changelist" comment="更改书签">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +89,19 @@
       <option name="presentableId" value="Default" />
       <updated>1588131282910</updated>
       <workItem from="1588131284884" duration="1327000" />
+      <workItem from="1602837732687" duration="399000" />
+      <workItem from="1602838445069" duration="1002000" />
+      <workItem from="1603076444496" duration="2000" />
+      <workItem from="1603076454077" duration="30000" />
     </task>
+    <task id="LOCAL-00001" summary="更改书签">
+      <created>1602838465756</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602838465756</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,18 +131,18 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="更改书签" />
+    <option name="LAST_COMMIT_MESSAGE" value="更改书签" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="2131" y="33" key="CommitChangelistDialog2" timestamp="1590478893447">
+    <state x="2129" y="114" key="CommitChangelistDialog2" timestamp="1602838807199">
       <screen x="1680" y="23" width="1920" height="1057" />
     </state>
-    <state x="2131" y="33" key="CommitChangelistDialog2/1680.23.1920.1057/0.23.1680.1027@1680.23.1920.1057" timestamp="1590478893447" />
-    <state x="1967" y="116" key="DiffContextDialog" timestamp="1590478892010">
+    <state x="2129" y="114" key="CommitChangelistDialog2/1680.23.1920.1057/0.23.1680.1027@1680.23.1920.1057" timestamp="1602838807199" />
+    <state x="2140" y="264" key="Vcs.Push.Dialog.v2" timestamp="1602838467206">
       <screen x="1680" y="23" width="1920" height="1057" />
     </state>
-    <state x="1967" y="116" key="DiffContextDialog/1680.23.1920.1057/0.23.1680.1027@1680.23.1920.1057" timestamp="1590478892010" />
-    <state x="2137" y="248" key="run.anything.popup" timestamp="1588131318566">
-      <screen x="1680" y="23" width="1920" height="1057" />
-    </state>
-    <state x="2137" y="248" key="run.anything.popup/1680.23.1920.1057/0.23.1680.1027@1680.23.1920.1057" timestamp="1588131318566" />
+    <state x="2140" y="264" key="Vcs.Push.Dialog.v2/1680.23.1920.1057/0.23.1680.1027@1680.23.1920.1057" timestamp="1602838467206" />
   </component>
 </project>

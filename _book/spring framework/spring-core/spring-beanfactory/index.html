@@ -1,0 +1,1484 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.1.2 Spring容器继承关系 · think study repeat</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="hyena">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-js-sequence-diagram/styles.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../spring-cycle-depend/" />
+    
+    
+    <link rel="prev" href="../spring-event/" />
+    
+
+    
+        <link rel="shortcut icon" href='../../../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"youngFF","repo":"glory","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.baidu.com" target="_blank" class="custom-link">百度一下</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../java/">
+            
+                <a href="../../../java/">
+            
+                    
+                    1.Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../../java/elementary/">
+            
+                <a href="../../../java/elementary/">
+            
+                    
+                    1.0 Java Elememtary
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../../java/elementary/atomic_unsafe/">
+            
+                <a href="../../../java/elementary/atomic_unsafe/">
+            
+                    
+                    1.0.1 AotimicInteger&Unsafe类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../../../java/elementary/executors/">
+            
+                <a href="../../../java/elementary/executors/">
+            
+                    
+                    1.0.2 ThreadPoolExecutor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../../../java/elementary/nio/">
+            
+                <a href="../../../java/elementary/nio/">
+            
+                    
+                    1.0.3 NIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../../../java/elementary/thread/">
+            
+                <a href="../../../java/elementary/thread/">
+            
+                    
+                    1.0.4 java线程概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../../../java/elementary/reference/">
+            
+                <a href="../../../java/elementary/reference/">
+            
+                    
+                    1.0.4 java应用类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../../java/jvm/">
+            
+                <a href="../../../java/jvm/">
+            
+                    
+                    1.1 Java virtual machine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../../java/specification/">
+            
+                <a href="../../../java/specification/">
+            
+                    
+                    1.2 Java Specification
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../../java/specification/JMS/">
+            
+                <a href="../../../java/specification/JMS/">
+            
+                    
+                    1.2.1 JMS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../../java/specification/JMX/">
+            
+                <a href="../../../java/specification/JMX/">
+            
+                    
+                    1.2.2 JMX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../../../java/specification/JDBC/">
+            
+                <a href="../../../java/specification/JDBC/">
+            
+                    
+                    1.2.3 JDBC
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../../java/design pattern/">
+            
+                <a href="../../../java/design pattern/">
+            
+                    
+                    1.3 Design Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../../java/microservice/">
+            
+                <a href="../../../java/microservice/">
+            
+                    
+                    1.4 Java Microservice
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../../../java/microservice/mq/">
+            
+                <a href="../../../java/microservice/mq/">
+            
+                    
+                    1.4.1 mq
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../../../java/microservice/rpc/">
+            
+                <a href="../../../java/microservice/rpc/">
+            
+                    
+                    1.4.2 RPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../../../java/tomcatxjetty/">
+            
+                <a href="../../../java/tomcatxjetty/">
+            
+                    
+                    1.5 Tomcat & Jetty
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.3.1" data-path="../../../java/tomcatxjetty/tomcat/framework/">
+            
+                <a href="../../../java/tomcatxjetty/tomcat/framework/">
+            
+                    
+                    1.5.1 tomcat架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3.2" data-path="../../../java/tomcatxjetty/tomcat/connector/README.md">
+            
+                <span>
+            
+                    
+                    1.5.2 tomcat连接器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../../java/asmxjavassit/">
+            
+                <a href="../../../java/asmxjavassit/">
+            
+                    
+                    1.6 Asm & Javassist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../../java/jndi/">
+            
+                <a href="../../../java/jndi/">
+            
+                    
+                    1.7 Jndi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../../java/maven/">
+            
+                <a href="../../../java/maven/">
+            
+                    
+                    1.8 maven
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.8.1" data-path="../../../java/maven/reactor/">
+            
+                <a href="../../../java/maven/reactor/">
+            
+                    
+                    1.8.1 maven反应堆
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    2.Spring Framework
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    2.1 Spring-Core
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../spring-event/">
+            
+                <a href="../spring-event/">
+            
+                    
+                    2.1.1 Spring事件发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    2.1.2 Spring容器继承关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../spring-cycle-depend/">
+            
+                <a href="../spring-cycle-depend/">
+            
+                    
+                    2.1.3 Spring循环依赖问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../spring-defaultlistablebeanfactory/">
+            
+                <a href="../spring-defaultlistablebeanfactory/">
+            
+                    
+                    2.1.4 Spring DefaultListableBeanFactory
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../spring-mvc/">
+            
+                <a href="../../spring-mvc/">
+            
+                    
+                    2.2 Spring-Mvc
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../spring-mvc/spring-mvc-request-annotation/">
+            
+                <a href="../../spring-mvc/spring-mvc-request-annotation/">
+            
+                    
+                    2.2.1 SpringMVC注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../spring-mvc/spring-mvc-interceptor/">
+            
+                <a href="../../spring-mvc/spring-mvc-interceptor/">
+            
+                    
+                    2.2.2 SpringMVC拦截器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../spring-mvc/spring-global-exception/">
+            
+                <a href="../../spring-mvc/spring-global-exception/">
+            
+                    
+                    2.2.3 Spring全局统一异常处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../../spring-mvc/spring-mvc-async-servlet/">
+            
+                <a href="../../spring-mvc/spring-mvc-async-servlet/">
+            
+                    
+                    2.2.4 Spring异步处理Servlet
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../spring-test/">
+            
+                <a href="../../spring-test/">
+            
+                    
+                    2.3 Spring-Test
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../spring-test/spring-web-mock-test/">
+            
+                <a href="../../spring-test/spring-web-mock-test/">
+            
+                    
+                    2.3.1 Spring-mvc-mock
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../spring-boot/">
+            
+                <a href="../../spring-boot/">
+            
+                    
+                    2.4 Spring-Boot
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../spring-boot/spring-boot项目配置/">
+            
+                <a href="../../spring-boot/spring-boot项目配置/">
+            
+                    
+                    2.4.1 Spring-boot项目配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../spring-data/">
+            
+                <a href="../../spring-data/">
+            
+                    
+                    2.5 Spring-Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../spring-cloud/">
+            
+                <a href="../../spring-cloud/">
+            
+                    
+                    2.6 Spring-Cloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../spring-rest/">
+            
+                <a href="../../spring-rest/">
+            
+                    
+                    2.7 Spring-Rest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../../spring-util/">
+            
+                <a href="../../spring-util/">
+            
+                    
+                    2.8 Spring-Util
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.8.1" data-path="../../spring-util/spring-cron/">
+            
+                <a href="../../spring-util/spring-cron/">
+            
+                    
+                    2.8.1 Spring定时任务和Cron表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../linux/">
+            
+                <a href="../../../linux/">
+            
+                    
+                    3.Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../linux/shell/">
+            
+                <a href="../../../linux/shell/">
+            
+                    
+                    3.1 Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../database/">
+            
+                <a href="../../../database/">
+            
+                    
+                    4.DataBase
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../database/mysql/">
+            
+                <a href="../../../database/mysql/">
+            
+                    
+                    4.1 MySQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../../database/mysql/sql/">
+            
+                <a href="../../../database/mysql/sql/">
+            
+                    
+                    4.1.1 SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../../database/mysql/transaction/">
+            
+                <a href="../../../database/mysql/transaction/">
+            
+                    
+                    4.1.2 Transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../database/redis/">
+            
+                <a href="../../../database/redis/">
+            
+                    
+                    4.2 Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../database/mybatis/">
+            
+                <a href="../../../database/mybatis/">
+            
+                    
+                    4.3 MyBatis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../../../database/mybatis/mybatis参数绑定/">
+            
+                <a href="../../../database/mybatis/mybatis参数绑定/">
+            
+                    
+                    4.3.1 MyBatis参数绑定方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="../../../database/mybatis/mybatis迭代/">
+            
+                <a href="../../../database/mybatis/mybatis迭代/">
+            
+                    
+                    4.3.2 MyBatis迭代器几种写法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../network/">
+            
+                <a href="../../../network/">
+            
+                    
+                    5.Network
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../network/http/">
+            
+                <a href="../../../network/http/">
+            
+                    
+                    5.1 Http
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../../network/tcp/">
+            
+                <a href="../../../network/tcp/">
+            
+                    
+                    5.2 TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../../operation_system/">
+            
+                <a href="../../../operation_system/">
+            
+                    
+                    6.Operation System
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../../operation_system/file_sequence_random_io/">
+            
+                <a href="../../../operation_system/file_sequence_random_io/">
+            
+                    
+                    6.1 文件顺序/随机IO
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../../data structure/">
+            
+                <a href="../../../data structure/">
+            
+                    
+                    7.Data Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../../algorithm/">
+            
+                <a href="../../../algorithm/">
+            
+                    
+                    8.Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../../../math/">
+            
+                <a href="../../../math/">
+            
+                    
+                    9.Math
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../../../programming language/">
+            
+                <a href="../../../programming language/">
+            
+                    
+                    10.Programming Language
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../../../big_data/">
+            
+                <a href="../../../big_data/">
+            
+                    
+                    11. 大数据
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../../../big_data/distrubuted_system/">
+            
+                <a href="../../../big_data/distrubuted_system/">
+            
+                    
+                    11.1 分布式系统概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../../../big_data/hdfs/">
+            
+                <a href="../../../big_data/hdfs/">
+            
+                    
+                    11. HDFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../../../armory/">
+            
+                <a href="../../../armory/">
+            
+                    
+                    12. weapons 武器库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../../../tech_framework/">
+            
+                <a href="../../../tech_framework/">
+            
+                    
+                    13.工程架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../../../tech_experience/">
+            
+                <a href="../../../tech_experience/">
+            
+                    
+                    14.工程经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../../../service_model/">
+            
+                <a href="../../../service_model/">
+            
+                    
+                    15.业务模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >2.1.2 Spring容器继承关系</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><ul><li><span class="title-icon "></span><a href="#1&#x7B80;&#x4ECB;"><b></b>1.&#x7B80;&#x4ECB;</a></li><li><span class="title-icon "></span><a href="#2&#x5BB9;&#x5668;&#x7EE7;&#x627F;&#x5173;&#x7CFB;"><b></b>2.&#x5BB9;&#x5668;&#x7EE7;&#x627F;&#x5173;&#x7CFB;</a></li><li><span class="title-icon "></span><a href="#3beanfactory&#x548C;applicationcontext&#x533A;&#x522B;"><b></b>3.BeanFactory&#x548C;ApplicationContext&#x533A;&#x522B;</a></li><li><span class="title-icon "></span><a href="#4&#x53C2;&#x8003;&#x8D44;&#x6599;"><b></b>4.&#x53C2;&#x8003;&#x8D44;&#x6599;</a></li></ul></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p>Spring&#x5BB9;&#x5668;&#x7EE7;&#x627F;&#x5173;&#x7CFB;</p>
+<p>&#x76EE;&#x5F55;:</p>
+<ol>
+<li><a href="#1&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</a></li>
+<li><a href="#2&#x5BB9;&#x5668;&#x7EE7;&#x627F;&#x5173;&#x7CFB;">&#x5BB9;&#x5668;&#x7EE7;&#x627F;&#x5173;&#x7CFB;</a></li>
+<li><a href="#3beanfactory&#x548C;applicationcontext&#x533A;&#x522B;">BeanFactory&#x548C;ApplicationContext&#x533A;&#x522B;</a></li>
+<li><a href="#4&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</a></li>
+</ol>
+<h3 id="1&#x7B80;&#x4ECB;"><a name="1&#x7B80;&#x4ECB;" class="anchor-navigation-ex-anchor" href="#1&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="1&#x7B80;&#x4ECB;" class="plugin-anchor" href="#1&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>1.&#x7B80;&#x4ECB;</h3>
+<p>Spring&#x5BB9;&#x5668;(<code>Spring Container</code>)&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x751F;&#x4EA7;&#x5BF9;&#x8C61;(OBJECT/BEAN)&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x5BB9;&#x5668;&#x8D1F;&#x8D23;&#x5BF9;&#x8C61;&#x7684;&#x6574;&#x4E2A;&#x751F;&#x547D;&#x5468;&#x671F;(<code>LifeCycle</code>)&#xFF0C;&#x521B;&#x5EFA;&#x3001;&#x88C5;&#x914D;&#x3001;&#x9500;&#x6BC1;&#x3002;&#x800C;&#x8FD9;&#x91CC;&#x9762;&#x5BF9;&#x8C61;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x7BA1;&#x7406;&#x90FD;&#x4EA4;&#x7ED9;Spring&#x5BB9;&#x5668;&#xFF0C;&#x8FD9;&#x79CD;&#x7F16;&#x7A0B;&#x6A21;&#x578B;&#x6210;&#x4E3A;-&#x63A7;&#x5236;&#x53CD;&#x8F6C;(<code>Inversion of Control</code>),&#x5BB9;&#x5668;&#x79F0;&#x4E3A;IOC&#x5BB9;&#x5668;&#x3002;&#x800C;&#x8FD9;&#x91CC;&#x9762;&#x7684;IOC&#x5BB9;&#x5668;&#x5E76;&#x4E0D;&#x53EA;&#x662F;Spring&#x624D;&#x6709;&#xFF0C;&#x5F88;&#x591A;&#x6846;&#x67B6;&#x4E5F;&#x6709;&#x8BE5;&#x6280;&#x672F;</p>
+<h3 id="2&#x5BB9;&#x5668;&#x7EE7;&#x627F;&#x5173;&#x7CFB;"><a name="2&#x5BB9;&#x5668;&#x7EE7;&#x627F;&#x5173;&#x7CFB;" class="anchor-navigation-ex-anchor" href="#2&#x5BB9;&#x5668;&#x7EE7;&#x627F;&#x5173;&#x7CFB;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="2&#x5BB9;&#x5668;&#x7EE7;&#x627F;&#x5173;&#x7CFB;" class="plugin-anchor" href="#2&#x5BB9;&#x5668;&#x7EE7;&#x627F;&#x5173;&#x7CFB;"><i class="fa fa-link" aria-hidden="true"></i></a>2.&#x5BB9;&#x5668;&#x7EE7;&#x627F;&#x5173;&#x7CFB;</h3>
+<p>&#x5982;&#x56FE;,&#x4E0B;&#x9762;&#x662F;Spring&#x5BB9;&#x5668;&#x7C7B;&#x7EE7;&#x627F;&#x5173;&#x7CFB;.
+<img src="1.jpg" alt=""></p>
+<center>&#x56FE;1 Spring&#x5BB9;&#x5668;&#x7C7B;&#x7EE7;&#x627F;&#x5173;&#x7CFB;</center>
+
+
+<p>Spring&#x5BB9;&#x5668;&#x6700;&#x57FA;&#x672C;&#x7684;&#x63A5;&#x53E3;&#x5C31;&#x662F;BeanFactory&#x3002;BeanFactory&#x8D1F;&#x8D23;&#x914D;&#x7F6E;&#x3001;&#x521B;&#x5EFA;&#x3001;&#x7BA1;&#x7406;Bean&#xFF0C;&#x5B83;&#x6709;&#x4E00;&#x4E2A;&#x5B50;&#x63A5;&#x53E3;ApplicationContext&#xFF0C;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;Spring&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x5BB9;&#x5668;&#x540C;&#x65F6;&#x8FD8;&#x7BA1;&#x7406;&#x7740;Bean&#x548C;Bean&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x3002;
+spring Ioc&#x5BB9;&#x5668;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x4ECE;&#x6839;&#x6E90;&#x4E0A;&#x662F;beanfactory&#xFF0C;<strong>&#x4F46;&#x771F;&#x6B63;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;&#x4F7F;&#x7528;&#x7684;ioc&#x5BB9;&#x5668;&#x8FD8;&#x662F;DefaultListableBeanFactory&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x8FD9;&#x4E48;&#x8BF4;&#xFF0C;
+DefaultListableBeanFactory &#x662F;&#x6574;&#x4E2A;spring ioc&#x7684;&#x59CB;&#x7956;</strong>.</p>
+<h4 id="21-&#x63A5;&#x53E3;&#x8BF4;&#x660E;"><a name="21-&#x63A5;&#x53E3;&#x8BF4;&#x660E;" class="anchor-navigation-ex-anchor" href="#21-&#x63A5;&#x53E3;&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="21-&#x63A5;&#x53E3;&#x8BF4;&#x660E;" class="plugin-anchor" href="#21-&#x63A5;&#x53E3;&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 &#x63A5;&#x53E3;&#x8BF4;&#x660E;</h4>
+<p><strong>BeanFactory</strong>
+Spring&#x5BB9;&#x5668;&#x6839;&#x63A5;&#x53E3;&#xFF0C;&#x63D0;&#x4F9B; <code>&#x83B7;&#x53D6;bean</code>,<code>&#x5224;&#x65AD;&#x662F;&#x5426;&#x5305;&#x542B;bean</code>,<code>&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;singleton/prototype</code>,<code>&#x83B7;&#x53D6;bean&#x7C7B;&#x578B;</code>,<code>&#x83B7;&#x53D6;bean&#x522B;&#x540D;</code></p>
+<p><img src="2.jpg" style="zoom:67%;"></p>
+<center>&#x56FE;&#x7247;</center>
+
+<p>This interface is implemented by objects that hold a number of bean definitions, each uniquely identified by a String name. Depending on the bean definition, the factory will return either an independent instance of a contained object (the Prototype design pattern), or a single shared instance</p>
+<p>Bean factory implementations should support the standard bean lifecycle interfaces as far as possible. The full set of initialization methods and their standard order is:</p>
+<ol>
+<li>BeanNameAware&apos;s setBeanName</li>
+<li>BeanClassLoaderAware&apos;s setBeanClassLoader</li>
+<li>BeanFactoryAware&apos;s setBeanFactory</li>
+<li>EnvironmentAware&apos;s setEnvironment</li>
+<li>EmbeddedValueResolverAware&apos;s setEmbeddedValueResolver</li>
+<li>ResourceLoaderAware&apos;s setResourceLoader (only applicable when running in an application context)</li>
+<li>ApplicationEventPublisherAware&apos;s setApplicationEventPublisher (only applicable when running in an application context)</li>
+<li>MessageSourceAware&apos;s setMessageSource (only applicable when running in an application context)</li>
+<li>ApplicationContextAware&apos;s setApplicationContext (only applicable when running in an application context)</li>
+<li>ServletContextAware&apos;s setServletContext (only applicable when running in a web application context)</li>
+<li>postProcessBeforeInitialization methods of BeanPostProcessors</li>
+<li>InitializingBean&apos;s afterPropertiesSet</li>
+<li>a custom init-method definition</li>
+<li>postProcessAfterInitialization methods of BeanPostProcessors</li>
+</ol>
+<p>On shutdown of a bean factory, the following lifecycle methods apply:</p>
+<ol>
+<li>postProcessBeforeDestruction methods of DestructionAwareBeanPostProcessors</li>
+<li>DisposableBean&apos;s destroy</li>
+<li>a custom destroy-method definition</li>
+</ol>
+<p><strong>HierachicalBeanFactory</strong></p>
+<p>&#x63D0;&#x4F9B;&#x8BBF;&#x95EE;&#x7236;&#x5BB9;&#x5668;(parent beanfactory)&#x529F;&#x80FD;</p>
+<p>Sub-interface implemented by bean factories that can be part of a hierarchy.
+The corresponding setParentBeanFactory method for bean factories that allow setting the parent in a configurable fashion can be found in the <code>ConfigurableBeanFactory</code> interface.</p>
+<p>method:
+    getParentBeanFactory():BeanFactory<br>        returns the parent bean factory,or null if there is none.
+    containsLocalBean(String):boolean
+        Return whether the local bean factory contains a bean of the given name, ignoring beans defined in ancestor contexts.
+This is an alternative to containsBean, ignoring a bean of the given name from an ancestor bean factory.</p>
+<p><strong>ListablebeanFactory</strong></p>
+<p>&#x6279;&#x91CF;&#x83B7;&#x53D6;Bean</p>
+<p>Extension of the BeanFactory interface to be implemented by bean factories that can enumerate all their bean instances, rather than attempting bean lookup by name one by one as requested by clients. BeanFactory implementations that preload all their bean definitions (such as XML-based factories) may implement this interface.</p>
+<p><strong>AutowireCapableBeanFactory</strong></p>
+<p>&#x5728;BeanFactory&#x57FA;&#x7840;&#x4E0A;&#x5B9E;&#x73B0;&#x5BF9;&#x5DF2;&#x5B58;&#x5728;&#x793A;&#x4F8B;&#x7684;&#x7BA1;&#x7406;&#xFF0C;&#x5BB9;&#x5668;&#x63D0;&#x4F9B;&#x81EA;&#x52A8;&#x88C5;&#x914D;(autowiring)&#x529F;&#x80FD;</p>
+<p>Extension of the BeanFactory interface to be implemented by bean factories that are capable of autowiring, provided that they want to expose this functionality for existing bean instances.</p>
+<p><strong>ConfigurableBeanFactory</strong></p>
+<p>&#x5355;&#x4F8B;bean&#x7684;&#x6CE8;&#x518C;&#xFF0C;&#x751F;&#x6210;&#x5B9E;&#x4F8B;</p>
+<p>Configuration interface to be implemented by most bean factories. Provides facilities to configure a bean factory, in addition to the bean factory client methods in the BeanFactory interface.</p>
+<p><strong>ConfigurableListableBeanFactory</strong></p>
+<p>&#x7EE7;&#x627F;&#x4E86;&#x4E0A;&#x8FF0;&#x7684;&#x6240;&#x6709;&#x63A5;&#x53E3;&#xFF0C;&#x589E;&#x52A0;&#x4E86;&#x5176;&#x4ED6;&#x529F;&#x80FD;&#xFF1A;&#x6BD4;&#x5982;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;,&#x7C7B;&#x578B;&#x8F6C;&#x5316;,&#x5C5E;&#x6027;&#x7F16;&#x8F91;&#x5668;,BeanPostProcessor,&#x4F5C;&#x7528;&#x57DF;,bean&#x5B9A;&#x4E49;,&#x5904;&#x7406;bean&#x4F9D;&#x8D56;&#x5173;&#x7CFB;, bean&#x5982;&#x4F55;&#x9500;&#x6BC1;&#x2026;</p>
+<p>Configuration interface to be implemented by most listable bean factories. In addition to ConfigurableBeanFactory, it provides facilities to analyze and modify bean definitions, and <strong>to pre-instantiate singletons</strong>.</p>
+<p><strong>DefaultListableBeanFactory</strong></p>
+<p>&#x5B9E;&#x73B0;&#x4E86;ConfigurableListableBeanFactory&#xFF0C;&#x5B9E;&#x73B0;&#x4E0A;&#x8FF0;BeanFactory&#x6240;&#x6709;&#x529F;&#x80FD;&#x3002;&#x5B83;&#x8FD8;&#x53EF;&#x4EE5;&#x6CE8;&#x518C;BeanDefinition</p>
+<h3 id="3beanfactory&#x548C;applicationcontext&#x533A;&#x522B;"><a name="3beanfactory&#x548C;applicationcontext&#x533A;&#x522B;" class="anchor-navigation-ex-anchor" href="#3beanfactory&#x548C;applicationcontext&#x533A;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="3beanfactory&#x548C;applicationcontext&#x533A;&#x522B;" class="plugin-anchor" href="#3beanfactory&#x548C;applicationcontext&#x533A;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a>3.BeanFactory&#x548C;ApplicationContext&#x533A;&#x522B;</h3>
+<p>BeanFactory&#x548C;ApplicationContext&#x662F;Spring&#x4E24;&#x5927;&#x6838;&#x5FC3;&#x63A5;&#x53E3;,&#x800C;&#x5176;&#x4E2D;ApplicationContext&#x662F;BeanFactory&#x7684;&#x5B50;&#x63A5;&#x53E3;.&#x5B83;&#x4EEC;&#x90FD;&#x53EF;&#x4EE5;&#x5F53;&#x4F5C;Spring&#x5BB9;&#x5668;,Spring&#x5BB9;&#x5668;&#x662F;&#x751F;&#x6210;Bean&#x5B9E;&#x4F8B;&#x7684;&#x5DE5;&#x5382;,&#x5E76;&#x7BA1;&#x7406;&#x5BB9;&#x5668;&#x4E2D;&#x7684;Bean.&#x5728;&#x57FA;&#x4E8E;Spring&#x7684;javaEE&#x5E94;&#x7528;&#x4E2D;,&#x6240;&#x6709;&#x7684;&#x7EC4;&#x4EF6;(Component)&#x90FD;&#x88AB;&#x5F53;&#x4F5C;Bean&#x5904;&#x7406;&#xFF0C;&#x5305;&#x62EC;&#x6570;&#x636E;&#x6E90;(DataSource),Hibernate&#x7684;SessionFactory&#x3001;&#x4E8B;&#x52A1;&#x7BA1;&#x7406;&#x5668;(TransactionManager).</p>
+<p>Spring&#x7684;&#x6838;&#x5FC3;&#x662F;&#x5BB9;&#x5668;(Spring Container),&#x6846;&#x67B6;&#x672C;&#x8EAB;&#x63D0;&#x4F9B;&#x4E86;&#x5F88;&#x591A;&#x4E2A;&#x5BB9;&#x5668;&#x7684;&#x5B9E;&#x73B0;&#x3002;&#x5927;&#x6982;&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#xFF1A;
+    BeanFactory: &#x63D0;&#x4F9B;&#x57FA;&#x672C;&#x7684;DI(Dependency Injection).
+    ApplicationContext: &#x63D0;&#x4F9B;&#x66F4;&#x591A;&#x4F01;&#x4E1A;&#x7EA7;&#x670D;&#x52A1;&#xFF0C;&#x4F8B;&#x5982;&#x89E3;&#x6790;&#x914D;&#x7F6E;&#x6587;&#x672C;&#x4FE1;&#x606F;&#x7B49;&#x7B49;&#x3002;</p>
+<p>BeanFactory&#x66F4;&#x4E13;&#x6CE8;&#x4E0E;&#x4FDD;&#x5B58;Bean,&#x89E3;&#x6790;Bean&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;,&#x91CD;&#x70B9;&#x662F;Factory.&#x800C;ApplicationContext&#x66F4;&#x5728;&#x4E8E;&#x4ECE;&#x5E94;&#x7528;&#x7684;&#x5168;&#x5C40;&#x89D2;&#x5EA6;&#x770B;&#x5F85;&#x95EE;&#x9898;,&#x7FFB;&#x8BD1;&#x4E3A;&quot;&#x5E94;&#x7528;&#x4E0A;&#x4E0B;&#x6587;&quot;,&#x4EE3;&#x8868;&#x6574;&#x4E2A;&#x5E94;&#x7528;&#x7684;&#x60C5;&#x51B5;,&#x5E76;&#x4E14;&#x63D0;&#x4F9B;&#x66F4;&#x591A;&#x7684;&#x4F01;&#x4E1A;&#x7EA7;&#x522B;&#x670D;&#x52A1;,&#x800C;&#x4E14;ApplicationContext&#x91CC;&#x9762;&#x6301;&#x6709;BeanFactory&#x7684;&#x5F15;&#x7528;,&#x9ED8;&#x8BA4;&#x662F;<code>DefaultListableBeanFactory</code>.</p>
+<p>ApplicationContext&#x5E38;&#x7528;&#x7C7B;</p>
+<table>
+<thead>
+<tr>
+<th>ApplicationContext&#x5E38;&#x7528;&#x5B9E;&#x73B0;&#x7C7B;</th>
+<th>&#x4F5C;&#x7528;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AnnotationConfigApplicationContext</td>
+<td>&#x4ECE;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x57FA;&#x4E8E;java&#x914D;&#x7F6E;&#x7C7B;&#x52A0;&#x8F7D;&#x4E0A;&#x4E0B;&#x6587;&#x5B9A;&#x4E49;,&#x9002;&#x7528;&#x4E8E;java&#x6CE8;&#x89E3;&#x7684;&#x65B9;&#x5F0F;</td>
+</tr>
+<tr>
+<td>ClassPathXmlApplicationContext</td>
+<td>&#x4ECE;&#x7C7B;&#x8DEF;&#x5F84;&#x4E0B;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;xml&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x8F7D;&#x4E0A;&#x4E0B;&#x6587;&#x5B9A;&#x4E49;,&#x9002;&#x7528;&#x4E8E;xml&#x914D;&#x7F6E;&#x65B9;&#x5F0F;</td>
+</tr>
+<tr>
+<td>FileSystemXmlApplicationContext</td>
+<td>&#x4ECE;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E0B;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;xml&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x8F7D;&#x4E0A;&#x4E0B;&#x6587;&#x5B9A;&#x4E49;,&#x9002;&#x7528;&#x4E8E;xml&#x914D;&#x7F6E;&#x65B9;&#x5F0F;</td>
+</tr>
+<tr>
+<td>AnnotationConfigWebApplicationContext</td>
+<td>&#x4E13;&#x95E8;&#x4E3A;web&#x5E94;&#x7528;&#x51C6;&#x5907;&#x7684;&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x6CE8;&#x89E3;&#x65B9;&#x5F0F;</td>
+</tr>
+<tr>
+<td>XmlWebApplicationContext</td>
+<td>&#x4ECE;web&#x5E94;&#x7528;&#x4E0B;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;xml&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x52A0;&#x8F7D;&#x4E0A;&#x4E0B;&#x6587;&#x5B9A;&#x4E49;&#xFF0C;&#x9002;&#x7528;&#x4E8E;xml&#x914D;&#x7F6E;&#x65B9;&#x5F0F;</td>
+</tr>
+</tbody>
+</table>
+<p>Spring&#x5177;&#x6709;&#x975E;&#x5E38;&#x5927;&#x7684;&#x7075;&#x6D3B;&#x6027;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x4E09;&#x79CD;&#x4E3B;&#x8981;&#x7684;&#x88C5;&#x914D;&#x673A;&#x5236;&#xFF1A;</p>
+<pre><code>1. XML&#x663E;&#x793A;&#x914D;&#x7F6E;
+2. JAVA&#x4E2D;&#x8FDB;&#x884C;&#x663E;&#x793A;&#x914D;&#x7F6E;&#xFF08;Configuration&#xFF09;
+3. &#x9690;&#x5F0F;Bean&#x53D1;&#x73B0;&#x673A;&#x5236;&#x548C;&#x81EA;&#x52A8;&#x88C5;&#x914D;
+    3.1 &#x7EC4;&#x4EF6;&#x626B;&#x63CF;(Component Scan)&#xFF1A;Spring&#x4F1A;&#x81EA;&#x52A8;&#x53D1;&#x73B0;&#x5E94;&#x7528;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x6240;&#x521B;&#x5EFA;&#x7684;Bean
+    3.2 &#x81EA;&#x52A8;&#x88C5;&#x914D;(autowiring):Spring&#x4F1A;&#x81EA;&#x52A8;&#x6EE1;&#x8DB3;Bean&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;
+</code></pre><p>&#x4F8B;&#x5B50;&#xFF1A;</p>
+<p>1.&#x901A;&#x8FC7;XML&#x6587;&#x4EF6;&#x914D;&#x7F6E;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">beans</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.foo.Test&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</code></pre>
+<p>2.&#x901A;&#x8FC7;JAVA&#x6CE8;&#x89E3;&#x7684;&#x65B9;&#x5F0F;&#x914D;&#x7F6E;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Configuration</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Config</span></span>{
+    <span class="hljs-comment">//Spring autowiring A of B</span>
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> B <span class="hljs-title">b</span><span class="hljs-params">(A a)</span></span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> B(a);
+    }
+
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> A <span class="hljs-title">a</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> A();
+    }
+}
+</code></pre>
+<p>3.Spring&#x9690;&#x5F0F;Bean&#x53D1;&#x73B0;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyComponent</span></span>{
+
+}
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x7EC4;&#x4EF6;&#x626B;&#x63CF;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x8BF7;&#x7528;&#xFF0C;&#x9700;&#x8981;&#x914D;&#x7F6E;.</p>
+<pre><code class="lang-java"><span class="hljs-meta">@ComponenetScan</span>
+<span class="hljs-meta">@Configuration</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Config</span></span>{}
+</code></pre>
+<p>&#x5728;Config&#x7C7B;&#x4E2D;&#x6DFB;&#x52A0;@ComponentScan&#x8868;&#x793A;&#x5F00;&#x542F;&#x7EC4;&#x4EF6;&#x626B;&#x63CF;,&#x9ED8;&#x8BA4;&#x626B;&#x63CF;&#x4E0E;&#x914D;&#x7F6E;&#x7C7B;&#x76F8;&#x540C;&#x7684;&#x5305;&#x3002;</p>
+<h3 id="4&#x53C2;&#x8003;&#x8D44;&#x6599;"><a name="4&#x53C2;&#x8003;&#x8D44;&#x6599;" class="anchor-navigation-ex-anchor" href="#4&#x53C2;&#x8003;&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="4&#x53C2;&#x8003;&#x8D44;&#x6599;" class="plugin-anchor" href="#4&#x53C2;&#x8003;&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a>4.&#x53C2;&#x8003;&#x8D44;&#x6599;</h3>
+<ol>
+<li><a href="https://www.pianshen.com/article/6729221959/" target="_blank">https://www.pianshen.com/article/6729221959/</a></li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../spring-event/" class="navigation navigation-prev " aria-label="Previous page: 2.1.1 Spring事件发布">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../spring-cycle-depend/" class="navigation navigation-next " aria-label="Next page: 2.1.3 Spring循环依赖问题">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.1.2 Spring容器继承关系","level":"1.3.1.2","depth":3,"next":{"title":"2.1.3 Spring循环依赖问题","level":"1.3.1.3","depth":3,"path":"spring framework/spring-core/spring-cycle-depend/README.md","ref":"spring framework/spring-core/spring-cycle-depend/README.md","articles":[]},"previous":{"title":"2.1.1 Spring事件发布","level":"1.3.1.1","depth":3,"path":"spring framework/spring-core/spring-event/README.md","ref":"spring framework/spring-core/spring-event/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","-lunr","-search","search-pro","github","github-buttons","-donate","sharing-plus","anchor-navigation-ex","favicon","js-sequence-diagram","mermaid-gb3","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/youngFF"},"livereload":{},"splitter":{},"search-pro":{},"js-sequence-diagram":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"./source/images/donate.png","title":"","button":"赞赏","alipayText":" "},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"youngFF","repo":"glory","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"hyena","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"think study repeat","language":"zh-hans","links":{"sidebar":{"百度一下":"https://www.baidu.com"}},"gitbook":"3.2.3","description":"my hearthStone book"},"file":{"path":"spring framework/spring-core/spring-beanfactory/README.md","mtime":"2020-10-15T15:03:09.288Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-01T09:42:41.488Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-js-sequence-diagram/jquery-2.1.1.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-js-sequence-diagram/underscore-min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-js-sequence-diagram/sequence-diagram-min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-js-sequence-diagram/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
