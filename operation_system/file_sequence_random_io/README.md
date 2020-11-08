@@ -128,7 +128,7 @@ LINUX中进程无法直接操作I/O设备，其必须通过系统调用请求ker
 2. https://www.toutiao.com/a6761254830716486157/ (推荐)
 3. https://www.toutiao.com/a6736053525266039304/
 
-
+4. https://blog.csdn.net/holybin/article/details/21175781 (推荐)
 
 
 
