@@ -247,7 +247,88 @@ HDFS旨在支持非常大的文件。与HDFS兼容的应用程序是处理大型
 
 ### 10.hdfs安装和使用
 
+必备条件：
 
+	1. java环境
+ 	2. ssh
+ 	3. hadoop-2.6.0.tar.gz
+
+#### 1.设置无密码登录本机
+
+```shell
+  $ ssh-keygen -t rsa -P''-f〜/ .ssh / id_rsa
+  $ cat〜/ .ssh / id_rsa.pub >>〜/ .ssh / authorized_keys
+  $ chmod 0600〜/ .ssh / authorized_keys
+```
+
+
+
+#### 2.配置hadoop环境
+
+Use the following:
+
+etc/hadoop/core-site.xml:
+
+```
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://localhost:9000</value>
+    </property>
+</configuration>
+```
+
+etc/hadoop/hdfs-site.xml:
+
+```
+<configuration>
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+</configuration>
+```
+
+
+
+#### 3.启动和停止hdfs
+
+1. Format the filesystem(格式化): 
+
+   ```shell
+     $ bin/hdfs namenode -format
+   ```
+
+2. Start NameNode daemon and DataNode daemon:
+
+   ```shell
+     $ sbin/start-dfs.sh
+   ```
+
+3. stop NameNode and DataNode
+
+```shell
+$ sbin/stop-dfs.sh
+```
+
+
+
+### 11.访问hdfs
+
+#### 1.shell api
+
+```shell
+  $ bin/hdfs dfs -mkdir /user   # 创建目录
+  $ bin/hdfs dfs -mkdir /user/<username>
+  
+  $ bin/hdfs dfs -mkdir input
+  $ bin/hdfs dfs -put etc/hadoop/*.xml input  # 将本地文件系统/etc/hadoop/下所有xml文件，上传到hdfs文件系统下的input目录下
+  
+  
+  $ bin/hdfs dfs -ls -al # 查看文件系统目录
+  
+  $ bin/hdfs dfs -get output localhost_output # 将hdfs上output文件下载到本地localhost_output文件夹下
+```
 
 
 
@@ -259,7 +340,9 @@ HDFS旨在支持非常大的文件。与HDFS兼容的应用程序是处理大型
 
 
 
-思考：HDFS不适合存储小文件
+思考：
+
+1.HDFS不适合存储小文件
 
 > 元信息存储在NameNode内存中
 
@@ -275,4 +358,13 @@ HDFS旨在支持非常大的文件。与HDFS兼容的应用程序是处理大型
 - 存储1亿个block，大约需要20GB内存
 - 如果一个文件大小为10K，则1亿个文件大小仅为1TB（但要消耗掉NameNode 20GB内存）
 
-**思想：对于一个大文件(例如:1TB)，数据块越大，则数据块数据越小，namenode内存中保存的元数据信息就越少。**
+**思想：对于一个大文件(例如:1TB)，数据块越大，则数据块数量越少，namenode内存中保存的元数据信息就越少。**
+
+2.在hdfs-site.xml中设置副本系数为1，为什么查询文件看到的3？
+
+通过hdfs shell的方式put，会采用默认的系数1
+通过java api上传，在本地没有手工设置副本系数，会采用hadoop默认系数3
+
+
+
+
