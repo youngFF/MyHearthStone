@@ -7,7 +7,7 @@
     * [1.0.2 ThreadPoolExecutor](java/elementary/executors/README.md)
     * [1.0.3 NIO](java/elementary/nio/README.md)
     * [1.0.4 java线程概念](java/elementary/thread/README.md)
-	* [1.0.4 java应用类型](java/elementary/reference/README.md)
+	* [1.0.4 java引用类型](java/elementary/reference/README.md)
   * [1.1 Java virtual machine](java/jvm/README.md)
   * [1.2 Java Specification](java/specification/README.md)
     * [1.2.1 JMS](java/specification/JMS/README.md)
