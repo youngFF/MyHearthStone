@@ -47,9 +47,7 @@
     <option name="TOOL_WINDOW_SELECTED_CONTENT_INDEX" value="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d7582e0-d3eb-479e-af38-4efc4dc1deef" name="Default Changelist" comment="更改书签">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9d7582e0-d3eb-479e-af38-4efc4dc1deef" name="Default Changelist" comment="更改书签" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,6 +91,7 @@
       <workItem from="1602838445069" duration="1002000" />
       <workItem from="1603076444496" duration="2000" />
       <workItem from="1603076454077" duration="30000" />
+      <workItem from="1608778197944" duration="72000" />
     </task>
     <task id="LOCAL-00001" summary="更改书签">
       <created>1602838465756</created>
