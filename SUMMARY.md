@@ -42,6 +42,7 @@
 	  * [2.4.1 Spring-boot项目配置](spring framework/spring-boot/spring-boot项目配置/README.md)
 	* [2.5 Spring-Data](spring framework/spring-data/README.md)
 	* [2.6 Spring-Cloud](spring framework/spring-cloud/README.md)
+    * [2.6.1 Spring-Cloud-gateway](spring framework/spring-cloud/spring-cloud-gateway/README.md)
 	* [2.7 Spring-Rest](spring framework/spring-rest/README.md)
 	* [2.8 Spring-Util](spring framework/spring-util/README.md)
 	  * [2.8.1 Spring定时任务和Cron表达式](spring framework/spring-util/spring-cron/README.md)
@@ -70,5 +71,6 @@
 * [12. weapons 武器库](armory/README.md)
 * [13.工程架构](tech_framework/README.md)
 * [14.工程经验](tech_experience/README.md)
+    * [14.1 问题域重要性讨论](tech_experience/question_domain/README.md)
 * [15.业务模型](service_model/README.md)
 
