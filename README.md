@@ -9,5 +9,3 @@ All of my knowledge writes here!
 
 
 **Just notebook , don't use for business or making money !**
-
-![image](https://user-images.githubusercontent.com/19885767/109382357-e8fdf480-791a-11eb-93bb-4bf0d7e8d274.png)
